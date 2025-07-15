@@ -291,7 +291,7 @@ body {
 
 /* Intro Section */
 .intro-page {
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/dream-pulse-header.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/images/dream-pulse-header.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
