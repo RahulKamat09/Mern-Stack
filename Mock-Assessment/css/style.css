@@ -124,7 +124,7 @@ body {
     font-size: 40px;
 }
 
-.logo a {
+.logo h1 {
     text-decoration: none;
     color: rgb(123, 200, 6);
 }
@@ -365,13 +365,6 @@ body {
     background: #388e3c;
 }
 
-@media (max-width: 768px) {
-    .category-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
 /* categories-2 */
 
 .featured-section {
@@ -459,121 +452,135 @@ body {
     margin-top: 10px;
 }
 
-@media (max-width: 900px) {
-    .product-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-
-
-
-
-
-
-
-
 
 /* Footer1 */
 
-footer {
-    background-color: #0b1622;
-    color: #cfd8dc;
+.footer {
+    background-color: #0d1b2a;
+    padding: 50px 20px 20px;
 }
 
-.container {
+.footer-container {
     display: flex;
-    justify-content: center;
-    max-width: 1700px;
-    gap: 200px;
     flex-wrap: wrap;
-    height: auto;
-    margin: auto;
-    margin-bottom: 20px;
+    justify-content: space-between;
+    gap: 30px;
 }
 
-.footer-section {
-    margin-top: 50px;
+.footer-box {
+    flex: 1 1 250px;
 }
 
-.footer-section h2 {
-    font-size: 30px;
+.footer-title {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.green {
+    color: #28a745;
+}
+
+.footer-box p,
+.footer-box li {
+    margin: 8px 0;
+    font-size: 0.95rem;
     color: white;
 }
 
-.footer-section ul {
+.footer-box i {
+    margin-right: 8px;
+    color: #287ba7;
+}
+
+.footer-box h3 {
+    color: white;
+}
+
+.footer-box ul {
     list-style: none;
-    line-height: 2;
-    text-align: left;
+    padding: 0;
 }
 
-.icons {
+.footer-box a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.footer-box a:hover {
+    color: #28a745;
+}
+
+/* Social & Subscribe */
+.footer-bottom {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
-    float: left;
+    margin-top: 40px;
+    border-top: 1px solid #222;
+    padding-top: 20px;
 }
 
-.icons i {
-    margin: 20px 20px 20px 40px;
-    font-size: 30px;
-    transition: 0.3s ease-in-out;
-    -webkit-transition: 0.3s ease-in-out;
-    -moz-transition: 0.3s ease-in-out;
-    -ms-transition: 0.3s ease-in-out;
-    -o-transition: 0.3s ease-in-out;
+.social-icons a {
+    margin-right: 15px;
+    font-size: 1.2rem;
+    color: #ccc;
+    transition: color 0.3s;
 }
 
-.icons i:hover:nth-child(1) {
-    color: blue;
-}
-
-.icons i:hover:nth-child(2) {
-    color: pink;
-}
-
-.icons i:hover:nth-child(3) {
-    color: cyan;
-}
-
-.icons i:hover:nth-child(4) {
-    color: skyblue;
+.social-icons a:hover {
+    color: #28a745;
 }
 
 .subscribe-form {
-    float: right;
     display: flex;
-    margin: 20px 20px 20px 20px;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .subscribe-form input[type="email"] {
-    flex: 1;
-    padding: 10px;
+    padding: 8px 10px;
     border: none;
     outline: none;
-    background-color: #1c2633;
-    color: white;
-    width: 300px;
+    border-radius: 4px;
+    width: 200px;
 }
 
 .subscribe-form button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
+    padding: 8px 15px;
+    background-color: #28a745;
     border: none;
+    border-radius: 4px;
+    color: white;
     cursor: pointer;
 }
 
-.copyright {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.subscribe-form button:hover {
+    background-color: #218838;
 }
 
-.copyright p {
-    font-size: 20px;
+/* Copyright */
+.footer-copy {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9rem;
 }
+
+.footer-copy p {
+    color: white;
+}
+
+.footer-copy a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.footer-copy a:hover {
+    color: #28a745;
+}
+
+
+/* Footer Ends Here */
 
 @media (max-width: 1024px) {
     .nav {
@@ -641,33 +648,14 @@ footer {
         width: 90%;
     }
 
-    .container {
+    .footer-container {
         flex-direction: column;
-        gap: 40px;
-        text-align: center;
     }
 
-    .subscribe-form {
+    .footer-bottom {
         flex-direction: column;
-        float: none;
-        align-items: center;
-    }
-
-    .subscribe-form input[type="email"] {
-        width: 90%;
-        margin-bottom: 10px;
-    }
-
-    .icons {
-        float: none;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .copyright p {
-        font-size: 14px;
-        padding: 10px;
-        text-align: center;
+        align-items: flex-start;
+        gap: 20px;
     }
 }
 
@@ -771,4 +759,4 @@ footer {
         max-width: 80%;
         height: auto;
     }
-}   
+}
