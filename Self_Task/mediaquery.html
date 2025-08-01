@@ -1,45 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple Website</title>
-    <link rel="stylesheet" href="mediaquery.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic Website</title>
+  <link rel="stylesheet" href="mediaquery.css">
 </head>
-
 <body>
-    <header>
-        <div class="row">
-            <div class="col-12">
-                <h1>My Simple Website</h1>
-                <nav>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav-container">
+      <h1 class="logo">MySite</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h2>Welcome to MySite</h2>
+        <p>We create beautiful, responsive websites for all kinds of businesses.</p>
+        <a href="#" class="btn">Get Started</a>
+      </div>
+      <div class="hero-img">
+        <img src="/images/banner_img_02.jpg" alt="Hero Image">
+      </div>
+    </div>
+  </section>
+
+  <!-- Cards Section -->
+  <section class="cards">
+    <div class="container">
+      <h2 class="section-title">Our Services</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Web Design</h3>
+          <p>Modern and responsive designs for websites and web apps.</p>
         </div>
-    </header>
+        <div class="card">
+          <h3>SEO</h3>
+          <p>Optimize your site to rank higher on search engines.</p>
+        </div>
+        <div class="card">
+          <h3>Support</h3>
+          <p>24/7 support for all your technical issues and queries.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <main>
-        <section class="intro">
-            <h2>Welcome!</h2>
-            <p>This is a basic website layout to practice media queries.</p>
-        </section>
-        <section class="content">
-            <div class="box">Box 1</div>
-            <div class="box">Box 2</div>
-            <div class="box">Box 3</div>
-        </section>
-    </main>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 MySite. All rights reserved.</p>
+    </div>
+  </footer>
 
-    <footer>
-        <p>&copy; 2025 My Website</p>
-    </footer>
 </body>
-
 </html>
