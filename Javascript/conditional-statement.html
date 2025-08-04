@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript || Conditional Statement</title>
+</head>
+
+<body>
+
+    <!-- Conditional Statement(If, If..else, if..elseIf..else, Nested if, Ternary Operator, Switch case) -->
+    <script>
+
+        // Conditional Statement
+        /* Conditional statements in JavaScript allow us to execute different blocks of code based on specific conditions. 
+        They're essential for decision-making in programming.  */
+
+        /*  1. if statement
+            Executes a block of code if the condition is true.*/
+
+        var a = 30;
+        if (a <= 40) {
+            document.write("<h1> I'm pass </h1>");
+        }
+
+        /*   2. if...else statement
+            Executes one block if the condition is true, another block if it is false.*/
+
+        var age = 17;
+        if (age >= 18) {
+            document.write("I'm an Adult Now!!!!!" + "<br>");
+        }
+        else {
+            document.write("I'm A Teenager Now!!!!" + "<br>");
+        }
+
+        /*  3. if...else if...else statement
+            Checks multiple conditions.*/
+
+        var marks = 85;
+        if (marks >= 90) {
+            document.write("Grade A" + "<br>");
+        }
+        else if (marks >= 80) {
+            document.write("Grade B" + "<br>");
+        }
+        else {
+            document.write("Grade C" + "<br>");
+        }
+
+        /*  4. Nested if Statement in JavaScript
+            A nested if is when you place one if (or if...else) statement inside another if block. 
+            It’s useful when you need to check multiple conditions in a specific sequence.*/
+
+        let age1 = 20;
+        let nationality = "Indian";
+
+        if (age1 >= 18) {
+            if (nationality === "Indian") {
+                document.write("You are eligible to vote in India." + "<br>");
+            } else {
+                document.write("You must be an Indian citizen to vote here." + "<br>");
+            }
+        } else {
+            document.write("You must be at least 18 years old to vote." + "<br>");
+        }
+
+        /*  5. switch statement
+            Use this when you need to compare one value against multiple options.*/
+
+        let day = 3;
+        switch (day) {
+            case 1:
+                document.write("Monday" + "<br>");
+                break;
+            case 2:
+                document.write("Tuesday" + "<br>");
+                break;
+            case 3:
+                document.write("Wednesday" + "<br>");
+                break;
+            default:
+                document.write("Invalid day" + "<br>");
+        }
+
+        /*  6.Ternary Operator (Shorthand for if...else)
+            A compact way to write simple if...else.*/
+
+        let age2 = 18;
+        let message = (age2 >= 18) ? "Adult" : "Minor" + "<br>";
+        document.write(message);
+
+
+    </script>
+
+</body>
+
+</html>

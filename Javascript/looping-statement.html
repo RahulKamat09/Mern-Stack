@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript || Looping Statements</title>
+</head>
+
+<body>
+
+    <!--Looping Statements in JavaScript
+        Loops in JavaScript allow you to repeat a block of code multiple times until a condition is false. 
+        They're essential for tasks like iterating through arrays, displaying lists, or executing repetitive logic.-->
+
+    <script>
+
+        // Loops In Javascript
+        /*  1. for Loop
+            Used when the number of iterations is known.
+            Syntax:
+
+            for (initialization; condition; increment) {
+            // code block
+            }
+            */
+
+        for (var i = 1; i <= 5; i++) {
+            document.write(i + "<br>");
+        }
+
+        /*  2. while Loop
+            Used when the condition is checked before execution, and you don't necessarily know how many times to run the loop.
+            Syntax:
+
+            while (condition) {
+            // code block
+            }
+            */
+
+        var j = 1;
+        while (j <= 5) {
+            document.write(j + "<br>");
+            j++;
+        }
+
+        /*  3. do...while Loop
+            The code runs at least once, and the condition is checked after.
+            Syntax:
+
+            do {
+                // code block
+                } while (condition);
+
+            */
+
+        let k = 1;
+        do {
+            document.write("Value:", k +"<br>");
+            k++;
+        } while (k <= 5);
+
+
+    </script>
+
+</body>
+
+</html>

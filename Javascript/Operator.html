@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript-Operators</title>
+</head>
+
+<body>
+    <h1>JavaScript- Operator</h1>
+    <!-- 
+    Operators in JavaScript are symbols or keywords used to perform operations on values or variables.
+
+    1. Arithmetic Operators
+    Used to perform mathematical calculations.
+    + - * / % 
+
+    2. Assignment Operators
+    Used to assign values to variables.
+    a=10 =+ =- =* =/ =%   a=10  a=a+b; a=+b
+
+    3. Comparison Operators
+    Used to compare two values; returns true or false.
+    == ===  > < <=  >= != 
+
+    4. Logical Operators
+    Used to combine multiple conditions (returns Boolean).
+    && ` !
+
+    5. increement & decreement operator 
+    used for increament and Decrement of Value
+    ++ --
+
+    6. Bitwise Operators
+    Work on binary level (less common for beginners).
+    &  |  ^ ~ << >> >>>
+
+    7. Ternary Operator (Conditional Operator)
+    A shortcut for if...else condition.
+    ? :
+
+    8. typeof Operator
+    The typeof operator evaluates to "number", "string", or "boolean" 
+    if its operand is a number, string, or boolean value and returns true or false based 
+    on the evaluation.  
+
+
+    -->
+
+
+    <script>
+
+        //Arithmatic Opertor(+,-,*,/,%)
+
+        var a, b, sum, min, mul, div, mod;
+        a = 10;
+        b = 20;
+        sum = a + b;
+        min = a - b;
+        mul = a * b;
+        div = a / b;
+        mod = a % b;
+        document.write("Sum of A and B=" + sum + "<br>");
+        document.write("Min of A and B=" + min + "<br>");
+        document.write("Mul of A and B=" + mul + "<br>");
+        document.write("Div of A and B=" + div + "<br>");
+        document.write("Module of A and B=" + mod + "<br>");
+
+        // Increment Decrement Operator(++ --)
+
+        var i = 10;
+        i++;
+        i++;
+        document.write(i + "<br>");
+
+        i--;
+        i--;
+
+        document.write(i + "<br>");
+
+        // Comparison Operator(==, ===, <,>,<=,>=,!=)
+
+        var j = "30";
+        var k = 30;
+        if (j == k) {
+            document.write("J is equal to k" + "<br>");
+        }
+        else {
+            document.write("J is not Equal To k" + "<br>");
+        }
+
+        if (j === k) {
+            document.write("J is Equal to K" + "<br>");
+        }
+        else {
+            document.write("j is not Equal to k" + "<br>");
+        }
+
+        //Logical or Relational Operator(&&, ||, !)
+
+        var a = 20;
+        var b = 30;
+        var c = 10
+        if (a <= b && a <= c)      // if(!(a<=b))    if(a<=b || a<=c) 
+        {
+            document.write("a less then b & c" + "<br>");
+        }
+        else {
+            document.write("Condition False" + "<br>");
+        }
+
+
+        // Assignment Operators  (= += -= *= /= %=)
+
+        var a = 20;
+        var b = 30;
+        document.write(a += b + "<br>");   // a=a+b;
+
+
+        //special/Miscellaneous/conditional 
+
+        var a = 20;
+        var b = 30;
+        var sum;
+        sum = (a > b) ? 'a is greater then b ' : 'a is less then b';
+        document.write(sum);
+
+
+        //typeof Operator(typeOf)
+
+
+        var a = 20;
+        if (typeof a == "number")      // if(!(a<=b))    if(a<=b || a<=c) 
+        {
+            document.write('a is Integer <br>');
+        }
+        else {
+            document.write('a is Not Integer');
+        }
+
+        var b = "10";
+        if (typeof b == "string")      // if(!(a<=b))    if(a<=b || a<=c) 
+        {
+            document.write('b is string');
+        }
+        else {
+            document.write('b is Not string');
+        }
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript-Variable</title>
+</head>
+
+<body>
+    <!-- 
+         JavaScript variable
+
+         var_name=var_value
+
+          var a=10;  
+          var b=10.5  
+          var c='r'   
+          var d="Rajesh" 
+
+
+          data type ( int=10  float=10.5  char='R'  string="string means words" )
+
+          Numbers, eg. 123, 120.50 etc.
+          Strings of text e.g. "This text string" etc.
+          Boolean e.g. true or false.
+          float e.g. 10.56565 
+
+          Naming variables
+
+          Variable names are pretty flexible as long as you follow a few rules:
+
+          Start them with a letter(a-z), underscore _, or dollar sign $.
+          After the first letter, you can use numbers, as well as letters, underscores, or dollar signs.
+          Don’t use any of JavaScript’s reserved keywords (javscript inbuild function or any keyword)
+          Variable names are case-sensitive,  a   A
+          No space in variable name
+
+          ============================================
+
+          VAR : KEYWORDS Use the var keyword only for declaration or initialization, 
+        once for the life of any variable name in a document. 
+
+
+          =====================================================
+          var camelCase = "lowercase word, then uppercase";
+          var dinner2Go = "pizza";
+          var I_AM_HUNGRY = true;
+          var _Hello_ = "what a nice greeting"
+          var $_$ = "money eyes";
+
+
+          var 12abc=   wrong (start with number)
+          var abc abc = no space        
+          
+          Primitive data type
+          Non-primitive (reference) data type	  
+	  
+          JavaScript primitive data types
+          There are five types of primitive data types in JavaScript. They are as follows:
+
+          Data Type	Description
+
+          String		represents sequence of characters e.g. "hello"
+          Number		represents numeric values e.g. 100
+          Boolean		represents boolean value either false or true
+          Undefined	represents undefined value
+          Null		represents null i.e. no value at all	
+
+
+          JavaScript non-primitive data types
+
+          Data Type	Description
+
+          Object	represents instance through which we can access members
+          Array	represents group of similar values
+          RegExp	represents regular expression          
+    -->
+
+    <script>
+
+        //Primitive Datatypes:
+
+        var a = 12; //int
+        document.write("Integer Variable is =" + a + "<br>");
+
+        var b = 12.50; // Float
+        document.write("Float Variable is=" + b + "<br>");
+
+        var c = "Rahul Kamat"; //string
+        document.write("String Variable is =" + c + "<br>");
+
+        var d = null; // Null Value
+        document.write("Null Variable is=" + d + "<br>");
+
+
+
+        // Non-Primitive Datatypes:
+
+        var student = ["rahul", "prashant", "Jay", "kunal", "tushar"]; //Array
+        document.write("Students Name are: " + student + "<br>");
+
+        document.write("Student 1=" + student[0] + "<br>"); // Retrived Value Using Index Numbers 0,1,2,3,4
+        document.write("Student 2=" + student[1] + "<br>");
+
+        var one_object = { name: "rahul", email: "kamatrahul415@gmail.com", pass: "1234", mobile: "7203806609" }; //object {property : value}
+        document.write("Email object is=" + one_object.email + "<br>");
+
+        //Array Object
+
+        var arr_object = [
+            { name: "rahul", email: "kamatrahul415@gmail.com", pass: "1234", mobile: "7203806609" },
+            { name: "Jay", email: "jaykhatik@gmail.com", pass: "1234", mobile: "9988776609" },
+            { name: "Prashant", email: "PrashantParmar@gmail.com", pass: "1234", mobile: "9876506609" },
+            { name: "Kunal", email: "Kunalrawal@gmail.com", pass: "1234", mobile: "9567406609" }
+        ];
+        document.write(arr_object[0].name);
+        document.write(arr_object[0].email);
+
+
+    </script>
+
+
+</body>
+
+</html>
