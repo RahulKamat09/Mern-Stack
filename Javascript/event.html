@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript || Events</title>
+</head>
+<body>
+    
+    <!--Events in Javascript
+        In JavaScript, events are actions or occurrences that happen in the browser — often triggered by the user or by the browser itself. 
+        You can respond to these events using event listeners. -->
+
+    <h1 id="text1">
+        This is a Html Text.
+    </h1>
+    <button onclick="change()">Click Me!</button>
+    <button ondblclick="change()">Double CLick!</button>
+    <button onmouseover="change()">Hover ME!!</button>
+    <button onmouseout="change()">Hover Out!</button><br><br>
+
+
+    <input type="text" id="test1" onfocus="change1()"  onblur="change2()"><br><br>
+
+    <input type="text" id="test2" onkeypress="upper()"> <br><br>
+
+    <img src="images/moon.png" id="image1" onmouseover="imageChange1()" width="30%" onmouseout="imageChange2()">
+
+    <script>
+
+        /*
+        Some Commmon Events in Javascript
+
+        onblur="", 
+        onchange="", 
+        onclick="", 
+        ondblclick="", 
+        onfocus="", 
+        onkeydown="", 
+        onkeypress="", 
+        onkeyup="", 
+        onmousedown="", 
+        onmousemove="", 
+        onmouseout="", 
+        onmouseover="", 
+        onmouseup=""> 
+        */
+
+        function change(){
+            document.getElementById('text1').innerHTML="This is a Javascript Text.";
+        }
+
+        function change1(){
+            document.getElementById('test1').style.backgroundColor="yellow";
+            document.getElementById('test1').style.color="white";
+        }
+        
+        function change2(){
+            document.getElementById('test1').style.backgroundColor="green";
+        }
+
+        function upper(){
+            document.getElementById('test2').style.textTransform="uppercase";
+        }
+
+        function imageChange1(){
+            var image = document.getElementById('image1');
+            image.src="images/star.png";
+        }
+
+        function imageChange2(){
+            var image = document.getElementById('image1');
+            image.src="images/moon.png";
+        }
+
+    </script>
+
+</body>
+</html>
