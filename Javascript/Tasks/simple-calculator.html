@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple-calculator</title>
+</head>
+<body>
+    <input type="number" name="number1" id="num1">
+    <input type="number" name="number2" id="num2">
+    <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <button onclick="calculate()">Calculate</button>
+    <p>Result: <span id="result"></span></p>
+    <script>
+        function calculate(){
+            const a = document.getElementById('num1').value;
+            const b = document.getElementById('num2').value;
+            const op = document.getElementById('operator').value;
+            let result = "Invalid";
+
+            if(op == '+'){
+                result = +a + +b;
+            }
+            else if(op == '-'){
+                result = a-b;
+            }
+            else if(op == '*'){
+                result = a*b;
+            }
+            else{
+                result = a/b;
+            }
+
+            document.getElementById('result').innerText=result;
+        }
+    </script>
+</body>
+</html>

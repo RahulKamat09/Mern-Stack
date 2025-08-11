@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart-Inc_Dec || Javascript</title>
+</head>
+
+<body>
+    <div align="Center">
+        <button onclick="increament()">+</button>
+        <h1 id="number1">0</h1>
+        <button onclick="decrement()">-</button>
+    </div>
+    <hr>
+
+    <div align="center">
+
+        <button onclick="inc()">+</button>
+        <input type="number" id="number2" value="0">
+        <button onclick="dec()">-</button>
+
+    </div>
+
+    <script>
+        let num1 = 0;
+        function increament() {
+            num1++;
+            document.getElementById('number1').innerHTML = num;
+        }
+        function decrement() {
+            if (num1 > 0) {
+                num1--;
+                document.getElementById('number1').innerHTML = num;
+            }
+        }
+
+        let num2 = 0;
+        function inc() {
+            num2++;
+            document.getElementById('number2').value = num2;
+        }
+        function dec() {
+            if (num2 > 0) {
+                num2--;
+                document.getElementById('number2').value = num2;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -59,7 +59,7 @@
             transition: 0.3s ease;
         }
 
-        input[type="text"]:focus {
+        input[type="number"]:focus {
             border-color: #38a3f1;
             box-shadow: 0 0 8px #38a3f17a;
         }
@@ -79,9 +79,46 @@
             background: #2f89cc;
         }
 
+        #answer1,
+        #answer2,
+        #answer3 {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            transition: 0.4s ease;
+            animation: fadeIn 1s ease-in;
+        }
+
+        /* Grade Colors */
+        #answer3 span {
+            font-size: 22px;
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 8px;
+            animation: pulse 1.5s infinite;
+        }
+
         @media(max-width: 500px) {
             .card {
                 margin: 20px;
+                width: 300px;
+                height: 500px;
+            }
+
+            .input-group {
+                width: 200px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            #answer1,
+            #answer2,
+            #answer3 {
+                font-size: 13px;
+                font-weight: bold;
+                line-height: 0.5px;
             }
         }
     </style>
