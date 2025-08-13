@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount-Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <label for="">Original Price    :</label>
+            <input type="text" name="Original-price" id="o-price" placeholder="Enter The Price Value!" oninput="calculateDiscount()">
+        </div>
+        <div class="row">
+            <label for="">Discount (% 0ff) :</label>
+            <input type="text" name="discount" id="discount" placeholder="Enter The Discount Value!" oninput="calculateDiscount()">
+        </div>
+        <div class="row">
+            <label for="">Final Price :</label>
+            <span id="result1">0</span>
+        </div>
+        <div class="row">
+            <label for="">You Save :</label>
+            <span id="result2">0</span>
+        </div>
+    </div>
+</body>
+</html>

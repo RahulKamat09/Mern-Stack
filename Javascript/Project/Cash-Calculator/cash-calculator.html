@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash-Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <h1>Cash Calculator</h1>
+    <div class="container">
+        <table>
+            <tr>
+                <th>Rupees(₹)</th>
+                <th>Quantity</th>
+                <th>Total</th>
+            </tr>
+            <tr>
+                <td><img src="/images/N500.jfif" width="80px"></td>
+                <td><input type="number" id="n500" value="0" oninput="calculateCash()"></td>
+                <td id="t500">0</td>
+            </tr>
+            <tr>
+                <td><img src="/images/N200.jfif" width="80px"></td>
+                <td><input type="number" id="n200" value="0" oninput="calculateCash()"></td>
+                <td id="t200">0</td>
+            </tr>
+            <tr>
+                <td><img src="/images/N100.jfif" width="80px"></td>
+                <td><input type="number" id="n100" value="0" oninput="calculateCash()"></td>
+                <td id="t100">0</td>
+            </tr>
+            <tr>
+                <td><img src="/images/N50.jpg" width="80px"></td>
+                <td><input type="number" id="n50" value="0" oninput="calculateCash()"></td>
+                <td id="t50">0</td>
+            </tr>
+            <tr>
+                <td><img src="/images/N20.jfif" width="80px"></td>
+                <td><input type="number" id="n20" value="0" oninput="calculateCash()"></td>
+                <td id="t20">0</td>
+            </tr>
+            <tr>
+                <td><img src="/images/N10.jfif" width="80px"></td>
+                <td><input type="number" id="n10" value="0" oninput="calculateCash()"></td>
+                <td id="t10">0</td>
+            </tr>
+            <tr>
+                <td><img src="/images/N5.jfif" width="80px"></td>
+                <td><input type="number" id="n5" value="0" oninput="calculateCash()"></td>
+                <td id="t5">0</td>
+            </tr>
+            <tr>
+                <td><img src="/images/N2.jfif" width="80px"></td>
+                <td><input type="number" id="n2" value="0" oninput="calculateCash()"></td>
+                <td id="t2">0</td>
+            </tr>
+            <tr>
+                <td><img src="/images/N1.jpg" width="80px"></td>
+                <td><input type="number" id="n1" value="0" oninput="calculateCash()"></td>
+                <td id="t1">0</td>
+            </tr>
+        </table>
+
+        <div class="result-box">
+            <div class="result" id="totalCash">Total Cash: ₹0</div>
+            <div class="result" id="totalNotes">Total Notes: 0</div>
+        </div>
+    </div>
+
+</body>
+
+</html>
