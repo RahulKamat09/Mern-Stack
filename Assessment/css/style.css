@@ -674,3 +674,189 @@ nav a {
     opacity: 1;
   }
 }
+
+/* ---------------------------- */
+/* Global Fixes */
+/* ---------------------------- */
+header {
+  width: 100%;
+}
+
+nav {
+  position: relative;
+}
+
+/* Hide hamburger by default */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #000;
+  border-radius: 2px;
+}
+
+/* Hide nav on small screens initially */
+nav ul,
+nav .dropdown {
+  list-style: none;
+}
+
+/* ---------------------------- */
+/* Mobile (Phones <576px) */
+/* ---------------------------- */
+@media (max-width: 575px) {
+
+  .header2 {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: auto;
+    padding: 10px;
+  }
+
+  .logo img {
+    margin-left: 0;
+    width: 55px;
+    height: 45px;
+  }
+
+  /* Hamburger visible */
+  .hamburger {
+    display: flex;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    background: #fff;
+    width: 100%;
+    padding: 15px;
+    position: absolute;
+    top: 63px;
+    left: 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+
+  .mega-menu,
+  .offer-menu,
+  .club-menu {
+    position: static;
+    width: 100%;
+    grid-template-columns: 1fr;
+    padding: 15px;
+    gap: 20px;
+    display: none;
+  }
+
+  .dropdown:hover .mega-menu,
+  .dropdown:hover .offer-menu,
+  .dropdown:hover .club-menu {
+    display: block;
+  }
+
+  .browse {
+    margin-left: auto;
+    font-size: 18px;
+    gap: 15px;
+  }
+}
+
+/* ---------------------------- */
+/* Tablets (576px–768px) */
+/* ---------------------------- */
+@media (max-width: 768px) {
+  nav {
+    gap: 20px;
+  }
+
+  nav a {
+    font-size: 15px;
+  }
+
+  .mega-menu,
+  .club-menu {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    left: 0;
+    top: auto;
+    padding: 20px;
+  }
+
+  .offer-menu {
+    width: 100%;
+    left: 0;
+    padding: 20px;
+  }
+
+  .browse {
+    font-size: 18px;
+    gap: 15px;
+  }
+}
+
+/* ---------------------------- */
+/* Small Laptops (769px–992px) */
+/* ---------------------------- */
+@media (max-width: 992px) {
+  nav {
+    gap: 20px;
+  }
+
+  .mega-menu,
+  .club-menu {
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    left: 0;
+    top: auto;
+  }
+
+  .category img {
+    width: 85px;
+  }
+}
+
+/* ---------------------------- */
+/* Large Screens (993px–1200px) */
+/* ---------------------------- */
+@media (max-width: 1200px) {
+  nav {
+    gap: 25px;
+  }
+
+  .mega-menu,
+  .club-menu {
+    grid-template-columns: repeat(4, 1fr);
+    width: 95vw;
+  }
+
+  .category img {
+    width: 95px;
+  }
+}
+
+/* ---------------------------- */
+/* Ultra Wide Screens (>1600px) */
+/* ---------------------------- */
+@media (min-width: 1600px) {
+  .mega-menu,
+  .club-menu {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}

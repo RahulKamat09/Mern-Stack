@@ -403,6 +403,13 @@
 
                 </nav>
 
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+
                 <div class="browse">
                     <i class="fa-solid fa-magnifying-glass one"></i>
                     <i class="fa-regular fa-user two"></i>
@@ -639,6 +646,14 @@
             </div>
         </div>
     </footer>
+    <script>
+        const hamburger = document.getElementById("hamburger");
+        const nav = document.querySelector("nav");
+
+        hamburger.addEventListener("click", () => {
+            nav.classList.toggle("active");
+        });
+    </script>
 
 </body>
 
