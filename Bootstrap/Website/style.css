@@ -1,3 +1,7 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
 .hero-section {
     background: #f8fdff;
     padding: 50px 0;
@@ -14,7 +18,11 @@
     -o-transition: 0.3s ease-in-out;
 }
 
-.doctor_img:hover{
+i {
+    color: #0b919e;
+}
+
+.doctor_img:hover {
     transform: rotate(0deg);
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
@@ -29,9 +37,10 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     display: inline-block;
 }
-.info-card2{
+
+.info-card2 {
     bottom: 0;
-    left: 50%;
+    left: 45%;
 }
 
 .stat-box {
@@ -46,4 +55,24 @@
     border-radius: 30px;
     padding: 10px 25px;
     font-weight: 600;
+}
+
+.service-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    color: #212529;
+}
+
+.service-box i {
+    font-size: 1.5rem;
+    color: #0097a7;
+    /* Teal color */
+}
+
+.service-row {
+    justify-content: center;
+    gap: 40px;
+    margin: 30px 0;
 }
