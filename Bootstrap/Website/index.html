@@ -11,6 +11,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Font Awesome Cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,11 +26,11 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+    <nav class="navbar navbar-expand-xl bg-white shadow-sm sticky-top">
         <div class="container">
             <!-- Logo -->
             <a class="navbar-brand fs-2 fw-bold" href="#">
-                Medi<span class="text-info">Nest</span>
+                Medi<span class="text-info fw-semibold">Nest</span>
             </a>
 
             <!-- Hamburger Toggler -->
@@ -54,9 +58,9 @@
                     </li>
                     <li class="nav-item"><a class="nav-link text-dark" href="#">Contact</a></li>
                 </ul>
+                <!-- Appointment Button -->
+                <a href="#" class="btn btn-info px-4 text-white ms-lg-5">Appointment</a>
             </div>
-            <!-- Appointment Button -->
-            <a href="#" class="btn btn-info px-4 text-white ms-lg-5">Appointment</a>
         </div>
     </nav>
 
@@ -137,7 +141,7 @@
                     </div>
 
                     <div class="container">
-                        <div class="row service-row mt-4">
+                        <div class="row service-row mt-3">
                             <div class="col-md-auto">
                                 <div class="service-box">
                                     <i class="bi bi-calendar-check"></i>
@@ -250,7 +254,7 @@
     <section class="featured-departments">
         <div class="container">
             <div class="row text-center">
-                <div class="col-12">
+                <div class="col-lg-12">
                     <h1>Featured Departments</h1>
                     <p class="text-muted mt-2 mb-5">Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
                         consectetur velit</p>
@@ -260,25 +264,167 @@
 
         <div class="container mt-3">
             <div class="row align-items-center my-4">
-                <div class="col-lg-6 mb-4">
-                    <h6 class="text-uppercase text-info fw-bold" style="letter-spacing: 1px;">Emergency Medicine</h6>
-                    <h2 class="fw-bold mt-2 mb-3">24/7 Emergency Care Services</h2>
-                    <p class="mb-3 lh-md">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                <div class="col-lg-6 mb-4 mt-4">
+                    <h6 class="text-uppercase text-info fw-bold mb-4" style="letter-spacing: 1px;">Emergency Medicine
+                    </h6>
+                    <h2 class="fw-bold mt-2 mb-4">24/7 Emergency Care Services</h2>
+                    <p class="mb-4 lh-md">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
                         doloremque laudantium,
                         totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
                         dicta sunt explicabo.</p>
-                    <ul class="list-unstyled mt-4">
-                        <li class="mb-2"><i class="bi bi-check-circle-fill me-3"></i>24/7 Emergency Response</li>
-                        <li class="mb-2"><i class="bi bi-check-circle-fill me-3"></i>Advanced Life Support</li>
-                        <li class="mb-2"><i class="bi bi-check-circle-fill me-3"></i>Trauma Care Specialists</li>
+                    <ul class="list-unstyled mt-4 mb-4">
+                        <li class="mb-3"><i class="bi bi-check-circle-fill me-3"></i>24/7 Emergency Response</li>
+                        <li class="mb-3"><i class="bi bi-check-circle-fill me-3"></i>Advanced Life Support</li>
+                        <li class="mb-3"><i class="bi bi-check-circle-fill me-3"></i>Trauma Care Specialists</li>
                     </ul>
 
-                    <a href="#" class="learn-more mt-2">Learn More </a>
+                    <a href="#" class="learn-more mt-2 mb-3">Learn More </a>
                 </div>
 
                 <div class="col-lg-6 services-img">
                     <div class="image-card">
                         <img src="images/emergency-3.webp" alt="emergency-3" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container py-5">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card service-card h-100">
+                        <div class="icon-circle">
+                            <i class="bi bi-heart-pulse"></i>
+                        </div>
+                        <div class="card-content text-start mt-2">
+                            <h5 class="fs-3">Cardiology</h5>
+                            <p class="text-muted mb-3">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
+                                aut fugit, sed quia
+                                consequuntur magni dolores.</p>
+                        </div>
+                        <div class="row stats text-start mt-4">
+                            <div class="col-6">
+                                <strong class="d-block fs-4">15+</strong>
+                                <small class="text-muted">SPECIALISTS</small>
+                            </div>
+                            <div class="col-6">
+                                <strong class="d-block fs-4">500+</strong>
+                                <small class="text-muted">PROCEDURES</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card service-card h-100">
+                        <div class="icon-circle">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <div class="card-content text-start mt-2">
+                            <h5 class="fs-3">Neurology</h5>
+                            <p class="text-muted mb-3">Eos qui ratione voluptatem sequi nesciunt neque porro quisquam
+                                est, qui dolorem ipsum quia dolor sit amet.</p>
+                        </div>
+                        <div class="row stats text-start mt-4">
+                            <div class="col-6">
+                                <strong class="d-block fs-4">8+</strong>
+                                <small class="text-muted">SPECIALISTS</small>
+                            </div>
+                            <div class="col-6">
+                                <strong class="d-block fs-4">200+</strong>
+                                <small class="text-muted">TREATMENTS</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card service-card h-100">
+                        <div class="icon-circle">
+                            <i class="bi bi-scissors"></i>
+                        </div>
+                        <div class="card-content text-start mt-2">
+                            <h5 class="fs-3">Surgery</h5>
+                            <p class="text-muted mb-3">Consectetur adipisci velit sed quia non numquam eius modi tempora
+                                incidunt ut labore et dolore magnam aliquam.</p>
+                        </div>
+                        <div class="row stats text-start mt-4">
+                            <div class="col-6">
+                                <strong class="d-block fs-4">12+</strong>
+                                <small class="text-muted">SURGEONS</small>
+                            </div>
+                            <div class="col-6">
+                                <strong class="d-block fs-4">1000+</strong>
+                                <small class="text-muted">OPERATIONS</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="card service-card h-100">
+                        <div class="icon-circle">
+                            <i class="fas fa-baby"></i>
+                        </div>
+                        <div class="card-content text-start mt-2">
+                            <h5 class="fs-3">Pediatrics</h5>
+                            <p class="text-muted mb-3">Quaerat voluptatem ut enim ad minima veniam quis nostrum
+                                exercitationem ullam corporis suscipit laboriosam.</p>
+                        </div>
+                        <div class="row stats text-start mt-4">
+                            <div class="col-6">
+                                <strong class="d-block fs-4">10+</strong>
+                                <small class="text-muted">PEDIATRICIANS</small>
+                            </div>
+                            <div class="col-6">
+                                <strong class="d-block fs-4">2000+</strong>
+                                <small class="text-muted">YOUNG PATIENTS</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="card service-card h-100">
+                        <div class="icon-circle">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="card-content text-start mt-2">
+                            <h5 class="fs-3">Ophthalmology</h5>
+                            <p class="text-muted mb-3">Nisi ut aliquid ex ea commodi consequatur quis autem vel eum iure
+                                reprehenderit qui in ea voluptate velit esse.</p>
+                        </div>
+                        <div class="row stats text-start mt-4">
+                            <div class="col-6">
+                                <strong class="d-block fs-4">6+</strong>
+                                <small class="text-muted">EYE DOCTORS</small>
+                            </div>
+                            <div class="col-6">
+                                <strong class="d-block fs-4">800+</strong>
+                                <small class="text-muted">EYE EXAMS</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="card service-card h-100">
+                        <div class="icon-circle">
+                            <i class="fas fa-band-aid"></i>
+                        </div>
+                        <div class="card-content text-start mt-2">
+                            <h5 class="fs-3">Dermatology</h5>
+                            <p class="text-muted mb-3">Quam nihil molestiae consequatur vel illum qui dolorem eum fugiat
+                                quo voluptas nulla pariatur at vero eos.</p>
+                        </div>
+                        <div class="row stats text-start mt-4">
+                            <div class="col-6">
+                                <strong class="d-block fs-4">7+</strong>
+                                <small class="text-muted">DERMATOLOGIST</small>
+                            </div>
+                            <div class="col-6">
+                                <strong class="d-block fs-4">600+</strong>
+                                <small class="text-muted">SKIN TREATMENTS</small>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
