@@ -44,10 +44,18 @@
         <div class="box">Row 2</div>
         <div class="box">Row 3</div>
     </div>
+    <div class="d-flex flex-row-reverse border p-2 mb-3">
+        <div class="box">Row-Reverse-1</div>
+        <div class="box">Row-Reverse-2</div>
+    </div>
     <div class="d-flex flex-column bg-light p-2">
         <div class="box">Column 1</div>
         <div class="box">Column 2</div>
         <div class="box">Column 3</div>
+    </div>
+    <div class="d-flex flex-column-reverse border p-2 mb-3">
+        <div class="box">Column-Reverse-1</div>
+        <div class="box">Column-Reverse-2</div>
     </div>
 
     <hr>
@@ -95,6 +103,14 @@
         <div class="box">Bottom</div>
         <div class="box">Bottom</div>
     </div>
+    <div class="d-flex align-items-baseline border p-2 mb-3" style="height:100px;">
+        <div class="box">Base</div>
+        <div class="box">Line</div>
+    </div>
+    <div class="d-flex align-items-stretch border p-2 mb-3" style="height:100px;">
+        <div class="box">Stretch</div>
+        <div class="box">Stretch</div>
+    </div>
 
     <hr>
 
@@ -104,13 +120,14 @@
         <div class="box align-self-start">Self Start</div>
         <div class="box align-self-center">Self Center</div>
         <div class="box align-self-end">Self End</div>
+        <div class="box b4 align-self-stretch"> Self Stretch</div>
     </div>
 
     <hr>
 
     <!-- Wrap -->
     <h4>6. Flex Wrap</h4>
-    <div class="d-flex flex-wrap bg-light p-2 mb-2" style="width:200px;">
+    <div class="d-flex flex-wrap bg-light p-2 mb-2" style="width:300px;">
         <div class="box">Wrap 1</div>
         <div class="box">Wrap 2</div>
         <div class="box">Wrap 3</div>
@@ -122,18 +139,52 @@
         <div class="box">No Wrap 3</div>
         <div class="box">No Wrap 4</div>
     </div>
+    <div class="d-flex flex-wrap-reverse border p-2" style="width:300px;">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+    </div>
+    <hr>
 
+    <h4>7. Flex Grow and Shrink</h4>
+    <div class="d-flex border p-2">
+        <div class="box flex-fill">Fill</div>
+        <div class="box">Box</div>
+    </div>
+    <div class="d-flex border p-2">
+        <div class="box flex-grow-0">NoGrow</div>
+        <div class="box flex-grow-1">Grow</div>
+    </div>
+    <div class="d-flex border p-2" style="width:300px;">
+        <div class="box flex-shrink-0">NoShrink</div>
+        <div class="box flex-shrink-1">Shrink</div>
+    </div>
     <hr>
 
     <!-- Order -->
-    <h4>7. Order</h4>
+    <h4>8. Order</h4>
     <div class="d-flex bg-light p-2">
         <div class="box order-3">Order 3</div>
         <div class="box order-1">Order 1</div>
         <div class="box order-2">Order 2</div>
         <div class="box order-last">Order Last</div>
     </div>
+    <hr>
+
+    <h4>9. Auto Margins</h4>
+    <div class="d-flex border p-2">
+        <div class="box b1">Left</div>
+        <div class="box b2 ms-auto">Right</div>
+    </div>
+    <div class="d-flex border p-2">
+        <div class="box b1 me-auto">Left</div>
+        <div class="box b2">Right</div>
+    </div>
+    <div class="d-flex border p-2">
+        <div class="box b1 mx-auto">Center</div>
+    </div>
 
 </body>
 
-</html> 
+</html>

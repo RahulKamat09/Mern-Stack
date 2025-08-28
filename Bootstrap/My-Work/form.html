@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap - Form Utilities</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="mb-4 text-center">Bootstrap Form Classes - All in One</h1>
+
+        <!-- Basic Input -->
+        <div class="mb-3">
+            <label class="form-label">Email address</label>
+            <input type="email" class="form-control" placeholder="Enter email">
+            <div class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+
+        <!-- Sizing -->
+        <div class="mb-3">
+            <input type="text" class="form-control form-control-sm mb-2" placeholder="Small input">
+            <input type="text" class="form-control mb-2" placeholder="Default input">
+            <input type="text" class="form-control form-control-lg" placeholder="Large input">
+        </div>
+
+        <!-- Floating Label -->
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" placeholder="John Doe">
+            <label for="floatingInput">Full Name</label>
+        </div>
+
+        <!-- Select -->
+        <div class="mb-3">
+            <label class="form-label">Select option</label>
+            <select class="form-select form-select-lg mb-2">
+                <option>Large select</option>
+            </select>
+            <select class="form-select mb-2">
+                <option>Default select</option>
+            </select>
+            <select class="form-select form-select-sm">
+                <option>Small select</option>
+            </select>
+        </div>
+
+        <!-- Checkboxes & Radios -->
+        <div class="mb-3">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="check1">
+                <label class="form-check-label" for="check1">Default checkbox</label>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="switch1">
+                <label class="form-check-label" for="switch1">Switch toggle</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="radioOptions" id="radio1">
+                <label class="form-check-label" for="radio1">Option 1</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="radioOptions" id="radio2">
+                <label class="form-check-label" for="radio2">Option 2</label>
+            </div>
+        </div>
+
+        <!-- Range -->
+        <div class="mb-3">
+            <label class="form-label">Range Input</label>
+            <input type="range" class="form-range">
+        </div>
+
+        <!-- File Upload -->
+        <div class="mb-3">
+            <label class="form-label">Upload File</label>
+            <input class="form-control" type="file">
+        </div>
+
+        <!-- Input Groups -->
+        <div class="input-group mb-3">
+            <span class="input-group-text">@</span>
+            <input type="text" class="form-control" placeholder="Username">
+        </div>
+        <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text">Small</span>
+            <input type="text" class="form-control">
+        </div>
+        <div class="input-group input-group-lg mb-3">
+            <input type="text" class="form-control">
+            <span class="input-group-text">Large</span>
+        </div>
+
+        <!-- Validation -->
+        <form class="needs-validation" novalidate>
+            <div class="mb-3">
+                <label class="form-label">Validated Email</label>
+                <input type="email" class="form-control is-invalid" required>
+                <div class="invalid-feedback">Please enter a valid email.</div>
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control is-valid" value="Looks good!">
+                <div class="valid-feedback">Nice work!</div>
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+
+        <!-- Plaintext -->
+        <div class="mb-3 row">
+            <label class="col-sm-2 col-form-label">Read-only</label>
+            <div class="col-sm-10">
+                <input type="text" readonly class="form-control-plaintext" value="Plain text here">
+            </div>
+        </div>
+
+        <!-- Button Check -->
+        <div class="mb-3">
+            <input type="checkbox" class="btn-check" id="btn-check" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btn-check">Single Toggle</label>
+        </div>
+
+        <!-- Inline Form -->
+        <form class="row row-cols-lg-auto g-3 align-items-center mb-3">
+            <div class="col-12">
+                <label class="visually-hidden" for="inlineEmail">Email</label>
+                <input type="email" class="form-control" id="inlineEmail" placeholder="Email">
+            </div>
+            <div class="col-12">
+                <select class="form-select">
+                    <option selected>Choose...</option>
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                </select>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+
+    </div>
+
+</body>
+
+</html>
