@@ -338,3 +338,25 @@ i {
     bottom: 0px;
     left: 65%;
 }
+
+.bg-color-cta {
+    background: linear-gradient(180deg,#f7f9f9 0%, color-mix(in srgb, #ffffff, #099aa7 3%) 100%);
+}
+
+.image-showcase{
+    background: color-mix(in srgb,#099aa7, transparent 95%);
+    height: 320px;
+    width: 90%;
+    border-radius: 10px;
+    position: relative;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.image-showcase img{
+    position: absolute;
+    left: 30px;
+    top: 20px;
+}
