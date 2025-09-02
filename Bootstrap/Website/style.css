@@ -340,11 +340,11 @@ i {
 }
 
 .bg-color-cta {
-    background: linear-gradient(180deg,#f7f9f9 0%, color-mix(in srgb, #ffffff, #099aa7 3%) 100%);
+    background: linear-gradient(180deg, #f7f9f9 0%, color-mix(in srgb, #ffffff, #099aa7 3%) 100%);
 }
 
-.image-showcase{
-    background: color-mix(in srgb,#099aa7, transparent 95%);
+.image-showcase {
+    background: color-mix(in srgb, #099aa7, transparent 95%);
     height: 320px;
     width: 90%;
     border-radius: 10px;
@@ -355,8 +355,46 @@ i {
     -o-border-radius: 10px;
 }
 
-.image-showcase img{
+.image-showcase img {
     position: absolute;
     left: 30px;
     top: 20px;
+}
+
+.service-card3 {
+    border: none;
+    border-top: 3px solid transparent;
+    box-shadow: none;
+    transition: all 0.3s ease;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.s3-learn-more {
+    color: #006d75;
+    font-weight: 500;
+}
+
+.icon-circle2 {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(0, 153, 153, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    font-size: 32px;
+    color: #009999;
+    transition: 0.3s ease-in;
+    -webkit-transition: 0.3s ease-in;
+    -moz-transition: 0.3s ease-in;
+    -ms-transition: 0.3s ease-in;
+    -o-transition: 0.3s ease-in;
+}
+
+.service-card3:hover,
+.icon-circle2:hover {
+    box-shadow: 0px 5px 10px rgba(7, 129, 145, 0.587);
+    border: 2px solid rgba(7, 129, 145, 0.587);
 }
