@@ -431,6 +431,22 @@ i {
 
 .service-card3:hover .icon-circle2 {
     transform: scale(1.1);
-    background: rgba(0, 153, 153, 0.2);
+    background: rgba(6, 118, 118, 0.2);
     color: #066a6a;
+}
+
+.assistance-box {
+    background-color: #0d9ba6;
+    border-radius: 15px;
+    padding: 25px;
+    color: white;
+}
+
+.contact-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
