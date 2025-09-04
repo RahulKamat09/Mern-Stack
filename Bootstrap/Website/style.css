@@ -450,3 +450,34 @@ i {
     align-items: center;
     justify-content: center;
 }
+
+.footer-social a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.footer-social a:hover {
+    transform: scale(1.1);
+    opacity: 0.85;
+}
+
+.service-card3:nth-child(3) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* About Page */
+
+
+.current::before {
+    content: "/";
+    display: inline-block;
+    padding-right: 10px;
+}
