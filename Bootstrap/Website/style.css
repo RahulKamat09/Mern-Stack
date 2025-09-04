@@ -155,19 +155,6 @@ i {
     transform: translateY(-8px);
 }
 
-.icon-circle {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background: rgba(0, 153, 153, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 20px auto;
-    font-size: 32px;
-    color: #009999;
-}
-
 .stats {
     margin-top: 20px;
 }
@@ -482,7 +469,104 @@ i {
     padding-right: 10px;
 }
 
-.about-content{
+.about-content {
     padding-top: 150px;
     padding-left: 30px;
+}
+
+.stat-number {
+    font-size: 2rem;
+    color: #00a6a6;
+}
+
+.stat-sub {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.img-large {
+    height: 350px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.img-small {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.icon-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #0097a7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.icon-circle i {
+    font-size: 2rem;
+    color: white;
+    transition: transform 0.3s ease-in-out;
+}
+
+.icon-circle:hover {
+    transform: translateY(-10px);
+}
+
+.excellence-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    height: 100%;
+}
+
+.excellence-card:hover {
+    border: 1px solid #0097a7;
+    box-shadow: 0px 4px 15px rgba(0, 151, 167, 0.3);
+    transform: translateY(-5px);
+}
+
+.service-icon {
+    font-size: 2rem;
+    color: #0097a7;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.excellence-card:hover .service-icon {
+    transform: translateX(5px);
+}
+
+.partner-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 25px;
+    background: #fff;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.partner-card img {
+    max-height: 40px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: all 0.3s ease;
+}
+
+.partner-card:hover {
+    box-shadow: 0px 6px 20px rgba(0, 151, 167, 0.2);
+    border-color: #0097a7;
+}
+
+.partner-card:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
 }
