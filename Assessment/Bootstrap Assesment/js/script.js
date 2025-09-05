@@ -1,83 +1,125 @@
 // -------- Reservation Form Logic -------- //
-const form = document.getElementById("reservationForm");
-const message = document.getElementById("message");
+var form = document.getElementById("reservationForm");
+var message = document.getElementById("message");
 
 if (form) {
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    let valid = true;
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const bookTitle = document.getElementById("bookTitle").value.trim();
-    const author = document.getElementById("author").value.trim();
-    const pickupDate = document.getElementById("pickupDate").value.trim();
+    var name = document.getElementById("name").value.trim();
+    var email = document.getElementById("email").value.trim();
+    var phone = document.getElementById("phone").value.trim();
+    var bookTitle = document.getElementById("bookTitle").value.trim();
+    var author = document.getElementById("author").value.trim();
+    var pickupDate = document.getElementById("pickupDate").value.trim();
 
-    document.querySelectorAll(".error").forEach(el => el.textContent = "");
+    // Clear errors
+    document.getElementById("nameError").textContent = "";
+    document.getElementById("emailError").textContent = "";
+    document.getElementById("phoneError").textContent = "";
+    document.getElementById("titleError").textContent = "";
+    document.getElementById("authorError").textContent = "";
+    document.getElementById("dateError").textContent = "";
 
-    if (!name) { document.getElementById("nameError").textContent = "Name required"; valid = false; }
-    if (!/^[^@]+@[^@]+\.[^@]+$/.test(email)) { document.getElementById("emailError").textContent = "Valid email required"; valid = false; }
-    if (!/^\d{10}$/.test(phone)) { document.getElementById("phoneError").textContent = "Enter 10 digit phone"; valid = false; }
-    if (!bookTitle) { document.getElementById("titleError").textContent = "Book title required"; valid = false; }
-    if (!author) { document.getElementById("authorError").textContent = "Author required"; valid = false; }
-    if (!pickupDate) { document.getElementById("dateError").textContent = "Pickup date required"; valid = false; }
+    var valid = true;
+
+    if (name === "") {
+      document.getElementById("nameError").textContent = "Name required";
+      valid = false;
+    }
+    if (email === "" || email.indexOf("@") === -1 || email.indexOf(".") === -1) {
+      document.getElementById("emailError").textContent = "Valid email required";
+      valid = false;
+    }
+    if (phone === "" || phone.length !== 10) {
+      document.getElementById("phoneError").textContent = "Enter 10 digit phone";
+      valid = false;
+    }
+    if (bookTitle === "") {
+      document.getElementById("titleError").textContent = "Book title required";
+      valid = false;
+    }
+    if (author === "") {
+      document.getElementById("authorError").textContent = "Author required";
+      valid = false;
+    }
+    if (pickupDate === "") {
+      document.getElementById("dateError").textContent = "Pickup date required";
+      valid = false;
+    }
 
     if (!valid) return;
 
-    let reservations = JSON.parse(localStorage.getItem("reservations")) || [];
-    reservations.push({ name, email, phone, bookTitle, author, pickupDate });
+    var reservations = JSON.parse(localStorage.getItem("reservations")) || [];
+    reservations.push({
+      name: name,
+      email: email,
+      phone: phone,
+      bookTitle: bookTitle,
+      author: author,
+      pickupDate: pickupDate
+    });
     localStorage.setItem("reservations", JSON.stringify(reservations));
 
-    message.innerHTML = `<div class="alert alert-success">🎉 Reservation saved successfully!</div>`;
+    message.innerHTML = "<div class='alert alert-success'>🎉 Reservation saved successfully!</div>";
     form.reset();
   });
 }
 
 // -------- View Reservations Logic -------- //
-const reservationList = document.getElementById("reservationList");
+var reservationList = document.getElementById("reservationList");
 
 if (reservationList) {
   function loadReservations() {
     reservationList.innerHTML = "";
-    const reservations = JSON.parse(localStorage.getItem("reservations")) || [];
-    reservations.forEach((res, index) => {
-      const row = document.createElement("tr");
-      row.classList.add("animate-fadeIn");
+    var reservations = JSON.parse(localStorage.getItem("reservations")) || [];
 
-      row.innerHTML = `
-        <td>${index + 1}</td>
-        <td>${res.name}</td>
-        <td>${res.email}</td>
-        <td>${res.phone}</td>
-        <td>${res.bookTitle}</td>
-        <td>${res.author}</td>
-        <td>${res.pickupDate}</td>
-        <td>
-          <button class="btn btn-sm btn-danger delete-btn">❌ Delete</button>
-        </td>
-      `;
+    for (var i = 0; i < reservations.length; i++) {
+      var res = reservations[i];
+      var row = document.createElement("tr");
+      row.className = "animate-fadeIn";
 
-      row.querySelector(".delete-btn").addEventListener("click", () => {
-        row.classList.add("fade-out");
-        setTimeout(() => {
-          reservations.splice(index, 1);
-          localStorage.setItem("reservations", JSON.stringify(reservations));
-          loadReservations();
-        }, 500);
-      });
+      row.innerHTML =
+        "<td>" + (i + 1) + "</td>" +
+        "<td>" + res.name + "</td>" +
+        "<td>" + res.email + "</td>" +
+        "<td>" + res.phone + "</td>" +
+        "<td>" + res.bookTitle + "</td>" +
+        "<td>" + res.author + "</td>" +
+        "<td>" + res.pickupDate + "</td>" +
+        "<td><button class='btn btn-sm btn-danger delete-btn'>❌ Delete</button></td>";
+
+      // Delete button
+      row.querySelector(".delete-btn").onclick = (function (index) {
+        return function () {
+          row.classList.add("fade-out");
+          setTimeout(function () {
+            reservations.splice(index, 1);
+            localStorage.setItem("reservations", JSON.stringify(reservations));
+            loadReservations();
+          }, 500);
+        };
+      })(i);
 
       reservationList.appendChild(row);
-    });
+    }
   }
+
   loadReservations();
 
-  // Search filter
-  document.getElementById("searchBox").addEventListener("keyup", function () {
-    let filter = this.value.toLowerCase();
-    document.querySelectorAll("#reservationList tr").forEach(row => {
-      let text = row.innerText.toLowerCase();
-      row.style.display = text.includes(filter) ? "" : "none";
-    });
+  // Search filter (basic)
+  var searchBox = document.getElementById("searchBox");
+  searchBox.addEventListener("keyup", function () {
+    var filter = searchBox.value.toLowerCase();
+    var rows = reservationList.getElementsByTagName("tr");
+
+    for (var j = 0; j < rows.length; j++) {
+      var text = rows[j].innerText.toLowerCase();
+      if (text.indexOf(filter) > -1) {
+        rows[j].style.display = "";
+      } else {
+        rows[j].style.display = "none";
+      }
+    }
   });
 }
