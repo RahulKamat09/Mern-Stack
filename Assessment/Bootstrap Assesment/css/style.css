@@ -1,0 +1,142 @@
+/* General */
+body {
+    background: linear-gradient(135deg, #e6f7ff, #ffffff);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Form Card */
+.form-container {
+    max-width: 900px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.form-container:hover {
+    transform: translateY(-5px);
+}
+
+/* Glass Effect */
+.glass-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Animations */
+.animate-fadeIn {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-row {
+    animation: fadeInRow 0.6s ease;
+}
+
+@keyframes fadeInRow {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+}
+
+/* Search Bar */
+.search-bar {
+    border-radius: 30px;
+    padding: 12px 20px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.search-bar:focus {
+    border-color: #0dcaf0;
+    box-shadow: 0 0 12px rgba(13, 202, 240, 0.4);
+}
+
+/* Table */
+.table {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(13, 202, 240, 0.08);
+    transform: scale(1.01);
+    transition: all 0.2s ease-in-out;
+}
+
+/* Action Buttons */
+.action-btn {
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    transition: all 0.3s ease;
+}
+
+.action-btn:hover {
+    color: #fff !important;
+    transform: scale(1.1);
+}
+
+.btn-outline-success:hover {
+    background-color: #198754;
+}
+
+.btn-outline-danger:hover {
+    background-color: #dc3545;
+}
+
+/* Add Reservation Button */
+.btn-animated {
+    border-radius: 30px;
+    padding: 10px 25px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-animated:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* Empty Message */
+.empty-message {
+    font-size: 0.95rem;
+    display: none;
+    /* Hidden until no data */
+}
