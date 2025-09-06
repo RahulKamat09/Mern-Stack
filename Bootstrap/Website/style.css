@@ -817,3 +817,69 @@
     border-radius: 15px;
     box-shadow: 5px 5px 10px;
 }
+
+/* Contact Page starts Here */
+
+.contact-card {
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease-in-out;
+}
+
+.contact-icon i {
+    color: #066a6a;
+}
+
+.contact-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 2px 30px rgba(0, 0, 0, 0.3);
+    border: 2px solid #0097a7;
+}
+
+.send-message-button {
+    background: #024747;
+    border: 0;
+    padding: 12px 34px;
+    color: #dee5e6;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.social-links a {
+    display: inline-flex;
+    margin-right: 30px;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: white;
+    color: #0097a7;
+    font-size: 18px;
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-10px);
+    background-color: #024747;
+    color: #dee5e6;
+    transition: all 0.4s ease-in-out;
+}
+
+@media (max-width:992px){
+    .embed-map iframe{
+        width: 60vh;
+    }
+}
+
+@media (max-width:576px) {
+    .embed-map iframe{
+        width: 43vh;
+    }
+
+    .social-links{
+        display: flex;
+        margin-left: 25px;
+    }
+}
