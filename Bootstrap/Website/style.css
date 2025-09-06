@@ -4,6 +4,25 @@
     font-weight: 400;
 }
 
+.navbar-nav .nav-link.active {
+    color: #0dcaf0 !important;
+    /* Bootstrap info color */
+    font-weight: 600;
+    /* Bold */
+}
+
+/* Inactive links are dark */
+.navbar-nav .nav-link {
+    color: #212529 !important;
+    /* Bootstrap dark */
+    transition: color 0.2s ease-in-out;
+}
+
+/* Inactive links turn blue on hover */
+.navbar-nav .nav-link:hover {
+    color: #0dcaf0 !important;
+}
+
 .hero-section {
     background: #f8fdff;
     padding: 50px 0;
@@ -867,18 +886,18 @@
     transition: all 0.4s ease-in-out;
 }
 
-@media (max-width:992px){
-    .embed-map iframe{
+@media (max-width:992px) {
+    .embed-map iframe {
         width: 60vh;
     }
 }
 
 @media (max-width:576px) {
-    .embed-map iframe{
+    .embed-map iframe {
         width: 43vh;
     }
 
-    .social-links{
+    .social-links {
         display: flex;
         margin-left: 25px;
     }
