@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap - Spinner</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+    <h1 class="my-4 text-center">Bootstrap Spinner All Example</h1>
+
+    <div class="container">
+        <!-- 1. Border Spinner -->
+        <h3 class="mb-3">1. Border Spinner</h3>
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+
+        <!-- 2. Spinner Grow -->
+        <h3 class="mb-3">2. Spinner Grow</h3>
+        <div class="spinner-grow" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+
+        <!-- 3. Spinner In Diffrent Colors -->
+        <h3 class="mb-3">3. Spinner In Diffrent Colors</h3>
+        <div class="d-flex flex-wrap gap-3">
+            <div class="spinner-border text-primary"></div>
+            <div class="spinner-border text-secondary"></div>
+            <div class="spinner-border text-danger"></div>
+            <div class="spinner-border text-warning"></div>
+            <div class="spinner-border text-success"></div>
+            <div class="spinner-border text-light"></div>
+            <div class="spinner-border text-dark"></div>
+            <div class="spinner-border text-info"></div>
+            <div class="spinner-border text-muted"></div>
+        </div>
+
+        <div class="d-flex flex-wrap gap-3 mt-3">
+            <div class="spinner-grow text-primary"></div>
+            <div class="spinner-grow text-secondary"></div>
+            <div class="spinner-grow text-danger"></div>
+            <div class="spinner-grow text-warning"></div>
+            <div class="spinner-grow text-success"></div>
+            <div class="spinner-grow text-light"></div>
+            <div class="spinner-grow text-dark"></div>
+            <div class="spinner-grow text-info"></div>
+            <div class="spinner-grow text-muted"></div>
+        </div>
+
+        <!-- 4. Spinner In Diffrent Sizes -->
+        <h3 class="mb-3">4. Spinner In Diffrent Sizes</h3>
+        <div class="d-flex gap-3">
+            <div class="spinner-border spinner-border-sm"></div>
+            <div class="spinner-grow spinner-grow-sm"></div>
+            <div class="spinner-border" style="width: 3rem; height: 3rem;"></div>
+            <div class="spinner-grow" style="width: 3rem; height: 3rem;"></div>
+        </div>
+
+        <!-- 5. Alignment -->
+        <h3 class="mt-4">5. Alignment</h3>
+
+        <p>Centered horizontally:</p>
+        <div class="d-flex justify-content-center">
+            <div class="spinner-border text-primary"></div>
+        </div>
+
+        <p class="mt-3">Centered vertically & horizontally (200px tall box):</p>
+        <div class="d-flex align-items-center justify-content-center border" style="height: 200px;">
+            <div class="spinner-grow text-success"></div>
+        </div>
+
+        <p class="mt-3">Float right:</p>
+        <div class="clearfix border p-2">
+            <div class="spinner-border float-end text-danger"></div>
+        </div>
+
+        <!-- 6. Inside Buttons -->
+        <h3 class="mt-4">6. Spinners Inside Buttons</h3>
+        <button class="btn btn-primary me-2" type="button" disabled>
+            <span class="spinner-border spinner-border-sm"></span>
+            Loading...
+        </button>
+
+        <button class="btn btn-success me-2" type="button" disabled>
+            <span class="spinner-grow spinner-grow-sm"></span>
+            Loading...
+        </button>
+
+        <button class="btn btn-warning" type="button" disabled>
+            <span class="spinner-border spinner-border-sm"></span>
+        </button>
+
+        <!-- 7. Multiple Spinners -->
+        <h3 class="mt-4">7. Multiple Spinners</h3>
+        <div class="d-flex justify-content-around">
+            <div class="spinner-border text-primary"></div>
+            <div class="spinner-grow text-success"></div>
+            <div class="spinner-border text-warning"></div>
+            <div class="spinner-grow text-danger"></div>
+        </div>
+    </div>
+</body>
+
+</html>
