@@ -144,19 +144,19 @@
 			</div>
 			<div class="form-group">
 				<label for="Username">Gender<span style="color: red;">*</span></label>
-				<input type="radio" name="gender">Male
-				<input type="radio" name="gender">Female
+				<input type="radio" name="gender" value="m">Male
+				<input type="radio" name="gender" value="f">Female
 			</div>
 			<div class="form-group">
 				<label for="Hobby">Hobby<span style="color: red;">*</span></label>
-				<input type="checkbox" name="cricket">Cricket
-				<input type="checkbox" name="Singing">Singing
-				<input type="checkbox" name="Dancing">Dancing
-				<input type="checkbox" name="Reading">Reading
+				<input type="checkbox" name="checkbox" value="Cricket">Cricket
+				<input type="checkbox" name="checkbox" value="Singing">Singing
+				<input type="checkbox" name="checkbox" value="Dancing">Dancing
+				<input type="checkbox" name="checkbox" value="Reading">Reading
 			</div>
 			<div class="form-group">
 				<label for="Country">Country<span style="color: red;">*</span></label>
-				<select name="Country" id="">
+				<select name="Country" id="country">
 					<option value="" hidden>Select Country</option>
 					<option value="India">India</option>
 					<option value="Russia">Russia</option>
@@ -168,18 +168,18 @@
 			</div>
 			<div class="form-group">
 				<label for="Address">Address<span style="color: red;">*</span></label>
-				<textarea name="address" placeholder="Enter Your Address!!!"></textarea>
+				<textarea name="address" placeholder="Enter Your Address!!!" id="address"></textarea>
 			</div>
 			<div class="form-group">
 				<label for="Profile Photo">Profile Photo:<span style="color: red;">*</span></label>
-				<input type="file" name="img">
+				<input type="file" name="img" id="photo" onChange="return check(this)">
 			</div>
 			<div class="form-group">
 				<label for="Resume">Resume<span style="color: red;">*</span></label>
-				<input type="file" name="resume">
+				<input type="file" name="resume" id="resume" onChange="return check(this)">
 			</div>
 			<div class="form-group">
-				<button type="submit">Submit</button>
+				<button type="submit" id="submit">Submit</button>
 			</div>
 
 		</form>
