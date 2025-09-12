@@ -1,0 +1,656 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-1 {
+    width: 8.33%
+}
+
+.col-2 {
+    width: 16.66%
+}
+
+.col-3 {
+    width: 25%
+}
+
+.col-4 {
+    width: 33.33%
+}
+
+.col-5 {
+    width: 41.66%
+}
+
+.col-6 {
+    width: 50%
+}
+
+.col-7 {
+    width: 58.33%
+}
+
+.col-8 {
+    width: 66.66%
+}
+
+.col-9 {
+    width: 75%
+}
+
+.col-10 {
+    width: 83.33%
+}
+
+.col-11 {
+    width: 91.66%
+}
+
+.col-12 {
+    width: 100%
+}
+
+.top-bar {
+    background-color: black;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    font-weight: 400;
+}
+
+.header2 {
+    background-color: white;
+    display: flex;
+    height: 63px;
+}
+
+.logo img {
+    height: 60px;
+    width: 80px;
+    margin-left: 40px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 0.87;
+    gap: 30px;
+}
+
+nav a {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 600;
+    color: black;
+}
+
+.offer {
+    color: red;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.nav-icon {
+    font-size: 50px;
+}
+
+.mega-menu {
+    position: fixed;
+    left: 50px;
+    top: 125px;
+    width: 90vw;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px 50px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 40px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.offer-menu {
+    position: absolute;
+    top: 43px;
+    width: 200px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px 50px;
+    display: grid;
+    gap: 40px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.club-menu {
+    position: fixed;
+    left: 50px;
+    top: 125px;
+    width: 90vw;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px 40px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 15px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.dropdown:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown:hover .offer-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown:hover .club-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.category img {
+    width: 100px;
+    margin-left: 48px;
+    transition: 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+.category img:hover {
+    filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.5));
+}
+
+.category h5 {
+    gap: 20px;
+    text-align: center;
+}
+
+.category h4 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #111;
+}
+
+.category ul {
+    list-style: none;
+}
+
+.category ul li {
+    margin: 6px 0;
+    font-size: 14px;
+    cursor: pointer;
+    color: #333;
+}
+
+.category ul li:hover {
+    text-decoration: underline;
+}
+
+.browse {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-size: 20px;
+}
+
+.one,
+.two,
+.three {
+    transition: 0.3s ease-in-out;
+}
+
+.one:hover {
+    transform: scale(1.2);
+}
+
+.two:hover {
+    transform: scale(1.2);
+
+}
+
+.three:hover {
+    transform: scale(1.2);
+}
+
+.back-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.nav2 {
+    width: 30%;
+    padding-left: 50px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    position: sticky;
+    top: 0;
+}
+
+.nav2 a {
+    text-decoration: none;
+    color: black;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.sidebar {
+    background-color: white;
+    padding: 50px 10px 50px 50px;
+    line-height: 2;
+    max-height: max-content;
+    position: sticky;
+    top: 30px;
+}
+
+.mainbar {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 50px;
+    padding-left: 20px;
+    padding-right: 20px;    
+    flex-wrap: wrap;
+
+
+}
+
+.box1 {
+    height: 400px;
+    width: 283px;
+    background: white;
+    margin-left: 10px;
+}
+
+.box2 {
+    height: 400px;
+    width: 283px;
+    /* background: #544e4e; */
+    /* margin-left: 50px; */
+}
+
+.box3 {
+    height: 400px;
+    width: 283px;
+
+    /* margin-left: 50px; */
+}
+
+.box1 img {
+    height: 273px;
+    width: 273px;
+    /* object-fit: contain; */
+}
+
+.box2 img {
+    height: 273px;
+    width: 273px;
+}
+
+.box3 img {
+    height: 273px;
+    width: 273px;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.black {
+    background-color: black;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.grey {
+    background-color: gray;
+}
+
+.product-title {
+    text-align: center;
+    font-size: 15px;
+    color: black;
+    text-transform: uppercase;
+    font-weight: bolder;
+    margin-top: 30px;
+
+}
+
+.product-price {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+
+}
+
+button {
+    visibility: hidden;
+    margin-left: 5px;
+    background: #000;
+    color: aliceblue;
+    border: none;
+    height: 30px;
+    width: 274px;
+    font-size: 15px;
+}
+
+.box1:hover button {
+    visibility: visible;
+}
+
+.box2:hover button {
+    visibility: visible;
+}
+
+.box3:hover button {
+    visibility: visible;
+}
+
+.mainbar img:hover {
+    transform: scaleX(-1);
+}
+
+.box1:hover,
+.box2:hover,
+.box3:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+    /* smooth effect */
+}
+
+details {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    border-bottom: 1px solid #ccc;
+    padding: 50px 0;
+}
+
+summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+/* Custom arrow */
+summary::before {
+    content: "▶";
+    display: inline-block;
+    margin-right: 8px;
+    transition: transform 0.2s ease;
+    font-size: 10px;
+    /* 👈 Make arrow smaller */
+}
+
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+.category-options {
+    padding-top: 10px;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 3;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+details {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+summary::before {
+    content: "▶";
+    display: inline-block;
+    margin-right: 8px;
+    transition: transform 0.2s ease;
+    font-size: 10px;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+.size-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 10px;
+}
+
+.size-options label {
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: normal;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.size-options input[type="checkbox"] {
+    display: none;
+}
+
+.size-options input[type="checkbox"]:checked+span {
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+.size-box {
+    display: inline-block;
+}
+
+
+
+details {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+summary::before {
+    content: "▶";
+    display: inline-block;
+    margin-right: 8px;
+    transition: transform 0.2s ease;
+    font-size: 10px;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+.price-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 10px;
+}
+
+.price-options label {
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: normal;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.price-options input[type="checkbox"] {
+    display: none;
+}
+
+.price-options input[type="checkbox"]:checked+span {
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+.price-box {
+    display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+/* Footer CSS */
+.footer {
+    background: #000;
+    color: white;
+    padding: 40px 60px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-signup h2 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.footer-signup h2 span {
+    color: #ffffff;
+}
+
+.email-input {
+    display: flex;
+    border-bottom: 1px solid #fff;
+    margin: 15px 0;
+}
+
+.email-input input {
+    background: transparent;
+    border: none;
+    color: white;
+    flex: 1;
+    padding: 10px;
+    outline: none;
+}
+
+.email-input button {
+    background: none;
+    border: none;
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+    padding-right: 10px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-icons i {
+    background: white;
+    color: black;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 18px;
+}
+
+.footer-info h3,
+.footer-contact h3 {
+    margin-bottom: 10px;
+}
+
+.footer-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-info ul li {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.footer-contact p {
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.footer-contact i {
+    margin-right: 8px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid red;
+    padding-top: 20px;
+    margin-top: 40px;
+}
+
+.logo img {
+    width: 80px;
+}

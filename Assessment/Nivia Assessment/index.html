@@ -29,7 +29,8 @@
                 <div class="logo">
                     <img src="/images/logo.svg" alt="">
                 </div>
-                <nav>
+                <nav id="nav">
+                    <button class="close-btn" id="closeNav">&times;</button>
                     <div class="dropdown">
                         <a href="index.html">All Sports</a>
                         <div class="mega-menu">
@@ -449,40 +450,41 @@
                         <img src="images/badminton.webp" alt="Badminton">
                         <div class="card-title">BADMINTON</div>
                     </div>
-
-                    <div class="card">
-                        <img src="images/circket.jpg" alt="cricket">
-                        <div class="card-title">CRICKET</div>
-                    </div>
                 </div>
             </div>
         </div>
 
         <div class="row">
             <div class="col-12 product-container">
+
                 <div class="col-3 product-card-title">
                     <h2>BEST SELLERS</h2>
                     <p>Sports Gear, Footwear & Accessories</p>
                     <a href="#">EXPLORE ALL</a>
                 </div>
+
                 <div class="col-3 product-card">
                     <img src="images/shoe-1" alt="">
                     <h3>Safari Men's Football Shoes</h3>
                     <p>₹1499</p>
                 </div>
+
                 <div class="col-3 product-card">
                     <img src="images/shoe-2" alt="">
                     <h3>Nivia Cric - 1000 2.0 Cricket Shoes</h3>
                     <p>₹1499</p>
                 </div>
+
                 <div class="col-3 product-card">
                     <img src="images/shoe-3" alt="">
                     <h3>Nivia Dagger Men's Football Studs</h3>
                     <span>₹1700 <del>₹1999</del> 10% Off</span>
                 </div>
             </div>
+
             <div class="highlight-line"></div>
         </div>
+
 
         <div class="row">
             <div class="col-12 product-container">
@@ -649,11 +651,20 @@
     <script>
         const hamburger = document.getElementById("hamburger");
         const nav = document.querySelector("nav");
+        const closeNav = document.getElementById("closeNav");
 
+        // Open nav
         hamburger.addEventListener("click", () => {
-            nav.classList.toggle("active");
+            nav.classList.add("active");
+        });
+
+        // Close nav
+        closeNav.addEventListener("click", () => {
+            nav.classList.remove("active");
         });
     </script>
+
+
 
 </body>
 
