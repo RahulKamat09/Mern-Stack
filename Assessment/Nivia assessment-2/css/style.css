@@ -659,6 +659,88 @@ nav {
 
 /* RESPONSIVE DESIGN - MEDIA QUERIES */
 
+@media (max-width:992px) {
+
+  /* Navigation */
+  .hamburger {
+    display: flex;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background: white;
+    flex-direction: column;
+    padding: 80px 30px 30px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    z-index: 1001;
+    overflow-y: auto;
+  }
+
+  nav.active {
+    right: 0;
+  }
+
+  .close-btn {
+    display: block;
+  }
+
+  .dropdown {
+    width: 100%;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .dropdown>a {
+    display: block;
+    padding: 15px 0;
+    font-size: 18px;
+  }
+
+  .mega-menu,
+  .club-menu,
+  .offer-menu {
+    position: static;
+    display: none;
+    box-shadow: none;
+    border-radius: 0;
+    background: #f8fafc;
+    margin-top: 10px;
+    padding: 20px 0;
+  }
+
+  .dropdown:hover .mega-menu,
+  .dropdown:hover .club-menu,
+  .dropdown:hover .offer-menu {
+    display: block;
+  }
+
+  .mega-menu {
+    grid-template-columns: 1fr 1fr;
+    min-width: auto;
+  }
+
+  .club-menu {
+    grid-template-columns: repeat(2, 1fr);
+    min-width: auto;
+  }
+
+  /* Grid System */
+  .col-8,
+  .col-4,
+  .col-3 {
+    width: 100%;
+  }
+
+  .back-image{
+    height: fit-content;
+  }
+}
+
+
 /* Large Tablets and Small Laptops */
 @media (max-width: 1024px) {
   .header2 {
@@ -1125,4 +1207,3 @@ nav {
 }
 
 /* Accessibility */
-
