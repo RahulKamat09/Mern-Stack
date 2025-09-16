@@ -4,7 +4,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    overflow-x: hidden;
 }
 
 /* Navbar */
@@ -32,12 +32,12 @@ body {
     border-radius: 6px;
 }
 
-/* Hero Section */
+/*----------------- Hero Section----------------------- */
 .hero {
     background: #007bff;
     color: #fff;
     padding: 80px 0;
-    height: 93vh;
+    height: 100vh;
 }
 
 .hero h1 span {
@@ -62,7 +62,7 @@ body {
     border: 2px solid #fff;
 }
 
-/* Stats Section */
+/*------------------- Stats Section -------------------------*/
 .stats {
     margin-top: 50px;
 }
@@ -95,6 +95,40 @@ body {
     box-shadow: 0 0 15px rgba(255, 193, 7, 0.5);
 }
 
+/* --------------About Section---------- */
+
+.about-sec-icon {
+    background: #fff;
+    border-radius: 50px;
+    box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.3);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease-in-out;
+    display: inline-flex;
+}
+
+.about-sec-icon:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+}
+
+.icon-box {
+    background: #0d6efd;
+    /* Bootstrap blue */
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 14px;
+}
+
+.about-sec-icon .text {
+    color: #000;
+}
+
 .btn-gradient {
     background: linear-gradient(90deg, #007bff, #00c6ff);
     color: #fff;
@@ -113,9 +147,359 @@ body {
     box-shadow: 5px 5px 10px rgba(255, 193, 7, 0.731);
 }
 
-.about-sec-icon i{
-    background: #007bff;
-    padding: 18px;
+
+/* -------------------Our Services Section-------------- */
+
+.service-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+    height: 100%;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.icon-box2 {
+    width: 60px;
+    height: 60px;
+    background: #0d6efd;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    font-size: 28px;
+    margin: 0 auto;
+    transition: all 0.3s ease-in-out;
+}
+
+.service-card:hover .icon-box {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+}
+
+.service-card h5 {
+    margin: 15px 0 10px;
+    color: #111;
+}
+
+.service-card p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.learn-more-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 22px;
+    background: linear-gradient(135deg, #0d6efd, #6610f2);
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
+}
+
+.learn-more-btn:hover {
+    background: linear-gradient(135deg, #6610f2, #0d6efd);
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 6px 18px rgba(13, 110, 253, 0.45);
+}
+
+/*----------------Professional Courses--------------------*/
+
+
+.course-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.3);
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.course-icon {
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 700;
+    margin: 0 auto 15px;
+    font-size: 18px;
+}
+
+.price {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #007bff;
+    margin: 10px 0;
+}
+
+.rating {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.rating i {
+    color: #ff9800;
+}
+
+.enroll-btn {
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-weight: 600;
+    border: none;
+    transition: all 0.3s ease-in-out;
+    color: #fff;
+}
+
+.enroll-btn:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+
+/* Button Colors */
+.btn-blue {
+    background: #0d6efd;
+}
+
+.btn-orange {
+    background: #ff6f00;
+}
+
+.btn-green {
+    background: #28a745;
+}
+
+/*----------------Industry-Expertise-------------*/
+
+.industry-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.3);
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.industry-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 2px 4px 10px rgba(0, 68, 255, 0.5);
+}
+
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    font-size: 26px;
+    color: #fff;
+}
+
+/* Different colors for icons */
+.icon-blue {
+    background: #0d6efd;
+}
+
+.icon-orange {
+    background: #ff6f00;
+}
+
+.icon-green {
+    background: #28a745;
+}
+
+/*----------------Get-Started-Section------------*/
+
+.get-started-section {
+    background-color: #0a3d91;
+    /* dark blue */
+    color: #fff;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+/* Gradient text */
+.text-gradient {
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    /* peach to light orange */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Start Project button */
+.btn-project {
+    background: linear-gradient(90deg, #43cea2, #185a9d);
+    /* green to blue */
+    color: #fff;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+}
+
+/* Call button */
+.btn-call {
+    background: linear-gradient(90deg, #ff512f, #dd2476);
+    /* red to pink */
+    color: #fff;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    margin-left: 15px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-call:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+}
+
+.feature-box {
+    margin-top: 40px;
+}
+
+.feature-box h4 {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.feature-box p {
+    margin-top: 5px;
+    font-size: 0.95rem;
+    color: #ddd;
+}
+
+/*-----------------Footer Section---------------*/
+
+footer {
+    background: linear-gradient(135deg, #1c1f26, #232730);
+    color: #ddd;
+    padding: 60px 0 20px;
+}
+
+footer h5 {
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #fff;
+    position: relative;
+}
+
+footer h5::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #ff6600;
+    margin-top: 8px;
+    border-radius: 2px;
+}
+
+footer a {
+    color: #bbb;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s;
+}
+
+footer a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -3px;
+    background: #ff6600;
+    transition: width 0.3s;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+footer a:hover::after {
+    width: 100%;
+}
+
+.footer-logo span {
+    font-weight: bold;
+    font-size: 22px;
+    background: linear-gradient(45deg, #ff6600, #ffcc00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.social-icons a {
+    color: #bbb;
+    font-size: 22px;
+    margin-right: 18px;
+    transition: 0.3s ease-in-out;
+    display: inline-block;
+}
+
+.social-icons a:hover {
+    color: #ff6600;
+    transform: scale(1.2) rotate(5deg);
+}
+
+.footer-bottom {
+    border-top: 1px solid #444;
+    padding-top: 15px;
+    margin-top: 40px;
+    text-align: center;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.footer-bottom a {
+    margin: 0 8px;
+    color: #aaa;
+    transition: 0.3s;
+}
+
+.footer-bottom a:hover {
+    color: #ff6600;
+}
+
+@media (max-width:992px){
+    .hero{
+        height: 70vh;
+    }
+
+    .navbar .nav-link.active{
+        border-bottom: none;
+    }
+}
+
+@media (max-width:576px){
+    .hero{
+        height: auto;
+        margin-top: -100px;
+    }
 }

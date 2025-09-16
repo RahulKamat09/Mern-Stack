@@ -24,7 +24,7 @@
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="#">
                 <div class="bg-primary text-white rounded px-2 me-2 fw-bold">MA</div>
@@ -48,7 +48,7 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container mt-2">
+        <div class="container mt-5">
             <div class="row align-items-center">
                 <div class="col-lg-12 mt-5">
                     <h1 class="text-center display-2 fw-bold mt-5">Transform Your Business with <br> <span>Digital
@@ -60,7 +60,7 @@
                         growth.
                     </p>
                     <div class="d-flex gap-3 d-flex justify-content-center mt-5">
-                        <a href="#" class="btn btn-light text-primary rounded-pill">Explore Services →</a>
+                        <a href="#" class="hero-button btn btn-light text-primary rounded-pill">Explore Services →</a>
                         <a href="#" class="btn btn-outline-warning text-black rounded-pill border-light">View
                             Courses</a>
                     </div>
@@ -71,42 +71,81 @@
 
     <!-- About us Section -->
     <section id="about-us">
-        <div class="container py-5">
+        <div class="container py-4">
             <div class="row">
-                <div class="col-lg-12 mt-4">
-                    <h1 class="text-center display-5 fw-bold my-5">About <span class="about-text">Our Agency</span></h1>
+                <div class="col-lg-12 mt-5">
+                    <h1 class="text-center display-5 fw-bold my-3">About <span class="about-text">Our Agency</span></h1>
                     <p class="text-center fs-4 text-secondary">With over 8 years of experience in the digital landscape,
                         we've helped
                         hundreds of <br>businesses
                         transform their online presence and achieve measurable growth.</p>
-                    <div class="about-sec-icon d-flex justify-content-center">
-                        <i class="bi bi-check-lg"></i> 
-                        <p class="">Quality Guaranteed</p>
-                    </div>
-                    
                 </div>
             </div>
+
+            <div class="row g-5 justify-content-center my-3">
+                <!-- Item 1 -->
+                <div class="col-lg-3 col-md-2 col-sm-6">
+                    <div class="about-sec-icon d-flex align-items-center justify-content-center p-2">
+                        <div class="icon-box me-2">
+                            <i class="bi bi-check-lg"></i>
+                        </div>
+                        <span class="text">Quality Guaranteed</span>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="col-lg-3 col-md-2 col-sm-6">
+                    <div class="about-sec-icon d-flex align-items-center justify-content-center p-2">
+                        <div class="icon-box me-2">
+                            <i class="bi bi-people-fill"></i>
+                        </div>
+                        <span class="text">Expert Team</span>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="col-lg-3 col-md-2 col-sm-6">
+                    <div class="about-sec-icon d-flex align-items-center justify-content-center p-2">
+                        <div class="icon-box me-2">
+                            <i class="bi bi-bullseye"></i>
+                        </div>
+                        <span class="text">Result Oriented</span>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="col-lg-3 col-md-2 col-sm-6">
+                    <div class="about-sec-icon d-flex align-items-center justify-content-center p-2">
+                        <div class="icon-box me-2">
+                            <i class="bi bi-headset"></i>
+                        </div>
+                        <span class="text">24/7 Support</span>
+                    </div>
+                </div>
+
+            </div>
+
             <!-- Stat card -->
             <div class="row gx-5">
-                <div class="col-lg-3 text-center mt-5">
+                <div class="col-lg-3 col-md-6 text-center mt-5">
                     <div class="card py-3 stat-card">
                         <h3 class="text-primary display-6 fw-bold">500+</h3>
                         <p class="fs-5">Projects Completed</p>
                     </div>
                 </div>
-                <div class="col-lg-3 text-center mt-5">
+                <div class="col-lg-3 col-md-6 text-center mt-5">
                     <div class="card py-3 stat-card">
                         <h3 class="text-warning display-6 fw-bold">250+</h3>
                         <p class="fs-5">Happy Clients</p>
                     </div>
                 </div>
-                <div class="col-lg-3 text-center mt-5">
+                <div class="col-lg-3 col-md-6 text-center mt-5">
                     <div class="card py-3 stat-card">
                         <h3 class="text-primary display-6 fw-bold">10+</h3>
                         <p class="fs-5">Experience</p>
                     </div>
                 </div>
-                <div class="col-lg-3 text-center mt-5">
+                <div class="col-lg-3 col-md-6 text-center mt-5">
                     <div class="card py-3 stat-card">
                         <h3 class="text-warning display-6 fw-bold">100+</h3>
                         <p class="fs-5">Team Members</p>
@@ -119,6 +158,374 @@
             </div>
         </div>
     </section>
+
+    <!-----------------------Our-Services-Section---------------------------->
+    <section id="our-services">
+        <div class="container py-2">
+            <div class="row">
+                <div class="col-lg-12 mt-4">
+                    <h1 class="text-center display-5 fw-bold my-3">Our <span class="about-text">Services</span></h1>
+                    <p class="text-center fs-4 text-secondary">We offer comprehensive digital solutions to help your
+                        business thrive in<br> today's competitive online landscape.</p>
+                </div>
+            </div>
+
+            <div class="row g-5 mt-2">
+                <!-- Card 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card text-center p-4">
+                        <div class="icon-box2 mb-3">
+                            <i class="bi bi-code-slash"></i>
+                        </div>
+                        <h5 class="fw-bold">Web Development</h5>
+                        <p>Custom websites & apps built with modern technologies and responsive design principles.</p>
+                        <a href="#" class="learn-more-btn">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card text-center p-4">
+                        <div class="icon-box2 mb-3 bg-success">
+                            <i class="bi bi-bullseye"></i>
+                        </div>
+                        <h5 class="fw-bold">Digital Marketing</h5>
+                        <p>SEO, PPC, social media & content marketing strategies to grow your online presence.</p>
+                        <a href="#" class="learn-more-btn">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card text-center p-4">
+                        <div class="icon-box2 mb-3 bg-warning">
+                            <i class="bi bi-pencil-square"></i>
+                        </div>
+                        <h5 class="fw-bold">Content Writing</h5>
+                        <p>High-quality content for websites, blogs, social media & marketing campaigns.</p>
+                        <a href="#" class="learn-more-btn">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card text-center p-4">
+                        <div class="icon-box2 mb-3 bg-danger">
+                            <i class="bi bi-palette-fill"></i>
+                        </div>
+                        <h5 class="fw-bold">Graphic Design</h5>
+                        <p>Creative visuals including branding, logos, social media posts & marketing materials.</p>
+                        <a href="#" class="learn-more-btn">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card text-center p-4">
+                        <div class="icon-box2 mb-3 bg-info">
+                            <i class="bi bi-phone"></i>
+                        </div>
+                        <h5 class="fw-bold">App Development</h5>
+                        <p>Mobile-friendly Android & iOS apps tailored for businesses and startups.</p>
+                        <a href="#" class="learn-more-btn">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card text-center p-4">
+                        <div class="icon-box2 mb-3 bg-primary">
+                            <i class="bi bi-headset"></i>
+                        </div>
+                        <h5 class="fw-bold">24/7 Support</h5>
+                        <p>Round-the-clock technical support and customer service for seamless workflow.</p>
+                        <a href="#" class="learn-more-btn">Learn More</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!----------------------Professional-Training-courses------------------------>
+    <section id="professional-courses">
+        <div class="container py-5">
+            <div class="row mt-5">
+                <div class="col-lg-12 mt-5">
+                    <h1 class="text-center display-6 fw-bold my-3">Professional<span class="about-text"> Training &
+                            Courses</span></h1>
+                    <p class="text-center fs-5 text-secondary mt-1">Advance your career with our comprehensive training
+                        programs designed by <br>industry experts. Learn the latest tools and techniques that employers
+                        demand.</p>
+                </div>
+            </div>
+
+
+            <div class="row g-5 mt-2">
+
+                <!-- Web Development Bootcamp -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="course-card">
+                        <div class="course-icon" style="background:#0d6efd;">WD</div>
+                        <h5 class="fw-bold">Web Development Bootcamp</h5>
+                        <p>Master full-stack development with React, Node.js, and modern frameworks.</p>
+                        <div class="price">$599</div>
+                        <div class="rating">
+                            ⭐⭐⭐⭐⭐ <span class="text-muted">(4.9)</span>
+                        </div>
+                        <button class="enroll-btn btn-blue">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Digital Marketing Mastery -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="course-card">
+                        <div class="course-icon" style="background:#ff6f00;">DM</div>
+                        <h5 class="fw-bold">Digital Marketing Mastery</h5>
+                        <p>Complete guide to SEO, social media, and paid advertising strategies.</p>
+                        <div class="price">$399</div>
+                        <div class="rating">
+                            ⭐⭐⭐⭐⭐ <span class="text-muted">(4.8)</span>
+                        </div>
+                        <button class="enroll-btn btn-orange">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Graphic Design Pro -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="course-card">
+                        <div class="course-icon" style="background:#28a745;">GD</div>
+                        <h5 class="fw-bold">Graphic Design Pro</h5>
+                        <p>Learn professional design principles with Adobe Creative Suite and Figma.</p>
+                        <div class="price">$299</div>
+                        <div class="rating">
+                            ⭐⭐⭐⭐⭐ <span class="text-muted">(4.7)</span>
+                        </div>
+                        <button class="enroll-btn btn-green">Enroll Now</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-----------------Industry-Expertise------------------>
+    <section id="industry-expertise">
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-lg-12 mt-5">
+                    <h1 class="text-center display-6 fw-bold my-3">Industry<span class="about-text"> Expertise</span>
+                    </h1>
+                    <p class="text-center fs-5 text-secondary mt-1">We bring specialized knowledge and tailored
+                        solutions to serve diverse <br>industries, understanding unique challenges and opportunities in
+                        each
+                        sector.</p>
+                </div>
+            </div>
+
+            <div class="row g-5 mt-2 mb-5">
+
+                <!-- FinTech -->
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="industry-card">
+                        <div class="icon-circle icon-blue">
+                            <i class="bi bi-currency-dollar"></i>
+                        </div>
+                        <h6 class="fw-bold">FinTech</h6>
+                        <p class="text-muted small">
+                            Secure payment systems, trading platforms, and financial dashboards
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Healthcare -->
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="industry-card">
+                        <div class="icon-circle icon-orange">
+                            <i class="bi bi-heart-pulse"></i>
+                        </div>
+                        <h6 class="fw-bold">Healthcare</h6>
+                        <p class="text-muted small">
+                            HIPAA-compliant solutions, patient portals, and telemedicine platforms
+                        </p>
+                    </div>
+                </div>
+
+                <!-- E-commerce -->
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="industry-card">
+                        <div class="icon-circle icon-green">
+                            <i class="bi bi-cart-check"></i>
+                        </div>
+                        <h6 class="fw-bold">E-commerce</h6>
+                        <p class="text-muted small">
+                            Multi-channel retail solutions, inventory management, and conversion optimization
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="industry-card">
+                        <div class="icon-circle icon-blue">
+                            <i class="bi bi-mortarboard"></i>
+                        </div>
+                        <h6 class="fw-bold">Education</h6>
+                        <p class="text-muted small">
+                            Learning management systems, online course platforms, and student portals
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Real Estate -->
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="industry-card">
+                        <div class="icon-circle icon-blue">
+                            <i class="bi bi-house-door"></i>
+                        </div>
+                        <h6 class="fw-bold">Real Estate</h6>
+                        <p class="text-muted small">
+                            Property management systems, virtual tours, and lead generation tools
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Food & Beverage -->
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="industry-card">
+                        <div class="icon-circle icon-orange">
+                            <i class="bi bi-cup-straw"></i>
+                        </div>
+                        <h6 class="fw-bold">Food & Beverage</h6>
+                        <p class="text-muted small">
+                            Restaurant management, online ordering, and delivery <br>platforms
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Manufacturing -->
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="industry-card">
+                        <div class="icon-circle icon-green">
+                            <i class="bi bi-gear"></i>
+                        </div>
+                        <h6 class="fw-bold">Manufacturing</h6>
+                        <p class="text-muted small">
+                            ERP systems, supply chain management, and industrial IoT solutions
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Travel & Tourism -->
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="industry-card">
+                        <div class="icon-circle icon-blue">
+                            <i class="bi bi-airplane"></i>
+                        </div>
+                        <h6 class="fw-bold">Travel & Tourism</h6>
+                        <p class="text-muted small">
+                            Booking systems, travel planning apps, and hospitality <br>management
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-------------------Get-Started-Section------------------->
+
+    <section class="get-started-section">
+        <div class="container">
+            <h2 class="fw-bold display-5">
+                Ready to <span class="text-gradient">Get Started?</span>
+            </h2>
+            <p class="mt-3 fs-5">
+                Let's discuss your project and see how we can help you achieve your digital goals.
+                Get a free consultation today!
+            </p>
+            <div class="mt-4">
+                <button class="btn-project mb-sm-5">Start Your Project</button>
+                <button class="btn-call">Call Us: (123) 456-7890</button>
+            </div>
+
+            <div class="row text-center feature-box">
+                <div class="col-md-4">
+                    <h4>24/7</h4>
+                    <p>Support Available</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Free</h4>
+                    <p>Initial Consultation</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>100%</h4>
+                    <p>Satisfaction Guarantee</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <!-- Left Section -->
+                <div class="col-lg-3 col-md-4">
+                    <div class="footer-logo mb-3">
+                        <span>MA</span> MarketingAgency
+                    </div>
+                    <p>Your trusted partner for comprehensive digital solutions.<br>
+                        We specialize in web development, digital marketing, content creation, and professional
+                        training.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-lg-3 offset-lg-3 col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Courses</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="col-lg-3 col-md-4">
+                    <h5>Our Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Digital Marketing</a></li>
+                        <li><a href="#">Content Writing</a></li>
+                        <li><a href="#">Graphic Design</a></li>
+                        <li><a href="#">Online Training</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>© 2024 Marketing Agency. All rights reserved.</p>
+                <a href="#">Privacy Policy</a> |
+                <a href="#">Terms of Service</a> |
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
