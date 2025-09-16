@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Courses - MarketingPro Academy</title>
+    <meta name="description"
+        content="Master digital skills with our comprehensive online courses. Web development, digital marketing, content writing, and graphic design training.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #1e3a8a;
+            --primary-light: #3b82f6;
+            --primary-dark: #1e40af;
+            --accent-orange: #f97316;
+            --accent-green: #059669;
+            --dark-gray: #374151;
+            --medium-gray: #6b7280;
+            --light-gray: #f3f4f6;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            padding-top: 80px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e5e7eb;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-blue);
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-blue);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
+            color: white;
+            padding: 100px 0 80px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-alt {
+            background: var(--light-gray);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--medium-gray);
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Course Categories */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .category-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .category-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-green));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+
+        /* Featured Courses */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .course-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        .course-content {
+            padding: 2rem;
+        }
+
+        .course-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .course-level {
+            background: var(--light-gray);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        .course-duration {
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+        }
+
+        .course-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 1.5rem 0;
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: var(--medium-gray);
+            margin-left: 0.5rem;
+        }
+
+        .course-features {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .course-features li {
+            padding: 0.25rem 0;
+            color: var(--medium-gray);
+        }
+
+        .course-features li::before {
+            content: "✓";
+            color: var(--accent-green);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-green));
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Pricing Plans */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            border: 3px solid var(--accent-orange);
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured::before {
+            content: "Most Popular";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-orange);
+            color: white;
+            padding: 0.5rem 2rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .plan-name {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+        }
+
+        .plan-price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .plan-period {
+            color: var(--medium-gray);
+            margin-bottom: 2rem;
+        }
+
+        .plan-features {
+            list-style: none;
+            text-align: left;
+            margin: 2rem 0;
+        }
+
+        .plan-features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .plan-features li::before {
+            content: "✓";
+            color: var(--accent-green);
+            font-weight: bold;
+            margin-right: 1rem;
+        }
+
+        /* Student Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 30px;
+            font-size: 4rem;
+            color: var(--accent-orange);
+            font-family: 'Times New Roman', serif;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .student-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .student-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+
+        .student-details h4 {
+            margin-bottom: 0.25rem;
+            color: var(--primary-blue);
+        }
+
+        .student-course {
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--primary-blue);
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn-outline {
+            border: 2px solid white;
+            color: white;
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary-blue);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-gray);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--accent-orange);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--accent-orange);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #4b5563;
+            padding-top: 1rem;
+            text-align: center;
+            color: #9ca3af;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .pricing-card.featured {
+                transform: none;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .course-content,
+            .pricing-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">MarketingPro</div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="courses.html" class="active">Courses</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Online <span class="gradient-text">Courses</span></h1>
+            <p>Master digital skills with expert-led training programs</p>
+        </div>
+    </section>
+
+    <!-- Course Categories -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Course <span class="gradient-text">Categories</span></h2>
+            <p class="section-subtitle">Choose from our comprehensive range of digital skill courses</p>
+
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon">💻</div>
+                    <h3>Web Development</h3>
+                    <p>Learn modern web technologies including HTML, CSS, JavaScript, React, Node.js, and full-stack
+                        development.</p>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">📈</div>
+                    <h3>Digital Marketing</h3>
+                    <p>Master SEO, PPC, social media marketing, email campaigns, and analytics to grow any business
+                        online.</p>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">✍️</div>
+                    <h3>Content Writing</h3>
+                    <p>Create compelling content for websites, blogs, marketing campaigns, and social media platforms.
+                    </p>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">🎨</div>
+                    <h3>Graphic Design</h3>
+                    <p>Learn professional design tools and techniques for branding, marketing materials, and digital
+                        graphics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Courses -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Featured <span class="gradient-text">Courses</span></h2>
+            <p class="section-subtitle">Our most popular and comprehensive training programs</p>
+
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-image">💻</div>
+                    <div class="course-content">
+                        <div class="course-meta">
+                            <span class="course-level">Beginner</span>
+                            <span class="course-duration">12 weeks</span>
+                        </div>
+                        <h3>Complete Web Development Bootcamp</h3>
+                        <p>Master modern web development from scratch. Learn HTML, CSS, JavaScript, React, Node.js, and
+                            MongoDB to build full-stack applications.</p>
+
+                        <ul class="course-features">
+                            <li>40+ hours of video content</li>
+                            <li>10 hands-on projects</li>
+                            <li>1-on-1 mentoring sessions</li>
+                            <li>Job placement assistance</li>
+                            <li>Certificate of completion</li>
+                        </ul>
+
+                        <div class="course-price">
+                            <div>
+                                <span class="price">$299</span>
+                                <span class="original-price">$499</span>
+                            </div>
+                        </div>
+
+                        <a href="contact.html" class="btn btn-primary">Enroll Now</a>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-image">📈</div>
+                    <div class="course-content">
+                        <div class="course-meta">
+                            <span class="course-level">Intermediate</span>
+                            <span class="course-duration">8 weeks</span>
+                        </div>
+                        <h3>Digital Marketing Mastery</h3>
+                        <p>Comprehensive digital marketing course covering SEO, PPC, social media, email marketing, and
+                            analytics for business growth.</p>
+
+                        <ul class="course-features">
+                            <li>30+ hours of expert training</li>
+                            <li>Real campaign case studies</li>
+                            <li>Google Ads certification prep</li>
+                            <li>Marketing tools and templates</li>
+                            <li>Lifetime course updates</li>
+                        </ul>
+
+                        <div class="course-price">
+                            <div>
+                                <span class="price">$199</span>
+                                <span class="original-price">$299</span>
+                            </div>
+                        </div>
+
+                        <a href="contact.html" class="btn btn-primary">Enroll Now</a>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-image">✍️</div>
+                    <div class="course-content">
+                        <div class="course-meta">
+                            <span class="course-level">Beginner</span>
+                            <span class="course-duration">6 weeks</span>
+                        </div>
+                        <h3>Professional Content Writing</h3>
+                        <p>Learn to create engaging, SEO-optimized content for websites, blogs, social media, and
+                            marketing campaigns that converts.</p>
+
+                        <ul class="course-features">
+                            <li>20+ hours of writing training</li>
+                            <li>SEO content optimization</li>
+                            <li>Portfolio development</li>
+                            <li>Client acquisition strategies</li>
+                            <li>Writing tools and resources</li>
+                        </ul>
+
+                        <div class="course-price">
+                            <div>
+                                <span class="price">$149</span>
+                                <span class="original-price">$249</span>
+                            </div>
+                        </div>
+
+                        <a href="contact.html" class="btn btn-primary">Enroll Now</a>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-image">🎨</div>
+                    <div class="course-content">
+                        <div class="course-meta">
+                            <span class="course-level">Intermediate</span>
+                            <span class="course-duration">10 weeks</span>
+                        </div>
+                        <h3>Graphic Design Fundamentals</h3>
+                        <p>Master design principles, typography, color theory, and industry-standard tools like
+                            Photoshop, Illustrator, and Figma.</p>
+
+                        <ul class="course-features">
+                            <li>35+ hours of design training</li>
+                            <li>Adobe Creative Suite mastery</li>
+                            <li>Brand identity projects</li>
+                            <li>Client work simulation</li>
+                            <li>Design portfolio creation</li>
+                        </ul>
+
+                        <div class="course-price">
+                            <div>
+                                <span class="price">$249</span>
+                                <span class="original-price">$399</span>
+                            </div>
+                        </div>
+
+                        <a href="contact.html" class="btn btn-primary">Enroll Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Plans -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Learning <span class="gradient-text">Plans</span></h2>
+            <p class="section-subtitle">Choose the plan that fits your learning goals and budget</p>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3 class="plan-name">Single Course</h3>
+                    <div class="plan-price">$149</div>
+                    <div class="plan-period">One-time payment</div>
+
+                    <ul class="plan-features">
+                        <li>Access to one course</li>
+                        <li>Course materials & resources</li>
+                        <li>Community forum access</li>
+                        <li>Certificate of completion</li>
+                        <li>6 months course access</li>
+                    </ul>
+
+                    <a href="contact.html" class="btn btn-primary">Choose Plan</a>
+                </div>
+
+                <div class="pricing-card featured">
+                    <h3 class="plan-name">All-Access Pass</h3>
+                    <div class="plan-price">$299</div>
+                    <div class="plan-period">Per year</div>
+
+                    <ul class="plan-features">
+                        <li>Access to all courses</li>
+                        <li>Monthly live workshops</li>
+                        <li>1-on-1 mentoring sessions</li>
+                        <li>Priority community support</li>
+                        <li>Job placement assistance</li>
+                        <li>Lifetime access</li>
+                        <li>New courses added monthly</li>
+                    </ul>
+
+                    <a href="contact.html" class="btn btn-primary">Choose Plan</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3 class="plan-name">Professional</h3>
+                    <div class="plan-price">$499</div>
+                    <div class="plan-period">One-time payment</div>
+
+                    <ul class="plan-features">
+                        <li>Everything in All-Access</li>
+                        <li>Personal career coaching</li>
+                        <li>Portfolio review sessions</li>
+                        <li>Industry networking events</li>
+                        <li>Freelance business setup</li>
+                        <li>Advanced masterclasses</li>
+                    </ul>
+
+                    <a href="contact.html" class="btn btn-primary">Choose Plan</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Testimonials -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Student <span class="gradient-text">Success Stories</span></h2>
+            <p class="section-subtitle">See how our courses have transformed careers</p>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">The Web Development Bootcamp exceeded my expectations. I went from
+                        knowing nothing about coding to landing my dream job as a front-end developer in just 4 months.
+                        The instructors are incredible and the community support is amazing!</p>
+                    <div class="student-info">
+                        <div class="student-avatar">SM</div>
+                        <div class="student-details">
+                            <h4>Sarah Martinez</h4>
+                            <div class="student-course">Web Development Graduate</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">The Digital Marketing course transformed my understanding of online
+                        business. I increased my company's online revenue by 250% within 6 months of completing the
+                        course. The strategies are practical and results-driven.</p>
+                    <div class="student-info">
+                        <div class="student-avatar">JC</div>
+                        <div class="student-details">
+                            <h4>James Chen</h4>
+                            <div class="student-course">Digital Marketing Graduate</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">As a freelance writer, the Content Writing course helped me double my
+                        rates and attract high-quality clients. The SEO techniques alone have made my content much more
+                        valuable to businesses.</p>
+                    <div class="student-info">
+                        <div class="student-avatar">ER</div>
+                        <div class="student-details">
+                            <h4>Emily Rodriguez</h4>
+                            <div class="student-course">Content Writing Graduate</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enrollment CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your <span class="gradient-text">Career?</span></h2>
+                <p>Join thousands of successful students who have advanced their careers with our expert-led courses.
+                    Start your learning journey today!</p>
+
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">Start Learning Today</a>
+                    <a href="contact.html" class="btn btn-outline">Schedule Free Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MarketingPro</h3>
+                    <p>Transforming businesses through innovative digital solutions and comprehensive marketing
+                        strategies.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html">Web Development</a></li>
+                        <li><a href="services.html">Digital Marketing</a></li>
+                        <li><a href="services.html">Content Writing</a></li>
+                        <li><a href="services.html">Graphic Design</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li>📧 info@marketingpro.com</li>
+                        <li>📞 (123) 456-7890</li>
+                        <li>📍 123 Business Ave, City</li>
+                        <li>🌐 www.marketingpro.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MarketingPro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

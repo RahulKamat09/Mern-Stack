@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - MarketingPro Agency</title>
+    <meta name="description"
+        content="Comprehensive digital services including web development, digital marketing, content writing, graphic design, and IT solutions.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #1e3a8a;
+            --primary-light: #3b82f6;
+            --primary-dark: #1e40af;
+            --accent-orange: #f97316;
+            --accent-green: #059669;
+            --dark-gray: #374151;
+            --medium-gray: #6b7280;
+            --light-gray: #f3f4f6;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            padding-top: 80px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e5e7eb;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-blue);
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-blue);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
+            color: white;
+            padding: 100px 0 80px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-alt {
+            background: var(--light-gray);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--medium-gray);
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Service Detail Cards */
+        .service-detail {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            margin-bottom: 4rem;
+        }
+
+        .service-header {
+            padding: 3rem;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
+            color: white;
+            text-align: center;
+        }
+
+        .service-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 2rem;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .service-content {
+            padding: 3rem;
+        }
+
+        .service-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-green));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .pricing-section {
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .pricing-item {
+            text-align: center;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-green));
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Process Steps */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent-orange), var(--accent-green));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-gray);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--accent-orange);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--accent-orange);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #4b5563;
+            padding-top: 1rem;
+            text-align: center;
+            color: #9ca3af;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .service-header,
+            .service-content {
+                padding: 2rem;
+            }
+
+            .service-features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">MarketingPro</div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our <span class="gradient-text">Services</span></h1>
+            <p>Comprehensive digital solutions tailored to your business needs</p>
+        </div>
+    </section>
+
+    <!-- Web Development Services -->
+    <section class="section">
+        <div class="container">
+            <div class="service-detail">
+                <div class="service-header">
+                    <div class="service-icon">💻</div>
+                    <h2>Web Development Services</h2>
+                    <p>Custom websites and web applications built with cutting-edge technologies</p>
+                </div>
+
+                <div class="service-content">
+                    <p>Our web development team creates powerful, scalable, and user-friendly websites that drive
+                        business growth. From simple landing pages to complex web applications, we deliver solutions
+                        that exceed expectations.</p>
+
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">🎨</div>
+                            <div>
+                                <h4>Responsive Design</h4>
+                                <p>Mobile-first approach ensuring perfect display across all devices</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">⚡</div>
+                            <div>
+                                <h4>Fast Performance</h4>
+                                <p>Optimized code and modern frameworks for lightning-fast loading</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">🔒</div>
+                            <div>
+                                <h4>Security First</h4>
+                                <p>Implementation of best security practices and SSL certificates</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">🔧</div>
+                            <div>
+                                <h4>CMS Integration</h4>
+                                <p>Easy content management with popular platforms like WordPress</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pricing-section">
+                        <h3>Web Development Packages</h3>
+                        <div class="pricing-grid">
+                            <div class="pricing-item">
+                                <h4>Basic Website</h4>
+                                <div class="price">$2,500</div>
+                                <p>5-page responsive website</p>
+                            </div>
+                            <div class="pricing-item">
+                                <h4>Business Website</h4>
+                                <div class="price">$5,500</div>
+                                <p>10-page website with CMS</p>
+                            </div>
+                            <div class="pricing-item">
+                                <h4>E-commerce</h4>
+                                <div class="price">$8,500</div>
+                                <p>Full online store solution</p>
+                            </div>
+                            <div class="pricing-item">
+                                <h4>Custom App</h4>
+                                <div class="price">$15,000+</div>
+                                <p>Tailored web application</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="contact.html" class="btn btn-primary">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Writing Services -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="service-detail">
+                <div class="service-header">
+                    <div class="service-icon">✍️</div>
+                    <h2>Content Writing Services</h2>
+                    <p>Engaging, SEO-optimized content that converts visitors into customers</p>
+                </div>
+
+                <div class="service-content">
+                    <p>Our content writing experts create compelling, original content that resonates with your audience
+                        and drives engagement. From blog posts to marketing copy, we deliver content that converts.</p>
+
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">🎯</div>
+                            <div>
+                                <h4>SEO Optimized</h4>
+                                <p>Content crafted to rank high in search engine results</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">📊</div>
+                            <div>
+                                <h4>Research-Based</h4>
+                                <p>Thoroughly researched content backed by industry insights</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">✨</div>
+                            <div>
+                                <h4>Original Content</h4>
+                                <p>100% unique, plagiarism-free content tailored to your brand</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">🔄</div>
+                            <div>
+                                <h4>Regular Updates</h4>
+                                <p>Consistent content calendar to keep your audience engaged</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pricing-section">
+                        <h3>Content Writing Packages</h3>
+                        <div class="pricing-grid">
+                            <div class="pricing-item">
+                                <h4>Blog Posts</h4>
+                                <div class="price">$150</div>
+                                <p>Per 1000-word article</p>
+                            </div>
+                            <div class="pricing-item">
+                                <h4>Website Copy</h4>
+                                <div class="price">$500</div>
+                                <p>Complete website content</p>
+                            </div>
+                            <div class="pricing-item">
+                                <h4>Social Media</h4>
+                                <div class="price">$300</div>
+                                <p>Monthly social content</p>
+                            </div>
+                            <div class="pricing-item">
+                                <h4>Content Strategy</h4>
+                                <div class="price">$1,200</div>
+                                <p>3-month content plan</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="contact.html" class="btn btn-primary">Start Writing</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Digital Marketing Services -->
+    <section class="section">
+        <div class="container">
+            <div class="service-detail">
+                <div class="service-header">
+                    <div class="service-icon">📈</div>
+                    <h2>Digital Marketing Services</h2>
+                    <p>Data-driven marketing strategies that deliver measurable results</p>
+                </div>
+
+                <div class="service-content">
+                    <p>Our digital marketing team develops comprehensive strategies that increase your online
+                        visibility, drive qualified traffic, and generate more leads and sales for your business.</p>
+
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">🔍</div>
+                            <div>
+                                <h4>SEO Optimization</h4>
+                                <p>Improve your search engine rankings and organic traffic</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">💰</div>
+                            <div>
+                                <h4>PPC Advertising</h4>
+                                <p>Targeted ads that maximize ROI and drive conversions</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">📱</div>
+                            <div>
+                                <h4>Social Media</h4>
+                                <p>Engaging social campaigns that build brand awareness</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">📧</div>
+                            <div>
+                                <h4>Email Marketing</h4>
+                                <p>Automated email campaigns that nurture leads and customers</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pricing-section">
+                        <h3>Digital Marketing Packages</h3>
+                        <div class="pricing-grid">
+                            <div class="pricing-item">
+                                <h4>SEO Starter</h4>
+                                <div class="price">$800/mo</div>
+                                <p>Basic SEO optimization</p>
+                            </div>
+                            <div class="pricing-item">
+                                <h4>Growth Package</h4>
+                                <div class="price">$1,500/mo</div>
+                                <p>SEO + PPC + Social</p>
+                            </div>
+                            <div class="pricing-item">
+                                <h4>Enterprise</h4>
+                                <div class="price">$3,000/mo</div>
+                                <p>Full marketing suite</p>
+                            </div>
+                            <div class="pricing-item">
+                                <h4>Custom Strategy</h4>
+                                <div class="price">Contact Us</div>
+                                <p>Tailored solutions</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="contact.html" class="btn btn-primary">Grow Your Business</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Graphic Design Services -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="service-detail">
+                <div class="service-header">
+                    <div class="service-icon">🎨</div>
+                    <h2>Graphic Design Services</h2>
+                    <p>Creative visual solutions that make your brand stand out</p>
+                </div>
+
+                <div class="service-content">
+                    <p>Our talented design team creates stunning visual assets that communicate your brand message
+                        effectively and leave a lasting impression on your audience.</p>
+
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">🏷️</div>
+                            <div>
+                                <h4>Brand Identity</h4>
+                                <p>Complete branding packages including logos and guidelines</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">📄</div>
+                            <div>
+                                <h4>Marketing Materials</h4>
+                                <p>Brochures, flyers, and promotional design assets</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">🖼️</div>
+                            <div>
+                                <h4>Digital Graphics</h4>
+                                <p>Social media graphics, web banners, and digital assets</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">📋</div>
+                            <div>
+                                <h4>Print Design</h4>
+                                <p>Business cards, letterheads, and print-ready materials</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pricing-section">
+                        <h3>Graphic Design Packages</h3>
+                        <div class="pricing-grid">
+                            <div class="pricing-item">
+                                <h4>Logo Design</h4>
+                                <div class="price">$500</div>
+                                <p>3 concepts + revisions</p>
+                            </div>
+                            <div class="pricing-item">
+                                <h4>Brand Package</h4>
+                                <div class="price">$1,200</div>
+                                <p>Logo + brand guidelines</p>
+                            </div>
+                            <div class="pricing-item">
+                                <h4>Marketing Kit</h4>
+                                <div class="price">$800</div>
+                                <p>Brochures + flyers + cards</p>
+                            </div>
+                            <div class="pricing-item">
+                                <h4>Complete Identity</h4>
+                                <div class="price">$2,500</div>
+                                <p>Full branding solution</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="contact.html" class="btn btn-primary">Design My Brand</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional IT Solutions -->
+    <section class="section">
+        <div class="container">
+            <div class="service-detail">
+                <div class="service-header">
+                    <div class="service-icon">🛠️</div>
+                    <h2>Additional IT Solutions</h2>
+                    <p>Comprehensive technology services to support your business growth</p>
+                </div>
+
+                <div class="service-content">
+                    <p>Beyond our core services, we offer a full range of IT solutions to help your business operate
+                        efficiently and stay competitive in today's digital landscape.</p>
+
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">☁️</div>
+                            <div>
+                                <h4>Cloud Solutions</h4>
+                                <p>Cloud migration, hosting, and infrastructure management</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">📊</div>
+                            <div>
+                                <h4>Analytics & Reporting</h4>
+                                <p>Data analysis and business intelligence solutions</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">🔐</div>
+                            <div>
+                                <h4>Cybersecurity</h4>
+                                <p>Security audits, monitoring, and protection services</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">🤝</div>
+                            <div>
+                                <h4>IT Consulting</h4>
+                                <p>Strategic technology planning and implementation</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <h4>Consultation</h4>
+                            <p>We analyze your needs and create a custom strategy</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <h4>Planning</h4>
+                            <p>Detailed project planning and timeline development</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <h4>Implementation</h4>
+                            <p>Expert execution of your digital solutions</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">4</div>
+                            <h4>Support</h4>
+                            <p>Ongoing maintenance and optimization</p>
+                        </div>
+                    </div>
+
+                    <a href="contact.html" class="btn btn-primary">Discuss Your Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MarketingPro</h3>
+                    <p>Transforming businesses through innovative digital solutions and comprehensive marketing
+                        strategies.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html">Web Development</a></li>
+                        <li><a href="services.html">Digital Marketing</a></li>
+                        <li><a href="services.html">Content Writing</a></li>
+                        <li><a href="services.html">Graphic Design</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li>📧 info@marketingpro.com</li>
+                        <li>📞 (123) 456-7890</li>
+                        <li>📍 123 Business Ave, City</li>
+                        <li>🌐 www.marketingpro.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MarketingPro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

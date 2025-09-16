@@ -1,0 +1,121 @@
+* {
+    font-family: "Lexend Deca", sans-serif;
+    font-optical-sizing: auto;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar-brand span {
+    font-weight: 600;
+    color: #333;
+}
+
+.navbar-brand span strong {
+    color: #007bff;
+}
+
+.navbar .nav-link {
+    font-weight: 500;
+    margin-left: 15px;
+}
+
+.navbar .nav-link.active {
+    color: #007bff !important;
+    border-bottom: 2px solid #007bff;
+}
+
+.navbar .btn {
+    padding: 6px 16px;
+    border-radius: 6px;
+}
+
+/* Hero Section */
+.hero {
+    background: #007bff;
+    color: #fff;
+    padding: 80px 0;
+    height: 93vh;
+}
+
+.hero h1 span {
+    background: linear-gradient(90deg, #ff7a18, #ffd819);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.hero .btn {
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.btn-outline-light {
+    border: 2px solid #fff;
+}
+
+/* Stats Section */
+.stats {
+    margin-top: 50px;
+}
+
+.stats h4 {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.about-text {
+    background: linear-gradient(90deg, #ff7a18, #ffd819);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stat-card {
+    box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.3);
+    transition: 0.3s ease-in;
+}
+
+.row .col-lg-3:nth-child(odd) .stat-card:hover {
+    transform: translateY(-10px);
+    border: 2px solid #007bff;
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+}
+
+.row .col-lg-3:nth-child(even) .stat-card:hover {
+    transform: translateY(-10px);
+    border: 2px solid #ffc107;
+    box-shadow: 0 0 15px rgba(255, 193, 7, 0.5);
+}
+
+.btn-gradient {
+    background: linear-gradient(90deg, #007bff, #00c6ff);
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 5px 5px 10px rgba(0, 123, 255, 0.746);
+}
+
+.btn-gradient:hover {
+    background: linear-gradient(90deg, #ffd819, #ff7a18);
+    transform: translateY(-5px);
+    box-shadow: 5px 5px 10px rgba(255, 193, 7, 0.731);
+}
+
+.about-sec-icon i{
+    background: #007bff;
+    padding: 18px;
+    border-radius: 50%;
+    color: white;
+}
