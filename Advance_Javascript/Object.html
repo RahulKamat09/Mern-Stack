@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADV-JS OBJECT</title>
+</head>
+<body>
+    <script>
+        //1) Single Object 
+        var single_object = {
+            id:101,
+            name:"Rahul Kamat",
+            salary: 20000
+        };
+
+        document.write(single_object.id + "<br>" + single_object.name + "<br>" + single_object.salary);
+
+        for(key in single_object){
+            document.write("<br>"+ key+" :" + single_object[key]+"<br>");
+        }
+
+
+        //Multiple Object Access
+
+        var multi_object = [
+            {id:101,name:"Rahul Kamat",Salary:20000},
+            {id:102,name:"Prashant singh",Salary:30000},
+            {id:103,name:"Jay Khatik",Salary:40000}
+        ];
+
+        document.write(multi_object[0].name +"<br>"+ multi_object[1].Salary+"<br>");
+
+        for(properties of multi_object){
+            document.writeln(properties.id + properties.name + properties.Salary+"<br>");
+        }
+
+        //2) By Creating An Instance Of Object Direclty
+
+        var object2 = new Object();
+        object2.id= 101;
+        object2.name="Rahul Kamat";
+        object2.salary= 30000;
+
+        document.writeln(object2.id + object2.name + object2.salary+"<br>");
+
+
+        //3) By using an Object Constructor:
+
+        function emp(id, name, salary)
+        {
+            this.userid = id;
+            this.username = name;
+            this.usersalary = salary;
+        }
+
+        obj = new emp(101,"Rahul Kamat",20000);
+        obj1 = new emp(102,"Prashant singh",30000);
+
+        document.write(obj.userid+" "+obj.username+ " " +obj.usersalary+"<br>");  
+        document.write(obj1.userid+" "+obj1.username+ " " +obj1.usersalary);  
+    </script>
+</body>
+</html>

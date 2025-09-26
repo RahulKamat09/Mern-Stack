@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADV-JS insertAdjacentHTML</title>
+</head>
+
+<body>
+    <h1>insertAdjacentHTML() Method:</h1>
+    <p>In JavaScript, insertAdjacentHTML() is a method of a DOM element that lets you insert an HTML string into the DOM
+        at a specific position relative to that element, without replacing the existing content.
+
+        It parses the given string as HTML and inserts the resulting nodes into the DOM.
+
+        It is faster and safer than innerHTML when you only need to insert HTML, because it does not re-parse the entire
+        element’s content — only the inserted part.</p>
+    <h3>🔹 Syntax:</h3>
+    <p>
+        <code
+            style="background-color: black;color: white; padding: 10px;border-radius: 10px;">element.insertAdjacentHTML(position, text);</code>
+    </p>
+    <p>
+        element → The DOM node you want to insert content into. <br>
+
+        position → A string that defines where to insert the HTML (relative to the element). <br>
+
+        text → The HTML string to be inserted. <br>
+    </p>
+    <h3>🔹 Positions Available:</h3>
+    <p>
+        The position parameter accepts 4 values: <br>
+
+        'beforebegin' → Insert before the element itself. <br>
+
+        'afterbegin' → Insert inside the element, before its first child. <br>
+
+        'beforeend' → Insert inside the element, after its last child. <br>
+
+        'afterend' → Insert after the element itself. <br>
+    </p>
+
+    <!-- Example: -->
+    <div id="box" style="border: 2px solid black;">
+        <p>Existing Paragraph</p>
+    </div>
+
+    <script>
+        let box = document.getElementById("box");
+
+        // 1. Before the element
+        box.insertAdjacentHTML("beforebegin", "<h2>Before Box</h2>");
+
+        // 2. At the beginning of the element
+        box.insertAdjacentHTML("afterbegin", "<p>First Child</p>");
+
+        // 3. At the end of the element
+        box.insertAdjacentHTML("beforeend", "<p>Last Child</p>");
+
+        // 4. After the element
+        box.insertAdjacentHTML("afterend", "<h2>After Box</h2>");
+    </script>
+</body>
+
+</html>

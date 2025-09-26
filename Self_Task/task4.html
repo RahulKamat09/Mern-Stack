@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reverse Array</title>
+    <title>JSON API Example</title>
 </head>
-<body>
-    <script>
 
-        //reverse a string without using reverse method
-        let name = "Prashant";
-        let result = "";
-        for(let i = name.length - 1; i >=0;i--){
-            result += name[i];
-        }
-        document.writeln(result);
+<body>
+    <h2>Users from API</h2>
+    <ul id="userList"></ul>
+
+    <script>
+        // Fetch JSON data from API
+        fetch("https://jsonplaceholder.typicode.com/todos")  // Free test API
+            .then(response => response.json())  // Convert JSON string → JS object
+            .then(data => {
+                console.log(data);  // Show in console
+                let userList = document.getElementById("userList");
+
+                // Loop through users and show names
+                data.forEach(user => {
+                    let li = document.createElement("li");
+                    li.textContent = user.id + " (" + user.title + ")";
+                    userList.appendChild(li);
+                }); 
+            })
     </script>
 </body>
-</html>
 
+</html>

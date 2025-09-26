@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADV-JS JSON</title>
+</head>
+
+<body>
+
+    <h1>Check Console!!!!</h1>
+    <script>
+
+        /*  JSON is a format for storing and transporting data.
+            JSON is often used when data is sent from a server to a web page.
+            JSON stands for JavaScript Object Notation
+            JSON is a lightweight data interchange format
+            JSON is language independent *
+            JSON is "self-describing" and easy to understand
+            * The JSON syntax is derived from JavaScript object notation syntax, but the JSON format 
+            is text only. Code for reading and generating JSON data can be written in any 
+            programming language. */
+
+
+        //Json Format
+        var json = `{"id":102,"name":"Shyam Kumar","salary":40000}`;
+        console.log(json);
+
+        //Object Format
+        var object = { id: 102, name: "Shyam Kumar", salary: 40000 };
+        console.log(object);
+
+        //Multi JSON Data
+
+        let jsonData = `[
+						{
+							"id": 1,
+							"productName": "Apple",
+							"Qty": 100
+						},
+						{
+							"id": 2,
+							"productName": "Pineapple",
+							"Qty": 120
+						},
+						{
+							"id": 3,
+							"productName": "Mango",
+							"Qty": 10
+						}
+					]`;
+        //Now We Convert JSON data into Object:
+
+        var obj = JSON.parse(jsonData);
+        console.log(obj);
+
+        //Now WE Convert An Object into JSON:
+
+        var json_data = JSON.stringify(obj);
+        console.log(json_data);
+
+
+        //Fatching Data From URL(API):
+
+        fetch(`https://fakestoreapi.com/products`)
+            .then(response => response.json())
+            .then(Obj_data => console.log(Obj_data));
+
+        /*
+        1.fetch('…')
+
+            fetch is a browser API that starts an HTTP request (default method GET) to the given URL.
+
+            It returns a Promise that resolves to a Response object if the network request completes successfully (note: HTTP error statuses like 404 or 500 do not make fetch reject — the Promise still resolves; you must check response.ok or response.status yourself).
+
+            The request is asynchronous — JavaScript continues running while the browser waits for the network.
+
+        2. .then(response => response.json())
+
+            .then(...) runs after the fetch promise resolves and receives the Response object.
+
+            response.json() reads the response body stream and parses it as JSON. That operation is asynchronous, so response.json() returns another Promise that resolves to the parsed JavaScript value (usually an object or array).
+
+            The arrow function response => response.json() is a concise form that returns response.json() implicitly.
+
+        3.  .then(Obj_data => console.log(Obj_data))
+
+            This .then runs when the response.json() promise resolves and receives the parsed JSON.
+
+            Obj_data (poorly named — it’s typically an array here) is logged to the console with console.log. You’ll see the full array of product objects in DevTools.*/
+
+
+
+
+        //With Promises!!!
+
+        /*fetch('https://fakestoreapi.com/products')
+            .then(response => {
+                if (!response.ok) throw new Error(`HTTP error ${response.status}`);
+                return response.json();
+            })
+            .then(products => {
+                console.log('Got products:', products);
+            })
+            .catch(err => {
+                console.error('Fetch failed:', err);
+            });*/
+
+
+    </script>
+</body>
+
+</html>
