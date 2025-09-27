@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADV-JS CONFIRM-BOX</title>
+</head>
+
+<body>
+    <!-- 📌 Dialog Box in JavaScript
+
+        A dialog box is a special type of popup window that appears in the browser to interact with the user.
+        They are synchronous (blocking) – meaning the browser stops and waits for the user to take action before continuing the code execution.
+
+        JavaScript provides three main types of dialog boxes:
+
+        1. Alert Box → alert()
+
+        2. Confirm Box → confirm()
+
+        3. Prompt Box → prompt()        
+        
+        
+        
+        2. Confirm Box (confirm())
+
+        Purpose: Ask the user to confirm (Yes/No, OK/Cancel).
+
+        It shows OK and Cancel buttons.
+
+        Return value:
+
+        true → if the user clicks OK
+
+        false → if the user clicks Cancel
+
+        👉 Syntax:
+
+        confirm("Are you sure?");
+
+        
+        -->
+    <button onclick="deleteItem()">Delete Item</button>
+
+    <script>
+        function deleteItem() {
+            let choice = confirm("Do you really want to delete?");
+            if (choice) {
+                alert("Item deleted!");
+                window.location='alert.html';
+            } else {
+                alert("Action cancelled.");
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>

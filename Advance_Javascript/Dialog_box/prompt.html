@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADV-JS PROMPT-BOX</title>
+</head>
+
+<body>
+    <!-- 📌 Dialog Box in JavaScript
+
+        A dialog box is a special type of popup window that appears in the browser to interact with the user.
+        They are synchronous (blocking) – meaning the browser stops and waits for the user to take action before continuing the code execution.
+
+        JavaScript provides three main types of dialog boxes:
+
+        1. Alert Box → alert()
+
+        2. Confirm Box → confirm()
+
+        3. Prompt Box → prompt()        
+        
+        
+        
+        3. Prompt Box (prompt())
+
+        Purpose: Ask the user to enter some input.
+
+        It shows a text field along with OK and Cancel.
+
+        Return value:
+
+        User input as a string → if the user clicks OK
+
+        null → if the user clicks Cancel
+
+        👉 Syntax:
+
+        prompt("Enter your name:", "Default Value");
+
+        
+        -->
+
+    <button onclick="askName()">Enter Name</button>
+
+    <script>
+        function askName() {
+            let name = prompt("What is your name?", "Guest");
+            if (name !== null) {
+                alert("Hello " + name + "!");
+                window.location='confirm.html';
+            } else {
+                alert("You cancelled the prompt.");
+            }
+        }
+    </script>
+</body>
+
+</html>

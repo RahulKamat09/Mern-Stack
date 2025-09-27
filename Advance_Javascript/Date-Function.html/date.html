@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADV-JS DATE-FUNCTION</title>
+</head>
+
+<body>
+    <!-- 
+    📌 Date Function in JavaScript
+    🔹 Definition
+
+    The Date object in JavaScript is a built-in object used to work with dates and times.
+    It allows you to:
+
+    Create date objects
+
+    Get the current date & time
+
+    Extract specific parts (year, month, day, hour…)
+
+    Set/modify dates
+
+    Perform calculations with dates
+
+    👉 Important:
+
+    Months are zero-based (0 = January, 11 = December).
+
+    Days of the week are 0–6 (0 = Sunday, 6 = Saturday). 
+
+    📅 Date Get Methods
+
+    Used to extract information from a date:
+
+        | Method              | Description                  | Example Output  |
+        | ------------------- | ---------------------------- | --------------- |
+        | `getFullYear()`     | Gets year (YYYY)             | `2025`          |
+        | `getMonth()`        | Gets month (0–11)            | `8` → September |
+        | `getDate()`         | Gets day of the month (1–31) | `27`            |
+        | `getDay()`          | Gets day of week (0–6)       | `6` → Saturday  |
+        | `getHours()`        | Gets hour (0–23)             | `10`            |
+        | `getMinutes()`      | Gets minutes (0–59)          | `30`            |
+        | `getSeconds()`      | Gets seconds (0–59)          | `45`            |
+        | `getMilliseconds()` | Gets ms (0–999)              | `250`           |
+        | `getTime()`         | Gets milliseconds since 1970 | `1632721800000` |
+        | `Date.now()`        | Current time in ms           | `1632721800000` |-->
+
+    <script>
+
+        //🛠️ Creating Date Objects:
+
+        // You use the new Date() constructor in different ways:
+
+
+        // 1. Current date & time:
+
+        let now = new Date();
+        document.writeln("<h3>Current Date:</h3>" + now);
+
+
+        // 2. Specific date:
+
+        let d1 = new Date("2025-09-27");
+        document.writeln("<h3>Specific Date:</h3>" + d1);
+
+
+        // 3. Date & time:
+
+        let d2 = new Date("September 27, 2025 10:30:00");
+        document.writeln("<h3>Date & Time:</h3>" + d2);
+
+
+        // 4. Year, month, day, hours, minutes, seconds:
+
+        let d3 = new Date(2025, 8, 27, 9, 30, 0);
+        // Note: 8 → September
+        document.writeln("<h3>Year, month, day, hours, minutes, seconds:</h3>" + d3);
+
+
+        // 5. Milliseconds since 1 Jan 1970 (Unix time):
+
+        // JavaScript internally stores dates as the number of milliseconds since January 1, 1970, 00:00:00 UTC.
+
+        // This is called the Unix Epoch(or Unix time).
+
+        // So every date and time is just a big integer value representing milliseconds from that starting point.
+
+        // 👉 Example:
+
+        // 0 → Thu Jan 01 1970 00:00:00 GMT
+
+        // 1000 → Thu Jan 01 1970 00:00:01 GMT(1 second later)
+
+        // 60000 → Thu Jan 01 1970 00:01:00 GMT(1 minute later)
+
+        let d4 = new Date(1632721800000);
+        document.writeln("<h3>Milliseconds since 1 Jan 1970 (Unix time):</h3>" + d4);
+
+        // 6. All Functions:
+
+        let now1 = new Date();
+        document.writeln("<h3>Current Date Using Function:</h3>")
+        document.writeln(now1.getDay());        // 6 (Saturday)
+        document.writeln(now1.getDate());       // 27
+        document.writeln(now1.getMonth());      // 8 (September)
+        document.writeln(now1.getFullYear());   // 2025
+        document.writeln(now1.getTime());       //Gets milliseconds since 1970
+        document.writeln(Date.now()+"<br><br>");           //Current time in ms
+
+
+        var today = new Date();
+        document.write(today + "<br>");
+
+
+        var date = (today.getDate()) + '/' + (today.getMonth() + 1) + '/' + (today.getFullYear());
+        document.write(date + "<br>");
+
+        var time = (today.getHours()) + ":" + today.getMinutes() + ":" + today.getSeconds();
+        document.write(time + "<br>");
+
+
+    </script>
+</body>
+
+</html>
