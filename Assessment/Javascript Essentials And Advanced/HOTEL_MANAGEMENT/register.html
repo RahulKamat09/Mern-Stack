@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest Registration - Hotel Management System</title>
+    <meta name="description" content="Register new guests with our comprehensive hotel management system">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark hotel-navbar">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-building"></i> Hotel Management
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="register.html">Register Guest</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="view-submissions.html">View Submissions</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Registration Form Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card hotel-card shadow-lg border-0">
+                        <div class="card-header bg-primary text-white text-center py-4">
+                            <h2 class="mb-0">
+                                <i class="bi bi-person-plus-fill me-2"></i>
+                                Guest Registration
+                            </h2>
+                            <p class="mb-0 mt-2 opacity-75">Please fill in all required information</p>
+                        </div>
+                        <div class="card-body p-5">
+                            <form id="guestRegistrationForm" novalidate>
+                                <!-- Personal Information -->
+                                <div class="row mb-4">
+                                    <div class="col-12">
+                                        <h5 class="text-primary mb-3">
+                                            <i class="bi bi-person-circle me-2"></i>Personal Information
+                                        </h5>
+                                    </div>
+                                </div>
+
+                                <div class="row g-3 mb-4">
+                                    <div class="col-md-6">
+                                        <label for="fullName" class="form-label">Full Name *</label>
+                                        <input type="text" class="form-control form-control-lg" id="fullName" required>
+                                        <div class="invalid-feedback"></div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="phoneNumber" class="form-label">Phone Number *</label>
+                                        <input type="tel" class="form-control form-control-lg" id="phoneNumber" required>
+                                        <div class="invalid-feedback"></div>
+                                    </div>
+                                </div>
+
+                                <div class="row g-3 mb-4">
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label">Email Address *</label>
+                                        <input type="email" class="form-control form-control-lg" id="email" required>
+                                        <div class="invalid-feedback"></div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="aadharNumber" class="form-label">Aadhar Number *</label>
+                                        <input type="text" class="form-control form-control-lg" id="aadharNumber" required>
+                                        <div class="invalid-feedback"></div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="address" class="form-label">Address *</label>
+                                    <textarea class="form-control" id="address" rows="3" required></textarea>
+                                    <div class="invalid-feedback"></div>
+                                </div>
+
+                                <!-- Booking Information -->
+                                <div class="row mb-4">
+                                    <div class="col-12">
+                                        <h5 class="text-primary mb-3">
+                                            <i class="bi bi-calendar-check me-2"></i>Booking Information
+                                        </h5>
+                                    </div>
+                                </div>
+
+                                <div class="row g-3 mb-4">
+                                    <div class="col-md-4">
+                                        <label for="checkInDate" class="form-label">Check-in Date *</label>
+                                        <input type="date" class="form-control form-control-lg" id="checkInDate" required>
+                                        <div class="invalid-feedback"></div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="checkOutDate" class="form-label">Check-out Date *</label>
+                                        <input type="date" class="form-control form-control-lg" id="checkOutDate" required>
+                                        <div class="invalid-feedback"></div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="numberOfAdults" class="form-label">Number of Adults *</label>
+                                        <select class="form-select form-select-lg" id="numberOfAdults" required>
+                                            <option value="">Select...</option>
+                                            <option value="1">1 Adult</option>
+                                            <option value="2">2 Adults</option>
+                                            <option value="3">3 Adults</option>
+                                            <option value="4">4 Adults</option>
+                                            <option value="5">5 Adults</option>
+                                            <option value="6">6 Adults</option>
+                                            <option value="7">7 Adults</option>
+                                            <option value="8">8 Adults</option>
+                                            <option value="9">9 Adults</option>
+                                            <option value="10">10 Adults</option>
+                                        </select>
+                                        <div class="invalid-feedback"></div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="purposeOfVisit" class="form-label">Purpose of Visit *</label>
+                                    <textarea class="form-control" id="purposeOfVisit" rows="3" required 
+                                              placeholder="Please describe the purpose of your visit (minimum 10 characters)"></textarea>
+                                    <div class="invalid-feedback"></div>
+                                </div>
+
+                                <!-- Submit Button -->
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-hotel-primary btn-lg px-5">
+                                        <i class="bi bi-check-circle me-2"></i>Register Guest
+                                    </button>
+                                    <button type="button" class="btn btn-outline-secondary btn-lg px-5 ms-3" id="clearForm">
+                                        <i class="bi bi-arrow-clockwise me-2"></i>Clear Form
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title">
+                        <i class="bi bi-check-circle-fill me-2"></i>Registration Successful
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="mb-3">
+                        <i class="bi bi-check-circle-fill text-success" style="font-size: 3rem;"></i>
+                    </div>
+                    <h5>Guest registration completed successfully!</h5>
+                    <p class="text-muted">The guest information has been saved to the system.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Continue</button>
+                    <a href="view-submissions.html" class="btn btn-outline-success">View All Submissions</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Hotel Management System</h5>
+                    <p class="text-muted">Professional hotel operations made simple.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="text-muted">&copy; 2023 Hotel Management System. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>

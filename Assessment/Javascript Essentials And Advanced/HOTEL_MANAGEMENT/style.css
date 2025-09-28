@@ -1,0 +1,449 @@
+/* Hotel Management System - Professional CSS */
+
+/* CSS Variables for Hotel Theme */
+:root {
+    /* Hotel Brand Colors - Sophisticated Blue & Gold */
+    --primary-color: #1e3a8a;
+    --primary-hover: #1d4ed8;
+    --primary-light: #dbeafe;
+
+    --secondary-color: #f59e0b;
+    --secondary-hover: #d97706;
+
+    --luxury-color: #a855f7;
+    --luxury-hover: #9333ea;
+
+    --success-color: #059669;
+    --warning-color: #d97706;
+    --danger-color: #dc2626;
+
+    --dark-color: #1f2937;
+    --light-color: #f8fafc;
+    --border-color: #e5e7eb;
+
+    /* Gradients */
+    --hotel-gradient: linear-gradient(135deg, #1e3a8a, #1d4ed8);
+    --luxury-gradient: linear-gradient(135deg, #a855f7, #9333ea);
+    --gold-gradient: linear-gradient(135deg, #f59e0b, #d97706);
+
+    /* Shadows */
+    --shadow-elegant: 0 10px 40px -10px rgba(30, 58, 138, 0.3);
+    --shadow-luxury: 0 20px 60px -15px rgba(168, 85, 247, 0.4);
+    --shadow-card: 0 4px 20px -5px rgba(31, 41, 55, 0.1);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bouncy: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Base Styles */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: var(--light-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600;
+    letter-spacing: -0.025em;
+}
+
+/* Navigation */
+.hotel-navbar {
+    background: var(--hotel-gradient) !important;
+    box-shadow: var(--shadow-card);
+    backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.nav-link {
+    font-weight: 500;
+    transition: var(--transition-smooth);
+}
+
+.nav-link:hover {
+    color: var(--secondary-color) !important;
+}
+
+.nav-link.active {
+    color: var(--secondary-color) !important;
+    font-weight: 600;
+}
+
+/* Hero Section */
+.hero-section {
+    background: var(--hotel-gradient);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>') repeat;
+    opacity: 0.5;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-card {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Hotel Cards */
+.hotel-card {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: var(--shadow-card);
+    backdrop-filter: blur(10px);
+    transition: var(--transition-smooth);
+}
+
+.hotel-card:hover {
+    box-shadow: var(--shadow-elegant);
+    transform: translateY(-2px);
+}
+
+/* Custom Buttons */
+.btn-hotel-primary {
+    background: var(--hotel-gradient);
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    box-shadow: var(--shadow-elegant);
+    transition: var(--transition-smooth);
+}
+
+.btn-hotel-primary:hover {
+    background: var(--hotel-gradient);
+    color: white;
+    box-shadow: var(--shadow-luxury);
+    transform: translateY(-2px);
+}
+
+.btn-hotel-luxury {
+    background: var(--luxury-gradient);
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    box-shadow: var(--shadow-luxury);
+    transition: var(--transition-bouncy);
+}
+
+.btn-hotel-luxury:hover {
+    background: var(--luxury-gradient);
+    color: white;
+    transform: translateY(-2px) scale(1.05);
+}
+
+/* Form Styles */
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(30, 58, 138, 0.25);
+}
+
+.form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(30, 58, 138, 0.25);
+}
+
+.input-group-text {
+    background-color: var(--primary-light);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* Tables */
+.table-responsive {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table th {
+    background: var(--primary-light);
+    color: var(--primary-color);
+    font-weight: 600;
+    border: none;
+}
+
+.table td {
+    vertical-align: middle;
+    border-color: var(--border-color);
+}
+
+.table tbody tr:hover {
+    background-color: rgba(30, 58, 138, 0.05);
+}
+
+/* Guest Cards */
+.guest-card {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+    background: white;
+    transition: var(--transition-smooth);
+}
+
+.guest-card:hover {
+    box-shadow: var(--shadow-card);
+    transform: translateX(5px);
+}
+
+.guest-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.guest-details h6 {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.guest-meta {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+.guest-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.status-checked-in {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.status-upcoming {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.status-checked-out {
+    background-color: #f3f4f6;
+    color: #374151;
+}
+
+/* Modal Enhancements */
+.modal-content {
+    border: none;
+    border-radius: 12px;
+    box-shadow: var(--shadow-luxury);
+}
+
+.modal-header.bg-primary {
+    background: var(--hotel-gradient) !important;
+}
+
+.modal-header.bg-success {
+    background: linear-gradient(135deg, var(--success-color), #10b981) !important;
+}
+
+.modal-header.bg-warning {
+    background: linear-gradient(135deg, var(--warning-color), #f59e0b) !important;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #6b7280;
+}
+
+.empty-state i {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 40px 0;
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .guest-info {
+        flex-direction: column;
+    }
+
+    .guest-actions {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .btn-hotel-primary,
+    .btn-hotel-luxury {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .card-body {
+        padding: 20px !important;
+    }
+
+    .hero-section .card-body {
+        padding: 30px !important;
+    }
+
+    .guest-card {
+        padding: 15px;
+    }
+}
+
+/* Accessibility */
+.btn:focus,
+.form-control:focus,
+.form-select:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+
+    .navbar,
+    .btn,
+    .modal,
+    footer {
+        display: none !important;
+    }
+
+    .hotel-card {
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+    }
+
+    .guest-card {
+        page-break-inside: avoid;
+        margin-bottom: 20px;
+    }
+}
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-in {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-hover);
+}
