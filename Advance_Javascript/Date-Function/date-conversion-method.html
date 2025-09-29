@@ -95,6 +95,32 @@
         document.writeln("<h3>Loaclized Data</h3>(US FORMAT)" + d6.toLocaleDateString("en-US")); // US format
         document.writeln("<h3>Loaclized Data</h3>(UK FORMAT)" + d6.toLocaleDateString("en-GB")); // UK format
 
+        // 🔹 7. toLocaleTimeString()
+
+        // Definition:
+        // Converts the time portion to a localized time string.
+
+        // Syntax:
+        // date.toLocaleTimeString([locale], [options]);
+
+        let d7 = new Date();
+        document.writeln("<h3>Local Time:</h3>" + d7.toLocaleTimeString());
+        document.writeln("<h3>Local Time(US-FORMAT):</h3>" + d7.toLocaleTimeString("en-US"));
+
+        // 🔹 8. toLocaleString()
+
+        // Definition:
+        // Converts the date to a localized string containing both date and time.
+
+        // Syntax:
+        // date.toLocaleString([locale], [options]);
+
+        let d8 = new Date();
+        document.writeln( "<h3>Date And Time:</h3>"+ d.toLocaleString());
+        document.writeln( "<h3>Date And Time:</h3>"+ d.toLocaleString("en-US"));
+        document.writeln( "<h3>Date And Time:</h3>"+ d.toLocaleString("en-GB"));
+
+
     </script>
 </body>
 
