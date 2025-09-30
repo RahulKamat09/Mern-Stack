@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADV-JS FETCH-METHOD</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px 15px;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Fetch API Methods Demo</h1>
+
+    <button onclick="getData()">GET Products</button>
+    <button onclick="postData()">POST Product</button>
+    <button onclick="putData()">PUT Product</button>
+    <button onclick="patchData()">PATCH Product</button>
+    <button onclick="deleteData()">DELETE Product</button>
+
+    <h2>Response:</h2>
+    <pre id="response"></pre>
+
+    <script>
+        const apiURL = "https://fakestoreapi.com/products";
+        const responseContainer = document.getElementById("response");
+
+        // ✅ GET
+        function getData() {
+            fetch(apiURL)
+                .then(res => res.json())
+                .then(data => responseContainer.textContent = JSON.stringify(data, null, 2))
+                .catch(err => responseContainer.textContent = "Error: " + err);
+        }
+
+        // ✅ POST
+        function postData() {
+            fetch(apiURL, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    title: "New Product",
+                    price: 123,
+                    description: "This is a new product",
+                    category: "electronics"
+                })
+            })
+                .then(res => res.json())
+                .then(data => responseContainer.textContent = JSON.stringify(data, null, 2))
+                .catch(err => responseContainer.textContent = "Error: " + err);
+        }
+
+        // ✅ PUT
+        function putData() {
+            fetch(`${apiURL}/1`, {  // update product with ID 1
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    title: "Updated Product",
+                    price: 199,
+                    description: "Product fully updated",
+                    category: "electronics"
+                })
+            })
+                .then(res => res.json())
+                .then(data => responseContainer.textContent = JSON.stringify(data, null, 2))
+                .catch(err => responseContainer.textContent = "Error: " + err);
+        }
+
+        // ✅ PATCH
+        function patchData() {
+            fetch(`${apiURL}/1`, {  // partially update product with ID 1
+                method: "PATCH",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ price: 250 })
+            })
+                .then(res => res.json())
+                .then(data => responseContainer.textContent = JSON.stringify(data, null, 2))
+                .catch(err => responseContainer.textContent = "Error: " + err);
+        }
+
+        // ✅ DELETE
+        function deleteData() {
+            fetch(`${apiURL}/1`, {  // delete product with ID 1
+                method: "DELETE"
+            })
+                .then(res => res.json())
+                .then(data => responseContainer.textContent = JSON.stringify(data, null, 2))
+                .catch(err => responseContainer.textContent = "Error: " + err);
+        }
+    </script>
+
+    <!-- <script>
+        //📌 1. Definition of fetch()
+
+        //fetch() is a built -in JavaScript function used to make HTTP requests(GET, POST, PUT, DELETE etc.) to APIs or servers.
+
+        //It returns a Promise, which means it runs asynchronously and lets you handle success or failure with .then() and.catch().
+
+        //👉 Syntax:
+
+        /*fetch(url, options)
+            .then(response => { ... })   // success response
+            .catch(error => { ... });    // error handling*/
+
+        // Works with different HTTP methods like:
+
+        // GET → to fetch data
+
+        // POST → to send data
+
+        // PUT → to update data
+
+        // PATCH → to partially update data
+
+        // DELETE → to remove data
+
+        // 🔹 Basic Syntax:
+        // fetch(url, {
+        //     method: "GET",       // HTTP method
+        //     headers: {},         // optional headers
+        //     body: JSON.stringify(data) // body (for POST, PUT, PATCH)
+        // })
+        //     .then(response => response.json())  // convert response to JSON
+        //     .then(data => console.log(data))
+        //     .catch(error => console.error(error));
+
+        //🔹 1. GET Method (Read Data):
+
+        //Used to fetch data from an API.
+
+        fetch("https://fakestoreapi.com/products")
+            .then(response => response.json())
+            .then(data => console.log("GET Data:", data))
+            .catch(error => console.error(error));
+        //✅ No body is needed for GET requests.
+
+        // 🔹 2. POST Method(Send Data):
+
+        // Used to send new data to the server.
+
+        fetch("https://fakestoreapi.com/products", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                title: "New Product",
+                price: 199.99,
+                description: "This is a test product",
+                category: "electronics"
+            })
+        })
+            .then(response => response.json())
+            .then(data => console.log("POST Data:", data))
+            .catch(error => console.error(error));
+
+        // 🔹 3. PUT Method(Update Data Fully):
+
+        // Used to replace an existing record.
+
+        fetch("https://fakestoreapi.com/products/1", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                title: "Updated Product",
+                price: 250,
+                description: "Product fully updated",
+                category: "electronics"
+            })
+        })
+            .then(response => response.json())
+            .then(data => console.log("PUT Data:", data))
+            .catch(error => console.error(error));
+
+        //🔹 4. PATCH Method (Update Data Partially):
+
+        //Used to update only specific fields of a record.
+
+        fetch("https://fakestoreapi.com/products/1", {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                price: 299.99
+            })
+        })
+            .then(response => response.json())
+            .then(data => console.log("PATCH Data:", data))
+            .catch(error => console.error(error));
+
+        // 🔹 5. DELETE Method(Remove Data)
+
+        // Used to delete a record from the server.
+
+        fetch("https://fakestoreapi.com/products/1", {
+            method: "DELETE"
+        })
+            .then(response => response.json())
+            .then(data => console.log("Deleted:", data))
+            .catch(error => console.error(error));
+
+        // 🔹 Summary of Fetch Methods
+
+        /*
+        | Method | Purpose |
+        | ---------- | ----------------------- |
+        | ** GET **    | Fetch data from server |
+        | ** POST **   | Send new data to server |
+        | ** PUT **    | Replace entire record |
+        | ** PATCH **  | Update specific fields |
+        | ** DELETE ** | Remove record |
+        */
+
+    </script> -->
+    </body>
+
+</html>
