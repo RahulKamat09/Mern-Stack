@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synchronuos-Callback in JavaScript</title>
+</head>
+
+<body>
+    <!-- Definition:
+
+    In synchronous JavaScript, code is executed line by line, in the exact order it appears.
+    Each statement waits for the previous one to complete before running.
+
+    🕓 This means the next line cannot run until the current one is done.
+    ✅ Example: Synchronous Code
+
+    console.log("Task 1");
+    console.log("Task 2");
+    console.log("Task 3");
+
+    📘 Explanation:
+    Each line runs in order — no delay, no skipping. -->
+
+    <h1>Check Console!!</h1>
+    <script>
+        function greet(name, callback) {
+            console.log("Hello" + name);
+            callback();
+        }
+
+        function sayBye() {
+            console.log("GoodBye!!!");
+        }
+        greet("Raul", sayBye);
+
+        // 📘 Explanation:
+        // The sayBye function is passed as a callback to greet.
+        // After greet() runs, it calls sayBye().
+    </script>
+</body>
+
+</html>

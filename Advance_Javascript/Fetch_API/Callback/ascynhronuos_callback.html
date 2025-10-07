@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous-Callback In JavaScript</title>
+</head>
+
+<body>
+    <!-- Definition:
+
+    In asynchronous JavaScript, code does not wait for previous tasks to complete.
+    Instead, it continues executing other code while waiting for a long-running task (like API call, timer, or file
+    read) to finish in the background.
+
+    ✅ Example: Asynchronous Code (with setTimeout):
+
+    console.log("Task 1");
+
+    setTimeout(() => {
+    console.log("Task 2 (after 2 seconds)");
+    }, 2000);
+
+    console.log("Task 3");
+
+    📘 Explanation:
+
+    setTimeout() is asynchronous.
+
+    JavaScript doesn’t wait 2 seconds; it moves to Task 3.
+
+    When the timer finishes, it calls back Task 2. -->
+
+    <script>
+        function fetchData(callback) {
+            console.log("Fetching Data Please wait...");
+
+            setTimeout(() => {
+                console.log("Data Fetched Successfully!!");
+                callback();
+            }, 4000);
+        }
+
+        function displayMessage() {
+            console.log("Now Displaying Data!!!");
+        }
+        fetchData(displayMessage);
+
+        // 📘 Explanation:
+        // Here, setTimeout simulates a delay(like an API call).
+        // The displayData() callback runs after the data is fetched.
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback in JavaScript</title>
+</head>
+
+<body>
+    <!-- 🔹 What is a Callback in JavaScript?
+
+    Definition:
+
+    A callback function is a function that is passed as an argument to another function and is executed after the
+    completion of that function.
+
+    It allows one function to call another function when an operation is done — especially useful in asynchronous
+    programming (e.g., waiting for a file to load, an API to respond, or a timer to complete).
+
+    📘 In Simple Words:
+
+    A callback is a function you give to another function —
+    and you tell it, “Hey, once you’re done, call me back!” -->
+
+    <h1>Check Console!!!</h1>
+    <h3>Press fn + <code>F12</code></h3>
+
+    <script>
+        function mainFunction(callback)
+        {
+            console.log("Main Function is Executing...")
+            callback();
+        }
+        function displayMessage()
+        {
+            console.log("Callback is executed!!!");
+        }
+        mainFunction(displayMessage);
+    </script>
+</body>
+
+</html>
