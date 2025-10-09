@@ -17,8 +17,38 @@
 
         // Simply put —
         // A Promise is like a “guarantee” that something will happen in the future — it may succeed(resolve) or fail(reject).
+        // A Promise is like a “placeholder” for a value that will be available in the future (not immediately).
 
-        
+        // 🧠 Real - World Analogy:
+
+        // Imagine you order food online 🍔
+
+        // You place the order → Promise is created(pending state)
+
+        // The restaurant starts preparing it → still pending
+
+        // Food is delivered → Promise is fulfilled(resolved)
+
+        // If something goes wrong → Promise is rejected  
+
+        // 🔹 Syntax of a Promise
+        // ✅ Creating a Promise
+
+        // let promise = new Promise(function (resolve, reject) {
+        //     // Asynchronous operation
+        //     if (/* operation successful */) {
+        //         resolve("Success message");
+        //     } else {
+        //         reject("Error message");
+        //     }
+        // });
+
+        // | Parameter | Description                                      |
+        // | --------- | ------------------------------------------------ |
+        // | `resolve` | Called when the operation completes successfully |
+        // | `reject`  | Called when the operation fails                  |
+
+
     </script>
 </body>
 

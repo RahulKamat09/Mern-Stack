@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callback Hell Example</title>
+</head>
+
+<body>
+    <h1>Open Console!!</h1>
+    <h3>Press fn + <code>F12</code></h3>
+    <script>
+        console.log("Starting the Login Process!!!");
+        setTimeout(() => {
+            console.log("Step 1: User Entered Username Or Password:");
+            setTimeout(() => {
+                console.log("Step 2: Valideting User Credencial!");
+                setTimeout(() => {
+                    console.log("Step 3: Fetching User Profile!!!");
+                    setTimeout(() => {
+                        console.log("Step 4: Displaying Dashboard to the User!!");
+                    }, 1000);
+                }, 1000);
+            }, 1000);
+        }, 1000);
+
+        // 🧠 Step - by - Step Explanation:
+
+        // | Step | What Happens                                | Time (approx.) |
+        // | ---- | ------------------------------------------- | -------------- |
+        // | 1️⃣  | The program starts                          | 0 sec          |
+        // | 2️⃣  | After 1 second, simulates user input        | 1 sec          |
+        // | 3️⃣  | After another second, validates credentials | 2 sec          |
+        // | 4️⃣  | After another second, fetches profile       | 3 sec          |
+        // | 5️⃣  | Finally, shows dashboard                    | 4 sec          |
+
+    </script>
+</body>
+
+</html>

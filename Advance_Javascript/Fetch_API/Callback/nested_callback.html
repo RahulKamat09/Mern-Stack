@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested-CallBack In JavaScript</title>
+</head>
+
+<body>
+    <h1>Check Console!!!</h1>
+    <h3>Press fn + <code>F12</code></h3>
+
+    <!-- 4: Nested Callbacks
+    When callbacks are nested too deeply, it becomes messy and hard to read — this is called callback hell. -->
+    <script>
+        setTimeout(() => {
+            console.log("Task 1 complete");
+            setTimeout(() => {
+                console.log("Task 2 complete");
+                setTimeout(() => {
+                    console.log("Task 3 complete");
+                }, 2000);
+            }, 1000);
+        }, 3000);
+
+        // 📘 Problem:
+        // The code becomes hard to manage — that’s why Promises and async / await were introduced.
+    </script>
+</body>
+
+</html>
