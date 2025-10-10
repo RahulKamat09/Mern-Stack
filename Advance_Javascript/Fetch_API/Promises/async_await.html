@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async-Await in JavaScript</title>
+</head>
+
+<body>
+    <h1>Check Console!!</h1>
+    <h3>Press fn + F12</h3>
+
+    <!-- 🔷 Definition of Async/Await
+
+    Async/Await is a modern way to handle asynchronous operations in JavaScript.
+    It is built on top of Promises, but it allows you to write asynchronous code that looks and behaves like synchronous
+    (normal) code.
+
+    In simple words:
+    Async/Await makes asynchronous code easier to read, write, and understand. -->
+
+    <!-- 🧠 Real-World Analogy
+
+    Imagine you order food 🍔:
+
+    You wait for the food to be ready before eating.
+
+    You don’t constantly check (“Is it ready? Is it ready?”) — you just wait until it’s served.
+
+    That’s what await does — it waits until a Promise is resolved or rejected before continuing. -->
+
+    <!-- 🔹 Syntax of Async/Await:
+
+    ✅ 1. Async Function Syntax
+    async function functionName() {
+    // Code
+    }
+
+    Declaring a function with async automatically makes it return a Promise. -->
+
+    <!-- ✅ 2. Await Syntax
+    let result = await promise;
+
+
+    await can only be used inside an async function.
+
+    It pauses the execution of the async function until the Promise is resolved.
+
+    The resolved value of the Promise is stored in the variable. -->
+
+
+    <script>
+        function fetchUserData() {
+            return promise = new Promise(function (resolve, reject) {
+                setTimeout(() => {
+                    let success = true;
+                    if (success) {
+                        resolve("Data Fetched Sucessfully!");
+                    }
+                    else {
+                        reject("Failed to fetched Data!!");
+                    }
+                }, 3000);
+            });
+        }
+
+        async function getData() {
+            console.log("Fetching Data.... Please Wait!");
+
+            try {
+                let result = await fetchUserData();
+                console.log(result);
+            }
+            catch (error) {
+                console.log(error);
+            }
+            finally {
+                console.log("Data Fetch Operation Successfull");
+            }
+        }
+
+        getData();
+
+        // 🧠 Step - by - Step Explanation:
+
+        // fetchData() returns a Promise that resolves after 2 seconds.
+
+        // getData() is declared with async, so it can use await.
+
+        // await fetchData() pauses execution until the Promise settles.
+
+        // If it’s resolved, result gets the value "✅ Data fetched successfully!".
+
+        // If it’s rejected, it jumps to the catch block.
+
+        // The finally block runs no matter what.
+
+        // 🔹 Key Points About Async / Await:
+
+        // | Feature       | Description                                    |
+        // | ------------- | ---------------------------------------------- |
+        // | `async`       | Declares a function that returns a Promise     |
+        // | `await`       | Waits for a Promise to settle (resolve/reject) |
+        // | `try...catch` | Used for error handling                        |
+        // | `finally`     | Executes code after try/catch, no matter what  |
+        // | Works With    | Any function that returns a Promise            |
+
+    </script>
+</body>
+
+</html>

@@ -8,6 +8,8 @@
 </head>
 
 <body>
+    <h1>Check Console!!!</h1>
+    <h3>Press fn + F12</h3>
     <script>
         // 🔹 What is a Promise in JavaScript ?
 
@@ -47,6 +49,77 @@
         // | --------- | ------------------------------------------------ |
         // | `resolve` | Called when the operation completes successfully |
         // | `reject`  | Called when the operation fails                  |
+
+
+        // let promise = new Promise(function (resolve, reject) {
+        //     let success = false;
+
+        //     if (success) {
+        //         resolve("Promise Resolved Successfully");
+        //     }
+        //     else{
+        //         reject("Promise Rejected Due to an error");
+        //     }
+        // });
+
+        // promise
+        // .then(function(message){
+        //     setTimeout(() => {
+        //        console.log("✅",message); 
+        //     }, 5000);
+        // })
+        // .catch(function(error){
+        //     console.log("❌",error);
+        // })
+        // .finally(function(){
+        //     console.log("Promise Execution Completed!");
+        // });
+
+        function fetchUserData() {
+            return promise = new Promise(function (resolve, reject) {
+                console.log("Fetching User Data!!!....");
+
+                setTimeout(() => {
+                    let success = false;
+
+                    if (success) {
+                        resolve({ name: "Rahul Kamat", age: 21 });
+                    }
+                    else {
+                        reject("Failed to Fetch Data!!!");
+                    }
+                }, 3000);
+            });
+        }
+
+        fetchUserData()
+            .then(function (user) {
+                console.log("Data:", user);
+            })
+            .catch(function (error) {
+                console.log("Caught Error:", error);
+            })
+            .finally(function () {
+                console.log("Request Finished");
+            });
+
+            // 🔹 Promise States:
+            // | State                    | Description                                    |
+            // | ------------------------ | ---------------------------------------------- |
+            // | **Pending**              | The initial state — operation is still running |
+            // | **Fulfilled (Resolved)** | Operation completed successfully               |
+            // | **Rejected**             | Operation failed with an error                 |
+
+            // 🧩 Summary Table:
+
+            // | Concept       | Description                                     | Example                            |
+            // | ------------- | ----------------------------------------------- | ---------------------------------- |
+            // | **Promise**   | Object representing future result of async task | `new Promise((res, rej) => {...})` |
+            // | **States**    | Pending → Fulfilled → Rejected                  | `resolve()` / `reject()`           |
+            // | **then()**    | Handles success                                 | `.then(result => {...})`           |
+            // | **catch()**   | Handles error                                   | `.catch(error => {...})`           |
+            // | **finally()** | Runs regardless of outcome                      | `.finally(() => {...})`            |
+            // | **Chaining**  | Sequential tasks                                | `step1().then(step2).then(step3)`  |
 
 
     </script>
