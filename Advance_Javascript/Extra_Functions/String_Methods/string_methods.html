@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String-Methods In JavaScript</title>
+</head>
+
+<body>
+    <h1>Output:</h1>
+    <h3 id="result"></h3>
+    <script>
+        /* 🔹 1. String Length
+         ➤ Definition:
+ 
+         Returns the number of characters in a string(including spaces).
+ 
+         Syntax:
+         string.length */
+
+        let t1 = "JavaScript";
+        let data = document.getElementById("result");
+        data.innerHTML = t1 + " length: " + t1.length + "<br>";
+
+
+        /*🔹 2. charAt()
+        ➤ Definition:
+
+        Returns the character at a specific index.
+
+        Syntax:
+
+        string.charAt(index)*/
+
+        let t2 = "Javascript";
+        data.innerHTML += "The Character At index 2 is: " + t2.charAt(2) + "<br>";
+
+
+        /*🔹 3. charCodeAt()
+        ➤ Definition:
+
+        Returns the Unicode(ASCII) value of the character at a specific index.
+
+        Example:*/
+
+        let t3 = "Javascript";
+        data.innerHTML += "The Character Index of 2 of Unicode (ASCII) value is: " + t3.charCodeAt(2) + "<br>";
+
+
+        /*🔹 4. at()(Modern method)
+        ➤ Definition:
+
+        Returns the character at a given position(can use negative indexes).
+
+        Example: */
+
+        let t4 = "Javascript";
+        data.innerHTML += "The Character at index of 4 is : " + t4.at(4) + "<br>";
+
+
+        /*🔹 5. slice()
+        ➤ Definition:
+
+        Extracts a section of a string and returns it as a new string.
+
+        Syntax: */
+
+        // string.slice(start, end)
+
+        let t5 = "Javascript is A Programming Langauage";
+        data.innerHTML += "String from 0 to 4 is =" + t5.slice(0,4) + "<br>";
+
+    </script>
+</body>
+
+</html>
