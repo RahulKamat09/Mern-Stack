@@ -4,15 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real-world-exmple of Async Await/title>
+    <title>Real-world-exmple of Async Await</title>
 </head>
 
 <body>
     <script>
+
         function loginUser(username, password) {
             return new Promise((resolve) => {
                 setTimeout(() => {
-                    console.log("✅ User logged in:", username);
+                    console.log("User logged in:", username);
                     resolve({ username: username });
                 }, 1000);
             });
@@ -21,30 +22,33 @@
         function getUserDetails(user) {
             return new Promise((resolve) => {
                 setTimeout(() => {
-                    console.log("📦 Fetching user details...");
-                    resolve({ ...user, email: "user@example.com", age: 20 });
+                    console.log("Fetching User Details....");
+                    resolve({ ...user, email: "Rahulkamat@gmail.com", age: 20 });
                 }, 1000);
             });
         }
 
-        function showDashboard(user) {
+        function showUserDetails(user) {
             return new Promise((resolve) => {
                 setTimeout(() => {
-                    console.log(`🎉 Welcome ${user.username}! Your email: ${user.email}`);
+                    console.log(`Welcome ${user.username}! Your Email:${user.email}`);
                     resolve();
                 }, 1000);
             });
         }
 
-        // ✅ Async/Await Implementation
         async function runApp() {
             try {
-                const user = await loginUser("Rahul", "12345");
-                const userDetails = await getUserDetails(user);
-                await showDashboard(userDetails);
-                console.log("🏁 Process complete!");
-            } catch (error) {
-                console.log("❌ Error:", error);
+                const user = await loginUser("Rahul Kamat", "300919");
+                const UserDetail = await getUserDetails(user);
+                await showUserDetails(UserDetail);
+                console.log("User Logged In SuccessFully!");
+            }
+            catch(error){
+                console.log("Error",error);
+            }
+            finally{
+                console.log("Process Has been completed Sucessfully!!");
             }
         }
 
