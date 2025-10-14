@@ -69,7 +69,197 @@
         // string.slice(start, end)
 
         let t5 = "Javascript is A Programming Langauage";
-        data.innerHTML += "String from 0 to 4 is =" + t5.slice(0,4) + "<br>";
+        data.innerHTML += "String from 0 to 4 is =" + t5.slice(0, 4) + "<br>";
+        data.innerHTML += "String from -6 is =" + t5.slice(-6) + "<br>";
+
+
+        /*🔹 6. substring()
+        ➤ Definition:
+
+        Similar to slice(), but cannot use negative indexes.
+
+        Example:*/
+
+        let t6 = "Javascript";
+        data.innerHTML += "String From 0 to 4 is = " + t6.substring(0, 4) + "<br>";
+        // data.innerHTML += "String of -6 is = " + t6.substring(-6) + "<br>";  //Cannot use negative Indexes!!!
+
+
+        /*🔹 7. substr()(⚠️ Deprecated)
+        ➤ Definition:
+
+        Extracts part of a string, starting from an index and for a specified length.
+
+        Example:*/
+
+        let t7 = "Javascript";
+        data.innerHTML += "String from 4 index to 6 length = " + t7.substr(4, 6) + "<br>";
+
+
+        /*🔹 8. toUpperCase() / toLowerCase()
+        ➤ Definition:
+
+        Converts all characters to uppercase or lowercase.
+
+        Example:*/
+
+        let t8 = "Javascript is a Programming Language";
+        data.innerHTML += "All Characters In UpperCase = " + t8.toUpperCase() + "<br>";
+        data.innerHTML += "All Characters In LowerCase = " + t8.toLowerCase() + "<br>";
+
+
+        /*🔹 9. concat()
+        ➤ Definition:
+
+        Joins two or more strings.
+
+        Example:*/
+
+        let t9i = "Javascript ";
+        let t9ii = "Language";
+        data.innerHTML += "Joining Two Stings = " + t9i.concat(t9ii) + "<br>";
+
+
+        /*🔹 10. trim(), trimStart(), trimEnd()
+        ➤ Definition:
+
+        Removes whitespace from both sides(or one side) of a string.
+
+        Example:*/
+
+        let t10 = "  Javascript   ";
+        data.innerHTML += "After Trimming space From Both Side=" + t10.trim() + "<br>";
+        data.innerHTML += "After Trimming Space From Left Side=" + t10.trimStart() + "<br>";
+        data.innerHTML += "After Trimming Space From Right Side=" + t10.trimEnd() + "<br>";
+
+
+        /*🔹 11. padStart(), padEnd()
+        ➤ Definition:
+
+        Pads a string with another string until it reaches a desired length.
+
+        Example:*/
+
+        let t11 = "5";
+        data.innerHTML += "Pads a string from start=" + t11.padStart(3, "0") + "<br>";
+        data.innerHTML += "Pads a string from End=" + t11.padEnd(3, "0") + "<br>";
+
+
+        /*🔹 12. repeat()
+        ➤ Definition:
+
+        Repeats the string a specified number of times.
+
+        Example:*/
+
+        let t12 = "Javascript! ";
+        data.innerHTML += `Repeating The ${t12} 3 times = ` + t12.repeat(3) + "<br>";
+
+
+        /*🔹 13. replace() / replaceAll()
+        ➤ Definition:
+
+        Replaces part of a string with another string.
+
+        Example:*/
+
+        let t13 = "Javascript is a Programming Language! I like Javascript!";
+        data.innerHTML += `Replacing Javascript from ${t13} = ` + t13.replace("Javascript", "Java") + "<br>";
+        data.innerHTML += `Replacing Javascript from ${t13} = ` + t13.replaceAll("Javascript", "Java") + "<br>";
+
+
+        /*🔹 14. split()
+        ➤ Definition:
+
+        Splits a string into an array using a separator.
+
+        Example:*/
+
+        let t14 = "apple,banana,mango";
+        data.innerHTML += "Spliting String Into An Array = " + t14.split() + "<br>" + "Open Console To see the Diffrence" + "<br>";
+        console.log(t14.split(","));
+
+
+        /*🔹 15. includes()
+        ➤ Definition:
+
+        Checks if a string contains a specified substring.Returns true or false.
+
+        Example:*/
+
+        let t15 = "Javascript is a Programming Language ! I like Javascript";
+        data.innerHTML += `Is there any like word in ${t15} = ` + t15.includes("like") + "<br>";
+
+
+        /*🔹 16. startsWith() / endsWith()
+        ➤ Definition:
+
+        Checks if a string starts or ends with a given substring.
+
+        Example:*/
+
+        let t16 = "Javascript"
+        data.innerHTML += `${t16} is starting from Java is true or false =` + t16.startsWith("Java") + "<br>";
+        data.innerHTML += `${t16} is ending from script is true or false =` + t16.endsWith("Script") + "<br>";
+
+
+        /*🔹 17. indexOf() / lastIndexOf()
+        ➤ Definition:
+
+        Finds the position of the first(or last) occurrence of a substring.
+
+        Example:*/
+
+        let t17 = "I like Javascript and Java Language!";
+        data.innerHTML += "On which index Java Starts From = " + t17.indexOf("Java") + "<br>";
+        data.innerHTML += "On which last index Java Starts From  = " + t17.lastIndexOf("Java") + "<br>";
+
+
+        /*🔹 18. search()
+        ➤ Definition:
+
+        Searches for a match using a regular expression and returns the index.
+
+        Example:*/
+
+        let t18 = "Learn JavaScript";
+        data.innerHTML += "Searching Index of Script = " + t18.search(/Script/) + "<br>";
+
+
+        /*🔹 19. match() / matchAll()
+        ➤ Definition:
+
+        Finds all matches of a regex pattern.
+        Both match() and matchAll() are String methods used to search for patterns in a string using regular expressions (RegEx).
+
+        Example:*/
+
+        let t19 = "cat, bat, mat";
+        data.innerHTML += "Matching at = " + t19.match(/at/g) + "<br>";
+        console.log(t19.match(/at/g));
+        console.log([...t19.matchAll(/at/g)]);
+
+
+        /*🔹 20. toString()
+        ➤ Definition:
+
+        Converts a value to a string.
+
+        Example:*/
+
+        let t20 = 125;
+        data.innerHTML += "Converting Number Into String= " + t20.toString() + "<br>";
+        data.innerHTML += `Type of ${t20} is = ` + typeof (toString(t20)) + "<br>";
+
+
+        /*🔹 21. valueOf()
+        ➤ Definition:
+
+        Returns the primitive value of a String object.
+
+        Example:*/
+        let t21 = new String("Hello");
+        
 
     </script>
 </body>
