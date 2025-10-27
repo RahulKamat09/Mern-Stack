@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array-Methods in JavaScript</title>
+</head>
+
+<body>
+    <h1>Output:</h1>
+    <h3 id="result"></h3>
+    <!-- 🚀 Common and Important Array Methods in JavaScript -->
+    <script>
+        /*1. Array()
+
+        Definition:
+        Used to create a new array.
+
+        Syntax:
+
+        let arr = new Array(element1, element2, ...);*/
+
+        let arr1 = new Array("Apple", "Banana", "Mango");
+        let data = document.getElementById("result");
+        data.innerHTML = "Array Created = " + arr1 + "<br>";
+
+
+        /*2. Array.of()
+
+        Definition:
+        Creates a new array from the given arguments.
+
+        Syntax:
+
+        Array.of(element1, element2, ...);*/
+
+        let arr2 = Array.of(10,20,30);
+        data.innerHTML += "Array Elements Are: " + arr2 + "<br>";
+
+    </script>
+</body>
+
+</html>

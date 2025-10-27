@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>String Method Playground</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>💬 String Method Playground</h1>
+
+    <textarea id="textInput" rows="6" placeholder="Type or paste text here..."></textarea>
+
+    <div class="button-section">
+        <h3>🔠 Case & Length</h3>
+        <button onclick="toUpper()">toUpperCase()</button>
+        <button onclick="toLower()">toLowerCase()</button>
+        <button onclick="showLength()">length</button>
+    </div>
+
+    <div class="button-section">
+        <h3>✂️ Extract</h3>
+        <button onclick="sliceText()">slice()</button>
+        <button onclick="substringText()">substring()</button>
+        <button onclick="substrText()">substr()</button>
+    </div>
+
+    <div class="button-section">
+        <h3>🧹 Trim & Pad</h3>
+        <button onclick="trimText()">trim()</button>
+        <button onclick="trimStartText()">trimStart()</button>
+        <button onclick="trimEndText()">trimEnd()</button>
+        <button onclick="padStartText()">padStart()</button>
+        <button onclick="padEndText()">padEnd()</button>
+    </div>
+
+    <div class="button-section">
+        <h3>🔍 Search</h3>
+        <button onclick="includesText()">includes()</button>
+        <button onclick="indexOfText()">indexOf()</button>
+        <button onclick="lastIndexOfText()">lastIndexOf()</button>
+        <button onclick="startsWithText()">startsWith()</button>
+        <button onclick="endsWithText()">endsWith()</button>
+        <button onclick="searchText()">search()</button>
+    </div>
+
+    <div class="button-section">
+        <h3>🔄 Modify & Replace</h3>
+        <button onclick="concatText()">concat()</button>
+        <button onclick="replaceText()">replace()</button>
+        <button onclick="replaceAllText()">replaceAll()</button>
+        <button onclick="repeatText()">repeat()</button>
+    </div>
+
+    <div class="button-section">
+        <h3>🔎 Regex & Match</h3>
+        <button onclick="matchText()">match()</button>
+        <button onclick="matchAllText()">matchAll()</button>
+        <button onclick="highlightMatches()">Highlight Matches</button>
+    </div>
+
+    <div class="button-section">
+        <h3>🌍 Locale & Convert</h3>
+        <button onclick="toStringText()">toString()</button>
+        <button onclick="valueOfText()">valueOf()</button>
+        <button onclick="localeCompareText()">localeCompare()</button>
+        <button onclick="toLocaleUpper()">toLocaleUpperCase()</button>
+        <button onclick="toLocaleLower()">toLocaleLowerCase()</button>
+    </div>
+
+    <h2>📊 Result:</h2>
+    <div id="result">Start typing text and use buttons...</div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

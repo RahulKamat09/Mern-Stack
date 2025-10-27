@@ -259,8 +259,30 @@
 
         Example:*/
         let t21 = new String("Hello");
-        
+        data.innerHTML += `Value of ${t21} is = ` + t21.valueOf() + "<br>";
 
+
+        /*🔹 22. localeCompare()
+        ➤ Definition:
+
+        Compares two strings in the current locale(useful for sorting alphabetically).
+
+        Example:*/
+
+        let t22i = "Apple";
+        let t22ii = "Banana";
+        data.innerHTML += `Comparing ${t22i} and ${t22ii} =` + t22i.localeCompare(t22ii) + "<br>";
+
+
+        /*🔹 23. toLocaleUpperCase() / toLocaleLowerCase()
+        ➤ Definition:
+
+        Converts the string to upper or lower case, based on locale - specific rules.
+
+        Example:*/
+
+        let t23 = "istanbul";
+        data.innerHTML += "Converting string into Upper and lower case based  on locale specific rules = " + t23.toLocaleUpperCase("tr-TR") + "<br>";
     </script>
 </body>
 
