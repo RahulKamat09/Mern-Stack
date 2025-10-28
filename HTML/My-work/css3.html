@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Visual Effects Demo</title>
+    <style>
+        /* 🌈 Global Style */
+        body {
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #89f7fe, #66a6ff);
+            color: #333;
+            margin: 0;
+            padding: 30px;
+            text-align: center;
+        }
+
+        /* 🧠 Section Container */
+        section {
+            background: white;
+            margin: 20px auto;
+            padding: 30px;
+            width: 85%;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 🌈 Background Gradient Example */
+        .gradient-box {
+            height: 120px;
+            border-radius: 12px;
+            background: linear-gradient(90deg, #ff6a00, #ee0979);
+            margin: 20px auto;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* ✂️ Background Clip Example */
+        .clip-text {
+            font-size: 40px;
+            font-weight: 700;
+            background: linear-gradient(45deg, #f12711, #f5af19);
+            background-clip: text;
+            color: transparent;
+            margin-top: 10px;
+        }
+
+        /* 🧭 Background Origin Example */
+        .origin-box {
+            background-image: url("https://i.imgur.com/2QpD0ey.png");
+            background-repeat: no-repeat;
+            background-origin: content-box;
+            padding: 30px;
+            border: 5px dashed #555;
+            height: 150px;
+            margin: 20px auto;
+        }
+
+        /* 🖼️ Border Image Example */
+        .border-box {
+            border: 12px solid transparent;
+            border-image: url('https://i.imgur.com/1FqI1xQ.png') 30 round;
+            padding: 20px;
+            width: 250px;
+            margin: 20px auto;
+        }
+
+        /* 🎭 Filter Example */
+        .filter-box img {
+            width: 200px;
+            border-radius: 15px;
+            transition: 0.5s;
+        }
+
+        .filter-box img:hover {
+            filter: brightness(130%) contrast(120%) drop-shadow(8px 8px 10px rgba(0, 0, 0, 0.4));
+        }
+
+        /* 🔄 Transform Example */
+        .transform-box {
+            width: 120px;
+            height: 120px;
+            background: #ff4e50;
+            margin: 20px auto;
+            border-radius: 12px;
+            transition: transform 0.5s ease;
+        }
+
+        .transform-box:hover {
+            transform: rotate(20deg) scale(1.2);
+        }
+
+        /* ⚡ Transition Example */
+        .transition-box {
+            width: 200px;
+            height: 80px;
+            background: #6a11cb;
+            border-radius: 12px;
+            margin: 20px auto;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background 1s ease, transform 1s ease;
+        }
+
+        .transition-box:hover {
+            background: #2575fc;
+            transform: scale(1.1);
+        }
+
+        /* 🎬 Animation Example */
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+                background-color: #f39c12;
+            }
+
+            50% {
+                transform: translateY(-60px);
+                background-color: #e74c3c;
+            }
+        }
+
+        .animation-ball {
+            width: 70px;
+            height: 70px;
+            background: #f39c12;
+            border-radius: 50%;
+            margin: 40px auto;
+            animation: bounce 1s infinite ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🎨 CSS Visual Effects Showcase</h1>
+
+    <section>
+        <h2>1️⃣ Background Gradient</h2>
+        <div class="gradient-box">Linear Gradient</div>
+    </section>
+
+    <section>
+        <h2>2️⃣ Background Clip (Text Gradient)</h2>
+        <div class="clip-text">Gradient Text</div>
+    </section>
+
+    <section>
+        <h2>3️⃣ Background Origin</h2>
+        <div class="origin-box">Background starts from content box</div>
+    </section>
+
+    <section>
+        <h2>4️⃣ Border Image</h2>
+        <div class="border-box">This box uses an image as border</div>
+    </section>
+
+    <section class="filter-box">
+        <h2>5️⃣ Filter Effects (Hover)</h2>
+        <img src="https://i.imgur.com/yY9Zy8N.jpg" alt="Filter Example">
+    </section>
+
+    <section>
+        <h2>6️⃣ Transform (Hover)</h2>
+        <div class="transform-box"></div>
+    </section>
+
+    <section>
+        <h2>7️⃣ Transition (Smooth Effect)</h2>
+        <div class="transition-box">Hover Me</div>
+    </section>
+
+    <section>
+        <h2>8️⃣ Animation (Bouncing Ball)</h2>
+        <div class="animation-ball"></div>
+    </section>
+
+</body>
+
+</html>
