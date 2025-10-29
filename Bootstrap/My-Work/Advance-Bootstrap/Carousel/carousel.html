@@ -14,82 +14,85 @@
 
 <body>
 
-    <!-- 🎠 What is a Carousel in Bootstrap?
+    <!-- 🎠 Bootstrap Carousel — Complete Explanation with All Classes & Examples:
 
-    A Carousel in Bootstrap is a slideshow component for cycling through elements — like images, text, or custom content — in a rotating, sliding manner.
-    It is often used for homepage banners, portfolios, or product showcases. -->
+        🧩 What is a Carousel?
 
-    <!-- ⚙️ Basic Structure (HTML)
-    A Bootstrap Carousel is made up of 4 main parts: -->
+        A carousel in Bootstrap is a slideshow component that cycles through elements (mostly images or cards) with smooth transitions — either automatically or with user controls.
 
-    <!-- 
-    | Part                     | Description                                               |
-    | ------------------------ | --------------------------------------------------------- |
-    | `<div class="carousel">` | Main wrapper for the carousel.                            |
-    | `.carousel-inner`        | Contains all slides (each slide inside `.carousel-item`). |
-    | `.carousel-item`         | Each individual slide (image or content).                 |
-    | Controls                 | Buttons to go **next** or **previous**.                   |
-    | Indicators               | Dots at the bottom to navigate to specific slides.        |
-    -->
+        It supports:
 
-    <div class="container mt-4">
-        <h2 class="text-center mb-4">🌟 Bootstrap 5 Carousel Example</h2>
+        Auto-sliding
 
-        <div id="myCarousel" class="carousel slide" data-vs-ride="carousel">
+        Previous/Next navigation
 
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2"></button>
+        Slide indicators (dots)
+
+        Captions/text
+
+        Crossfade animation
+
+        Dark/Light variants -->
+
+
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/images/nature-images..webp" class="d-block w-100" alt="Slide 1">
             </div>
-
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="https://picsum.photos/id/1018/1000/400" alt="Image-1" class="d-block w-100">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Beautiful Nature</h5>
-                        <p>Explore the world through stunning landscapes.</p>
-                    </div>
-                </div>
-
-                <div class="carousel-item">
-                    <img src="https://picsum.photos/id/1015/1000/400" class="d-block w-100" alt="Slide 2">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Adventure Awaits</h5>
-                        <p>Every moment is a new opportunity.</p>
-                    </div>
-                </div>
-
-                <div class="carousel-item">
-                    <img src="https://picsum.photos/id/1019/1000/400" class="d-block w-100" alt="Slide 3">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Urban Vibes</h5>
-                        <p>Experience the beauty of city lights.</p>
-                    </div>
-                </div>
+            <div class="carousel-item">
+                <img src="/images/Unconfirmed 825766.crdownload" class="d-block w-100" alt="Slide 2">
             </div>
-
-            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </button>
-
-            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </button>
-
+            <div class="carousel-item">
+                <img src="/images/nature-image-3.jpg" class="d-block w-100" alt="Slide 3">
+            </div>
         </div>
+
+        <!-- Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
     </div>
 
-    <!-- 🧱 Explanation of Key Attributes: 
+    <!-- 🧱 Class-by-Class Explanation: -->
 
-        | Attribute                      | Description                                        |
-        | ------------------------------ | -------------------------------------------------- |
-        | `data-bs-ride="carousel"`      | Enables automatic sliding.                         |
-        | `data-bs-slide-to="0"`         | Moves to specific slide when indicator is clicked. |
-        | `data-bs-slide="prev"`         | Moves to the previous slide.                       |
-        | `data-bs-slide="next"`         | Moves to the next slide.                           |
-        | `class="carousel-item active"` | Marks the first slide as visible by default.       |
-     
+    <!-- 
+    
+        | Class                         | Description                                                             |
+        | ----------------------------- | ----------------------------------------------------------------------- |
+        | `.carousel`                   | Base class for carousel component. Must be added to the main container. |
+        | `.slide`                      | Adds a sliding animation between slides.                                |
+        | `.carousel-inner`             | Wrapper that contains all the carousel items.                           |
+        | `.carousel-item`              | Represents a single slide.                                              |
+        | `.active`                     | Makes the first item visible when page loads. Must be used only once.   |
+        | `.d-block`                    | Makes the image a block element.                                        |
+        | `.w-100`                      | Makes the image take full width of the carousel.                        |
+        | `.carousel-control-prev`      | Button class for the “previous” control.                                |
+        | `.carousel-control-next`      | Button class for the “next” control.                                    |
+        | `.carousel-control-prev-icon` | Built-in Bootstrap icon for previous control.                           |
+        | `.carousel-control-next-icon` | Built-in Bootstrap icon for next control.                               |
+        | `.carousel-indicators`        | Used to create slide navigation dots.                                   |
+        | `.carousel-caption`           | Adds a caption overlay (text and headings) on the slide.                |
+        | `.carousel-fade`              | Replaces sliding with a fading transition.                              |
+        | `.carousel-dark`              | Changes control icons and captions to dark (for light images).          |-->
+
+    <!-- 🧠 Important Attributes: -->
+
+    <!-- 
+    
+        | Attribute                          | Description                                                 |
+        | ---------------------------------- | ----------------------------------------------------------- |
+        | `data-bs-ride="carousel"`          | Enables auto-sliding when the page loads.                   |
+        | `data-bs-interval="3000"`          | Sets delay (in ms) between auto slides (3000 = 3 seconds).  |
+        | `data-bs-target="#id"`             | Links control or indicator to carousel by ID.               |
+        | `data-bs-slide="next"` or `"prev"` | Tells carousel which direction to slide.                    |
+        | `data-bs-slide-to="0"`             | Indicates the specific slide to go to (used in indicators). |
+
+    
     -->
 
 </body>
