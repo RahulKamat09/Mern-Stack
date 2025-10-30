@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Carousel Full Demo</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="p-4 bg-light">
+
+    <div class="container">
+        <h1 class="text-center mb-5">🎠 Bootstrap Carousel - All Examples</h1>
+
+        <!-- 1️⃣ Basic Carousel -->
+        <h3>1. Basic Carousel</h3>
+        <div id="carouselBasic" class="carousel slide mb-5" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/images/nature-images..webp" class="d-block w-100"
+                        alt="Slide 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="/images/nature-image-2.jpg" class="d-block w-100"
+                        alt="Slide 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="/images/nature-image-3.jpg" class="d-block w-100"
+                        alt="Slide 3">
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselBasic" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselBasic" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+
+        <!-- 2️⃣ Carousel with Indicators -->
+        <h3>2. Carousel with Indicators</h3>
+        <div id="carouselIndicators" class="carousel slide mb-5" data-bs-ride="carousel">
+            <!-- Indicators -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="2"></button>
+            </div>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/images/nature-images..webp" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="/images/nature-image-2.jpg" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="/images/nature-image-3.jpg" class="d-block w-100">
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+
+        <!-- 3️⃣ Carousel with Captions -->
+        <h3>3. Carousel with Captions</h3>
+        <div id="carouselCaptions" class="carousel slide mb-5" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/images/nature-images..webp" class="d-block w-100">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>First Slide Title</h5>
+                        <p>This is the first slide with text and description.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/images/nature-image-2.jpg" class="d-block w-100">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Second Slide</h5>
+                        <p>Captions are hidden on small screens and visible on medium+ devices.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+
+        <!-- 4️⃣ Fading Carousel -->
+        <h3>4. Fading Carousel</h3>
+        <div id="carouselFade" class="carousel slide carousel-fade mb-5" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/images/nature-images..webp" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="/images/nature-image-2.jpg" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="/images/nature-image-3.jpg" class="d-block w-100">
+                </div>
+            </div>
+        </div>
+
+        <!-- 5️⃣ Dark Variant -->
+        <h3>5. Dark Carousel</h3>
+        <div id="carouselDark" class="carousel carousel-dark slide mb-5" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/images/nature-images..webp" class="d-block w-100">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Dark Variant</h5>
+                        <p>Captions and controls are dark for better visibility on light images.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6️⃣ Carousel with Interval -->
+        <h3>6. Carousel with Custom Interval</h3>
+        <div id="carouselInterval" class="carousel slide mb-5" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="/images/nature-images..webp"
+                        class="d-block w-100">
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img src="/images/nature-image-2.jpg"
+                        class="d-block w-100">
+                </div>
+            </div>
+        </div>
+
+        <!-- 7️⃣ Manual Carousel -->
+        <h3>7. Manual Carousel (No Auto Slide)</h3>
+        <div id="carouselManual" class="carousel slide mb-5" data-bs-ride="false">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/images/nature-images..webp" class="d-block w-100">
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselManual" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselManual" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
