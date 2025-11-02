@@ -23,7 +23,7 @@
 
         let arr1 = new Array("Apple", "Banana", "Mango");
         let data = document.getElementById("result");
-        data.innerHTML = "Array Created = " + arr1 + "<br>";
+        data.innerHTML = "1. Array Created = " + arr1 + "<br><br>";
 
 
         /*2. Array.of()
@@ -35,9 +35,98 @@
 
         Array.of(element1, element2, ...);*/
 
-        let arr2 = Array.of(10,20,30);
-        data.innerHTML += "Array Elements Are: " + arr2 + "<br>";
+        let arr2 = Array.of(10, 20, 30);
+        data.innerHTML += "2.Array Elements Are: " + arr2 + "<br><br>";
 
+
+        /*3. Array.isArray()
+
+        Definition:
+        Checks if a given value is an array or not.
+
+        Syntax:
+
+        Array.isArray(value);*/
+
+        let arr3 = [1, 2, 3, 4, 5];
+        let arr3ii = "Rahul Kamat";
+        data.innerHTML += `3.${arr3} is Array ? : ` + Array.isArray(arr3) + "<br>";
+        data.innerHTML += `3.${arr3ii} is Array ? :` + Array.isArray(arr3ii) + "<br><br>";
+
+
+        /*4. push()
+
+        Definition:
+        Adds one or more elements to the end of an array.
+
+        Syntax:
+
+        array.push(element1, element2, ...);*/
+
+        let arr4 = ["Apple", "Banana", "Mango"];
+        data.innerHTML += "4. This is An Array : " + arr4 + "<br>";
+        arr4.push("Tomato");
+        data.innerHTML += `4. In ${arr4} We Have Added Tomato : ` + arr4 + "<br><br>";
+
+
+        /*5. pop()
+
+        Definition:
+        Removes the last element from an array.
+
+        Syntax:
+
+        array.pop();*/
+
+        let arr5 = ["apple", "banana", "Mango"];
+        data.innerHTML += "5. This is An Array : " + arr5 + "<br>";
+        arr5.pop();
+        data.innerHTML += "5. After Poping One Element : " + arr5 + "<br><br>";
+
+
+        /*6. unshift()
+
+        Definition:
+        Adds one or more elements to the beginning of an array.
+
+        Syntax:
+
+        array.unshift(element1, element2, ...);*/
+
+        let arr6 = ["Apple", "Banana"];
+        data.innerHTML += "6. This is An Array : " + arr6 + "<br>";
+        arr6.unshift("Mango");
+        data.innerHTML += "6. After Adding One Element To First Place : " + arr6 + "<br><br>";
+
+
+        /*7. shift()
+
+        Definition:
+        Removes the first element of an array.
+
+        Syntax:
+
+        array.shift();*/
+
+        let arr7 = ["Mango", "Apple", "Banana"];
+        data.innerHTML += "7. This is An Array : " + arr7 + "<br>";
+        arr7.shift();
+        data.innerHTML += "7. After Poping First Element : " + arr7 + "<br><br>";
+
+
+        /*8. splice()
+
+        Definition:
+        Adds or removes elements from an array at a specific index.
+
+        Syntax:
+
+        array.splice(startIndex, deleteCount, item1, item2, ...);*/
+
+        let arr8 = [10,20,30,40,50];
+        data.innerHTML += "8. Array Is:" + arr8 + "<br>" ;
+        arr8.splice(2,3,50,40,30);
+        data.innerHTML += "After Splicing :" + arr8 + "<br><br>";
     </script>
 </body>
 
