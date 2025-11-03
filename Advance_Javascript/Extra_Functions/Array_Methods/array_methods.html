@@ -123,10 +123,183 @@
 
         array.splice(startIndex, deleteCount, item1, item2, ...);*/
 
-        let arr8 = [10,20,30,40,50];
-        data.innerHTML += "8. Array Is:" + arr8 + "<br>" ;
-        arr8.splice(2,3,50,40,30);
+        let arr8 = [10, 20, 30, 40, 50];
+        data.innerHTML += "8. Array Is:" + arr8 + "<br>";
+        arr8.splice(2, 3, 50, 40, 30);
         data.innerHTML += "After Splicing :" + arr8 + "<br><br>";
+
+
+        /*9. slice()
+
+        Definition:
+        Returns a portion of the array(does not modify the original array).
+
+        Syntax:
+
+        array.slice(start, end);*/
+
+        let arr9 = [10, 20, 30, 40, 50, 60, 70];
+        data.innerHTML += "9. Array is :" + arr9 + "<br>";
+        data.innerHTML += "After Slicing :" + arr9.slice(2, 5) + "<br><br>";
+
+
+        /*10. concat()
+
+        Definition:
+        Combines two or more arrays and returns a new array.
+
+        Syntax:
+
+        array1.concat(array2, array3, ...);*/
+
+        let arr10i = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        let arr10ii = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+        let newArray = arr10i.concat(arr10ii);
+        data.innerHTML += "10. After Concating Both Array :" + newArray + "<br><br>";
+
+
+        /*11. includes()
+
+        Definition:
+        Checks whether an array contains a specific value.
+
+        Syntax:
+
+        array.includes(value);*/
+
+        let arr11 = ["Apple", "banana", "mango"];
+        data.innerHTML += `11. ${arr11} includes mango or not in array : ` + arr11.includes("mango") + "<br><br>"
+        //Case sensitive Checks Every alphabet if it is uppercase
+        // and the value is in lowercase then it will give false.
+
+
+        /*12. indexOf()
+
+        Definition:
+        Returns the first index where a value is found.
+
+        Syntax:
+
+        array.indexOf(value);*/
+
+        let arr12 = ["Apple", "banana", "mango"];
+        data.innerHTML += `12. ${arr12} in this array Mango is on Index of :` + arr12.indexOf("mango") + "<br><br>";
+
+
+        /*13. lastIndexOf()
+
+        Definition:
+        Returns the last index of the specified element.
+
+        Syntax:
+
+        array.lastIndexOf(value);*/
+
+        let arr13 = [1, 2, 3, 4, 5, 5, 4, 3, 2, 1];
+        data.innerHTML += "13. The Last Index of The Value 2 is: " + arr13.lastIndexOf(2) + "<br><br>";
+
+
+        /*14. find()
+
+        Definition:
+        Returns the first element that satisfies a testing condition.
+
+        Syntax:
+
+        array.find(callback);*/
+
+        let arr14 = [5, 10, 15, 20, 25];
+        let found = arr14.find(n => n > 10);
+        data.innerHTML += `14. Is there any value  in ${arr14} who is greater then 10: ` + found + "<br><br>";
+
+
+        /*15. findIndex()
+
+        Definition:
+        Returns the index of the first element that satisfies a testing condition.
+
+        Syntax:
+
+        array.findIndex(callback);*/
+
+        let arr15 = [10, 20, 30, 40, 50];
+        let found2 = arr15.findIndex(n => n > 10);
+        data.innerHTML += `15. Is there any value  in ${arr15} who is greater then 10 on what index: ` + found2 + "<br><br>";
+
+
+        /*16. sort()
+
+        Definition:
+        Sorts array elements in ascending order(alphabetically by default ).
+
+        Syntax:
+
+        array.sort(compareFunction);*/
+
+
+        let arr16 = [10, 30, 40, 50, 20, 70, 60];
+        arr16.sort();
+        data.innerHTML += `16. Sorting ${arr16} In Accending Order: ` + arr16 + "<br><br>";
+
+
+        /*17. reverse()
+
+        Definition:
+        Reverses the order of array elements.
+
+        Syntax:
+
+        array.reverse();*/
+
+        let arr17 = ["Apple", "Mango", "Banana"];
+        arr17.reverse();
+        data.innerHTML += `17. Reversing ${arr17} : ` + arr17 + "<br><br>";
+
+
+        /*18. forEach()
+
+        Definition:
+        Executes a function for each element in the array(no return value).
+
+        Syntax:
+
+        array.forEach(callback);*/
+
+        let arr18 = [1, 2, 3, 4, 5];
+        data.innerHTML += arr18.forEach(n => console.log(n * 2)) + "<br><br>";
+
+
+        /*19. map()
+
+        Definition:
+        Creates a new array by applying a function to every element.
+
+        Syntax:
+
+        array.map(value,index,array);*/
+
+        let arr19 = [10, 20, 30, 40, 50];
+        let newArr19 = arr19.map((value) => {
+            return value + 1;
+        })
+        data.innerHTML += "19. Mappig Array: " + newArr19 + "<br><br>";
+
+
+        /*20. filter()
+
+        Definition:
+        Returns a new array with elements that pass a certain test.
+
+        Syntax:
+
+        array.filter(value,index,array);*/
+
+        let arr20 = [1,2,3,4,5,6,7,8,9];
+        let newArr20 = arr20.filter((value)=>{
+            return value + 1;
+        })
+
+        data.innerHTML += "20. Filter Array : " + newArr20 + "<br><br>";
     </script>
 </body>
 
