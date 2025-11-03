@@ -294,12 +294,95 @@
 
         array.filter(value,index,array);*/
 
-        let arr20 = [1,2,3,4,5,6,7,8,9];
-        let newArr20 = arr20.filter((value)=>{
+        let arr20 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        let newArr20 = arr20.filter((value) => {
             return value + 1;
         })
 
         data.innerHTML += "20. Filter Array : " + newArr20 + "<br><br>";
+
+
+        /*21. reduce()
+
+        Definition:
+        Reduces an array to a single value by applying a function.
+
+        Syntax:
+
+        array.reduce(callback, initialValue);*/
+
+        let arr21 = [1, 2, 3, 4, 5, 6, 7];
+        let newArr21 = arr21.reduce((acc, n) => acc + n, 0);
+        data.innerHTML += "21. Reduce Array: " + newArr21 + "<br><br>";
+
+
+        /*22. some()
+
+        Definition:
+        Returns true if any element passes the test condition.
+
+        Syntax:
+
+        array.some(callback);*/
+
+        let arr22 = [1, 2, 3, 4];
+        let newArr22 = arr22.some(n => n > 2);
+        data.innerHTML += "22. Some Method: " + newArr22 + "<br><br>";
+
+
+        /*23. every()
+
+        Definition:
+        Returns true if all elements pass the test condition.
+
+        Syntax:
+
+        array.every(callback);*/
+
+        let arr23 = [2, 4, 6, 8, 10];
+        let newArr23 = arr23.every(n => n % 2 == 0);
+        data.innerHTML += "23. Every Method: " + newArr23 + "<br><br>";
+
+
+        /*24. join()
+
+        Definition:
+        Joins all elements into a single string separated by a chosen separator.
+
+        Syntax:
+
+        array.join(separator);*/
+
+
+        let arr24 = ["Apple", "Banana", "Kiwi", "Guava", "Grapes"];
+        let newArr24 = arr24.join(" - ");
+        data.innerHTML += "24. Join Method: " + newArr24 + "<br><br>";
+
+
+        /*25. flat()
+
+        Definition:
+        Flattens a nested array into a single - level array.
+
+        Syntax:
+
+        array.flat(depth);*/
+
+        let arr25 = [1, [2, [3, 4]]];
+        let newArr25 = arr25.flat(2);
+        data.innerHTML += "25. FLat Method: " + newArr25 + "<br><br>";
+
+
+        /*26. flatMap()
+
+        Definition:
+        Applies a function to each element and flattens the result.
+
+        Syntax:
+
+        array.flatMap(callback);*/
+
+        
     </script>
 </body>
 
