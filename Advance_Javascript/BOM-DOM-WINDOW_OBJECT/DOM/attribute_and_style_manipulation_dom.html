@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute and Style Manipulation</title>
+</head>
+
+<body>
+
+    <!-- 
+    🎨 2️⃣ Attribute and Style Manipulation:
+    These methods modify existing elements’ attributes and visual styles, without changing the DOM structure. -->
+
+    <!-- 
+    | Method                                      | Description                        | Used For                  |
+    | ------------------------------------------- | ---------------------------------- | ------------------------- |
+    | `setAttribute()`                            | Add or modify an attribute         | Change element behavior   |
+    | `getAttribute()`                            | Get the value of an attribute      | Read existing attributes  |
+    | `removeAttribute()`                         | Delete an attribute                | Remove properties         |
+    | `style.property`                            | Change CSS property directly       | Inline CSS                |
+    | `classList.add()` / `remove()` / `toggle()` | Add, remove, or toggle CSS classes | Manage styles dynamically | -->
+
+
+    <!-- 6️⃣ setAttribute()
+
+    Adds or changes an HTML attribute.
+    Useful for dynamically setting src, href, id, etc. -->
+
+    <img id="image" alt="No image yet">
+    <button onclick="changeImage()">Set Image</button>
+
+
+    <!-- 
+    7️⃣ getAttribute()
+
+    Returns the current value of an attribute. -->
+    <a id="link" href="https://www.google.com" target="_blank">Visit Site</a>
+    <button onclick="showLink()">Get Attribute</button>
+
+    <script>
+        //For SetAttribute Method:
+        function changeImage() {
+            let img = document.getElementById("image");
+            img.setAttribute("src", "../images/image1.jpeg");
+        }
+
+        // For getAttribute Method:
+        function showLink() {
+            let link = document.getElementById("link");
+            alert(link.getAttribute("href"));
+        }
+    </script>
+</body>
+
+</html>

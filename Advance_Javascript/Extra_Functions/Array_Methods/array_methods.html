@@ -382,7 +382,40 @@
 
         array.flatMap(callback);*/
 
-        
+        let arr26 = [1, 2, 3, 4, 5, 6];
+        let newArr26 = arr26.flatMap(x => [x, x * 2]);
+        data.innerHTML += "26. Flat Map Array: " + newArr26 + "<br><br>";
+
+
+        /*27. fill()
+
+        Definition:
+        Fills elements in an array with a specified static value.
+
+        Syntax:
+
+        array.fill(value, start, end);*/
+
+        let arr27 = [1, 2, 3, 4];
+        let newArr27 = arr27.fill(0, 1, 3);
+        data.innerHTML += "27. Fill Array Method: " + newArr27 + "<br><br>";
+
+
+        /*28. toString()
+
+        Definition:
+        Converts an array into a string separated by commas.
+
+        Syntax:
+
+        array.toString();*/
+
+        let arr28 = ["Apple","Banana","Mango"];
+        let newArr28 = arr28.toString();0
+        data.innerHTML += "28. Tostring Array Method: " + newArr28 + " Type Of Array :" + typeof(newArr28) +  "<br><br>"; 
+
+// --------------------------------------------Array Method Completed -----------------------------------------------------------------
+
     </script>
 </body>
 

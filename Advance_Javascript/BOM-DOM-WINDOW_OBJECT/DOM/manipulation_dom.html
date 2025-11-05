@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation Methods Project</title>
+    <style>
+        /* 🌐 Basic Page Styling */
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(120deg, #f8f9fa, #e3f2fd);
+            margin: 40px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #0d47a1;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin: 8px 0;
+        }
+
+        section {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 25px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        button {
+            background: #1976d2;
+            color: #fff;
+            border: none;
+            padding: 8px 15px;
+            margin-top: 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: #0d47a1;
+            transform: scale(1.05);
+        }
+
+        pre {
+            background: #f1f1f1;
+            border-left: 5px solid #1976d2;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background: #1976d2;
+            color: white;
+        }
+
+        code {
+            background: #e8f0fe;
+            color: #0d47a1;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🔹 DOM Manipulation Methods (Project Demo)</h1>
+
+    <!-- 🧩 Intro Comment Section Visible on Webpage -->
+    <section>
+        <h2>🧩 DOM Manipulation Methods (Core Modification)</h2>
+        <p>
+            These are the foundation of DOM manipulation — they directly create, modify, or remove elements and their
+            contents.
+        </p>
+
+        <table>
+            <tr>
+                <th>Method</th>
+                <th>Description</th>
+                <th>Used For</th>
+            </tr>
+            <tr>
+                <td><code>innerHTML</code></td>
+                <td>Gets or sets HTML code inside an element</td>
+                <td>Add/modify HTML content</td>
+            </tr>
+            <tr>
+                <td><code>textContent</code></td>
+                <td>Gets or sets plain text</td>
+                <td>Add/modify text safely</td>
+            </tr>
+            <tr>
+                <td><code>createElement()</code></td>
+                <td>Creates a new HTML element</td>
+                <td>Dynamically create elements</td>
+            </tr>
+            <tr>
+                <td><code>appendChild()</code></td>
+                <td>Adds a new element as the last child</td>
+                <td>Insert elements into DOM</td>
+            </tr>
+            <tr>
+                <td><code>removeChild()</code></td>
+                <td>Removes a child element</td>
+                <td>Delete elements</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- 1️⃣ innerHTML -->
+    <section>
+        <h2>1️⃣ innerHTML</h2>
+        <p>Used to get or set HTML markup inside an element. It can replace existing content with new HTML structure.
+        </p>
+        <p><b>⚠️ It parses HTML tags (unlike textContent).</b></p>
+
+        <div id="demo1">Hello <b>World</b></div>
+        <button onclick="changeHTML()">Run innerHTML()</button>
+    </section>
+
+    <!-- 2️⃣ textContent -->
+    <section>
+        <h2>2️⃣ textContent</h2>
+        <p>Used to get or set only plain text (HTML tags are treated as text). Safer than <code>innerHTML</code> because
+            it doesn’t interpret HTML tags.</p>
+
+        <div id="demo2">Hello <b>World</b></div>
+        <button onclick="changeText()">Run textContent()</button>
+    </section>
+
+    <!-- 3️⃣ createElement() -->
+    <section>
+        <h2>3️⃣ createElement()</h2>
+        <p>Used to dynamically create a new HTML element (not yet visible). You can then customize it before adding it
+            to DOM.</p>
+
+        <button onclick="addElement()">Run createElement()</button>
+        <div id="container"></div>
+    </section>
+
+    <!-- 4️⃣ appendChild() -->
+    <section>
+        <h2>4️⃣ appendChild()</h2>
+        <p>Used to insert an element as the last child of a parent. Must be used with a node object (created with
+            createElement()).</p>
+
+        <ul id="list">
+            <li>Apple</li>
+        </ul>
+        <button onclick="addItem()">Run appendChild()</button>
+    </section>
+
+    <!-- 5️⃣ removeChild() -->
+    <section>
+        <h2>5️⃣ removeChild()</h2>
+        <p>Removes a specific child node from its parent element. You must reference both the parent and child nodes.
+        </p>
+
+        <ul id="fruits">
+            <li id="apple">Apple</li>
+            <li id="banana">Banana</li>
+        </ul>
+        <button onclick="removeApple()">Run removeChild()</button>
+    </section>
+
+    <script>
+        // 1️⃣ innerHTML Example
+        function changeHTML() {
+            document.getElementById("demo1").innerHTML = "This text is modified by <code>innerHTML</code> method!";
+        }
+
+        // 2️⃣ textContent Example
+        function changeText() {
+            document.getElementById("demo2").textContent = "This text is modified by <code>textContent</code> method!";
+        }
+
+        // 3️⃣ createElement Example
+        function addElement() {
+            let newPara = document.createElement("p");
+            newPara.textContent = "✅ This is the New Paragraph Element Text!!";
+            document.getElementById("container").appendChild(newPara);
+        }
+
+        // 4️⃣ appendChild Example
+        function addItem() {
+            let li = document.createElement("li");
+            li.textContent = "Banana";
+            document.getElementById("list").appendChild(li);
+        }
+
+        // 5️⃣ removeChild Example
+        function removeApple() {
+            let parent = document.getElementById("fruits");
+            let child = document.getElementById("apple");
+            if (child) parent.removeChild(child);
+            else alert("Apple has already been removed!");
+        }
+    </script>
+</body>
+
+</html>

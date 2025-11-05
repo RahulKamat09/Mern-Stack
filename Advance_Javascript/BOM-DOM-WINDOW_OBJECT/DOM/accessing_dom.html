@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Element Access Project</title>
+
+    <style>
+        /* ---------- Basic Styling ---------- */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f8f9fa;
+            margin: 40px;
+            line-height: 1.6;
+        }
+
+        h2 {
+            color: #333;
+            border-left: 4px solid #007bff;
+            padding-left: 10px;
+        }
+
+        section {
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        p,
+        h1,
+        li {
+            margin: 8px 0;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        .highlight {
+            font-weight: bold;
+        }
+
+        /* ---------- Button Styling ---------- */
+        button {
+            background-color: #007bff;
+            border: none;
+            color: white;
+            padding: 8px 14px;
+            margin-top: 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>DOM Element Access Methods (Interactive Project)</h1>
+    <p>This mini project demonstrates all major DOM selection methods with live examples.</p>
+
+    <!-- 1️⃣ getElementById() -->
+    <section>
+        <h2>1️⃣ document.getElementById()</h2>
+        <p id="demo">This paragraph will be styled using <span class="highlight">getElementById()</span>.</p>
+        <button onclick="runGetElementById()">Run getElementById()</button>
+    </section>
+
+    <!-- 2️⃣ getElementsByClassName() -->
+    <section>
+        <h2>2️⃣ document.getElementsByClassName()</h2>
+        <p class="text">Paragraph 1 - accessed by <span class="highlight">class name</span>.</p>
+        <p class="text">Paragraph 2 - accessed by <span class="highlight">class name</span>.</p>
+        <p class="text">Paragraph 3 - accessed by <span class="highlight">class name</span>.</p>
+        <button onclick="runGetElementsByClassName()">Run getElementsByClassName()</button>
+    </section>
+
+    <!-- 3️⃣ getElementsByTagName() -->
+    <section>
+        <h2>3️⃣ document.getElementsByTagName()</h2>
+        <h1>Heading 1 - Example of <span class="highlight">Tag Name</span></h1>
+        <h1>Heading 2 - Example of <span class="highlight">Tag Name</span></h1>
+        <button onclick="runGetElementsByTagName()">Run getElementsByTagName()</button>
+    </section>
+
+    <!-- 4️⃣ querySelector() -->
+    <section>
+        <h2>4️⃣ document.querySelector()</h2>
+        <p class="text1"></p>
+        <button onclick="runQuerySelector()">Run querySelector()</button>
+    </section>
+
+    <!-- 5️⃣ querySelectorAll() -->
+    <section>
+        <h2>5️⃣ document.querySelectorAll()</h2>
+        <ul class="container">
+            <li class="list-item">List Item 1 - accessed by querySelectorAll()</li>
+            <li class="list-item">List Item 2 - accessed by querySelectorAll()</li>
+            <li class="list-item">List Item 3 - accessed by querySelectorAll()</li>
+            <li class="list-item">List Item 4 - accessed by querySelectorAll()</li>
+            <li class="list-item">List Item 5 - accessed by querySelectorAll()</li>
+        </ul>
+        <button onclick="runQuerySelectorAll()">Run querySelectorAll()</button>
+    </section>
+
+    <!-- ---------- Script Section ---------- -->
+    <script>
+        // 1️⃣ Accessing by ID
+        function runGetElementById() {
+            let demoPara = document.getElementById("demo");
+            demoPara.style.color = "red";
+            demoPara.style.fontWeight = "bold";
+            demoPara.innerHTML = "✔️ getElementById() Applied Successfully!";
+        }
+
+        // 2️⃣ Accessing by Class Name (HTMLCollection)
+        function runGetElementsByClassName() {
+            let classElements = document.getElementsByClassName("text");
+            classElements[0].style.color = "green";
+            classElements[1].style.color = "blue";
+            classElements[2].style.color = "purple";
+            alert("✔️ getElementsByClassName() applied to 3 elements.");
+        }
+
+        // 3️⃣ Accessing by Tag Name
+        function runGetElementsByTagName() {
+            let headings = document.getElementsByTagName("h1");
+            headings[0].style.fontSize = "35px";
+            headings[1].style.color = "darkred";
+            console.log("Total number of <h1> tags:", headings.length);
+            alert("✔️ getElementsByTagName() applied. Check console for count!");
+        }
+
+        // 4️⃣ Accessing by Query Selector
+        function runQuerySelector() {
+            let singleElement = document.querySelector(".text1");
+            singleElement.innerHTML = "✔️ This paragraph was modified using querySelector().";
+            singleElement.style.color = "#007bff";
+            singleElement.style.fontWeight = "bold";
+        }
+
+        // 5️⃣ Accessing by Query Selector All
+        function runQuerySelectorAll() {
+            let listItems = document.querySelectorAll(".list-item");
+            listItems.forEach((item, index) => {
+                item.style.color = "#ff5722";
+                item.style.fontWeight = "bold";
+                item.innerHTML = `✔️ List Item ${index + 1} styled dynamically using querySelectorAll()`;
+            });
+        }
+    </script>
+</body>
+
+</html>
