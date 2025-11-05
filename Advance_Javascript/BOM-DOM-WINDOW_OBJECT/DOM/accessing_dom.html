@@ -58,6 +58,31 @@
             box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
         }
 
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background: #1976d2;
+            color: white;
+        }
+
+        code {
+            background: #e8f0fe;
+            color: #0d47a1;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
         h2 {
             color: #0d47a1;
             font-size: 20px;
@@ -122,21 +147,50 @@
 </head>
 
 <body>
-    <h1>DOM Element Access Methods</h1>
-    <p class="intro">This mini project demonstrates all major DOM selection methods with live examples and visible
-        comments.</p>
+    <h1>🔹 DOM Manipulation Methods </h1>
 
-    <!-- 📘 Documentation Table -->
-    <div class="comment">
-        | Method | Description | Return Type |
-        | ------- | ------------ | ------------ |
-        | getElementById("id") | Returns element with specified ID | Element |
-        | getElementsByClassName("class") | Returns all elements with the given class name | HTMLCollection |
-        | getElementsByTagName("tag") | Returns all elements with the given tag name | HTMLCollection |
-        | querySelector("selector") | Returns first matching element | Element |
-        | querySelectorAll("selector") | Returns all matching elements (NodeList) | NodeList |
-        | getElementsByName("name") | Returns elements by name attribute | NodeList |
-    </div>
+
+    <section>
+        <h2>🧩 DOM Manipulation Methods (Core Modification)</h2>
+        <p>
+            These are the foundation of DOM manipulation — they directly create, modify, or remove elements and their
+            contents.
+        </p>
+
+        <!-- 🧩 Intro Comment Section Visible on Webpage -->
+        <table>
+            <tr>
+                <th>Method</th>
+                <th>Description</th>
+                <th>Return Type</th>
+            </tr>
+            <tr>
+                <td><code>getElementById("id")</code></td>
+                <td>Returns element with specified ID</td>
+                <td>Element</td>
+            </tr>
+            <tr>
+                <td><code>getElementsByClassName("class")</code></td>
+                <td>Returns all elements with the given class name </td>
+                <td>HTMLCollection</td>
+            </tr>
+            <tr>
+                <td><code>getElementsByTagName("tag")</code></td>
+                <td>Returns all elements with the given tag name</td>
+                <td>HTMLCollection</td>
+            </tr>
+            <tr>
+                <td><code>querySelector("selector")</code></td>
+                <td>Returns first matching element</td>
+                <td>Element</td>
+            </tr>
+            <tr>
+                <td><code>querySelectorAll("selector")</code></td>
+                <td>Returns all matching elements (NodeList)</td>
+                <td>NodeList</td>
+            </tr>
+        </table>
+    </section>
 
     <section>
         <div class="comment">1️⃣ document.getElementById()
