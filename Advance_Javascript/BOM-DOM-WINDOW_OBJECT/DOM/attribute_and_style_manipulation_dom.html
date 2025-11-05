@@ -4,52 +4,289 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Attribute and Style Manipulation</title>
+    <title>Attribute & Style Manipulation - DOM Project</title>
+
+    <style>
+        /* 🎨 Page Styling */
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(120deg, #f8f9fa, #e3f2fd);
+            margin: 40px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            color: #0d47a1;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #1565c0;
+        }
+
+        section {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 25px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        button {
+            background: #1976d2;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            margin-top: 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: #0d47a1;
+            transform: scale(1.05);
+        }
+
+        img {
+            display: block;
+            margin-top: 10px;
+            width: 200px;
+            height: 150px;
+            border-radius: 10px;
+            object-fit: cover;
+            border: 2px solid #ccc;
+        }
+
+        a {
+            color: #1976d2;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background: #1976d2;
+            color: white;
+        }
+
+        code {
+            background: #e8f0fe;
+            color: #0d47a1;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
+        .highlight1 {
+            background-color: yellow;
+            color: black;
+            padding: 10px;
+        }
+
+        .highlight2 {
+            background-color: yellow;
+        }
+
+        .highlight3 {
+            background-color: yellow;
+        }
+
+        .output-box {
+            background: #f1f1f1;
+            padding: 10px;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- 
-    🎨 2️⃣ Attribute and Style Manipulation:
-    These methods modify existing elements’ attributes and visual styles, without changing the DOM structure. -->
+    <h1>🎨 DOM Attribute & Style Manipulation Project</h1>
 
-    <!-- 
-    | Method                                      | Description                        | Used For                  |
-    | ------------------------------------------- | ---------------------------------- | ------------------------- |
-    | `setAttribute()`                            | Add or modify an attribute         | Change element behavior   |
-    | `getAttribute()`                            | Get the value of an attribute      | Read existing attributes  |
-    | `removeAttribute()`                         | Delete an attribute                | Remove properties         |
-    | `style.property`                            | Change CSS property directly       | Inline CSS                |
-    | `classList.add()` / `remove()` / `toggle()` | Add, remove, or toggle CSS classes | Manage styles dynamically | -->
+    <!-- Intro Section -->
+    <section>
+        <h2>🔹 Attribute and Style Manipulation</h2>
+        <p>
+            These methods modify existing elements’ attributes and visual styles, without changing the DOM structure.
+        </p>
 
+        <table>
+            <tr>
+                <th>Method</th>
+                <th>Description</th>
+                <th>Used For</th>
+            </tr>
+            <tr>
+                <td><code>setAttribute()</code></td>
+                <td>Add or modify an attribute</td>
+                <td>Change element behavior</td>
+            </tr>
+            <tr>
+                <td><code>getAttribute()</code></td>
+                <td>Get the value of an attribute</td>
+                <td>Read existing attributes</td>
+            </tr>
+            <tr>
+                <td><code>removeAttribute()</code></td>
+                <td>Delete an attribute</td>
+                <td>Remove properties</td>
+            </tr>
+            <tr>
+                <td><code>style.property</code></td>
+                <td>Change CSS property directly</td>
+                <td>Inline CSS</td>
+            </tr>
+            <tr>
+                <td><code>classList.add()</code> / <code>remove()</code> / <code>toggle()</code></td>
+                <td>Add, remove, or toggle CSS classes</td>
+                <td>Manage styles dynamically</td>
+            </tr>
+        </table>
+    </section>
 
-    <!-- 6️⃣ setAttribute()
+    <!-- 6️⃣ setAttribute() -->
+    <section>
+        <h2>6️⃣ setAttribute()</h2>
+        <p>Adds or changes an HTML attribute dynamically (e.g., <code>src</code>, <code>href</code>, <code>id</code>).
+        </p>
 
-    Adds or changes an HTML attribute.
-    Useful for dynamically setting src, href, id, etc. -->
+        <img id="image" alt="No image yet">
+        <button onclick="changeImage()">Run setAttribute()</button>
+    </section>
 
-    <img id="image" alt="No image yet">
-    <button onclick="changeImage()">Set Image</button>
+    <!-- 7️⃣ getAttribute() -->
+    <section>
+        <h2>7️⃣ getAttribute()</h2>
+        <p>Returns the current value of an attribute from an element.</p>
 
+        <a id="link" href="https://www.google.com" target="_blank">Visit Google</a>
+        <button onclick="showLink()">Run getAttribute()</button>
+        <div id="linkOutput" class="output-box"></div>
+    </section>
 
-    <!-- 
-    7️⃣ getAttribute()
+    <!-- 8️⃣ removeAttribute() -->
+    <section>
+        <h2>8️⃣ removeAttribute()</h2>
+        <p>Deletes a specific attribute (like <code>src</code>, <code>alt</code>, etc.) from an element.</p>
 
-    Returns the current value of an attribute. -->
-    <a id="link" href="https://www.google.com" target="_blank">Visit Site</a>
-    <button onclick="showLink()">Get Attribute</button>
+        <img id="pic" src="../images/image2.jpeg" alt="Placeholder image">
+        <button onclick="removeSrc()">Run removeAttribute()</button>
+    </section>
+
+    <!-- 9️⃣ style.property -->
+    <section>
+        <h2>9️⃣ style.property</h2>
+        <p>Directly modifies CSS properties of an element (inline). Use camelCase for multi-word properties.</p>
+
+        <p id="textStyle">Hello! This will change style dynamically.</p>
+        <button onclick="styleText()">Run style.property()</button>
+    </section>
+
+    <!-- 🔟 classList.add() -->
+    <section>
+        <h2>🔟 classList.add()</h2>
+        <p>Adds a new CSS class to the element dynamically (no duplication).</p>
+
+        <p id="textAdd">This paragraph will get highlighted.</p>
+        <button onclick="addClass()">Run classList.add()</button>
+    </section>
+
+    <!-- classList.remove() -->
+    <section>
+        <h2>classList.remove()</h2>
+        <p>Removes a specific CSS class if it exists.</p>
+
+        <p id="textRemove" class="highlight2">This paragraph starts highlighted.</p>
+        <button onclick="removeClass()">Run classList.remove()</button>
+    </section>
+
+    <!-- classList.toggle() -->
+    <section>
+        <h2>classList.toggle()</h2>
+        <p>Toggles (adds/removes) a class dynamically — great for light/dark modes, menus, etc.</p>
+
+        <p id="textToggle">This paragraph will toggle highlight on/off.</p>
+        <button onclick="toggleClass()">Run classList.toggle()</button>
+    </section>
 
     <script>
-        //For SetAttribute Method:
+        // ✅ setAttribute()
         function changeImage() {
             let img = document.getElementById("image");
             img.setAttribute("src", "../images/image1.jpeg");
+            img.setAttribute("alt", "Updated image by setAttribute()");
         }
 
-        // For getAttribute Method:
+        // ✅ getAttribute()
         function showLink() {
             let link = document.getElementById("link");
-            alert(link.getAttribute("href"));
+            let hrefValue = link.getAttribute("href");
+            document.getElementById("linkOutput").textContent = "The href attribute value is: " + hrefValue;
+        }
+
+        // ✅ removeAttribute()
+        function removeSrc() {
+            let pic = document.getElementById("pic");
+            if (pic.hasAttribute("src")) {
+                pic.removeAttribute("src");
+                pic.alt = "src attribute removed successfully!";
+            } else {
+                alert("src already removed!");
+            }
+        }
+
+        // ✅ style.property
+        function styleText() {
+            let text = document.getElementById("textStyle");
+            text.style.color = "red";
+            text.style.fontSize = "20px";
+            text.style.backgroundColor = "yellow";
+            text.style.padding = "10px";
+            text.style.borderRadius = "6px";
+        }
+
+        // ✅ classList.add()
+        function addClass() {
+            let p = document.getElementById("textAdd");
+            p.classList.add("highlight1");
+        }
+
+        // ✅ classList.remove()
+        function removeClass() {
+            let p = document.getElementById("textRemove");
+            p.classList.remove("highlight2");
+        }
+
+        // ✅ classList.toggle()
+        function toggleClass() {
+            let p = document.getElementById("textToggle");
+            p.classList.toggle("highlight3");
         }
     </script>
 </body>

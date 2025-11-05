@@ -7,85 +7,149 @@
     <title>DOM Element Access Project</title>
 
     <style>
-        /* ---------- Basic Styling ---------- */
+        /* ---------- Page Styling ---------- */
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(120deg, #e3f2fd, #ffffff);
             margin: 40px;
+            color: #222;
             line-height: 1.6;
         }
 
-        h2 {
-            color: #333;
-            border-left: 4px solid #007bff;
-            padding-left: 10px;
+        h1 {
+            text-align: center;
+            color: #0d47a1;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        p.intro {
+            text-align: center;
+            color: #444;
+            margin-bottom: 35px;
+            font-size: 15px;
+        }
+
+        .comment {
+            background: #f1f8ff;
+            border-left: 4px solid #2196f3;
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-size: 14px;
+            margin-bottom: 15px;
+            color: #0d47a1;
+            white-space: pre-line;
+            font-family: Consolas, monospace;
         }
 
         section {
-            background: #fff;
-            border-radius: 8px;
-            padding: 20px;
+            background: #ffffff;
+            border-left: 6px solid #2196f3;
+            border-radius: 10px;
+            padding: 25px;
             margin-bottom: 25px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         section:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
         }
 
-        p,
-        h1,
-        li {
-            margin: 8px 0;
-        }
-
-        ul {
-            padding-left: 20px;
+        h2 {
+            color: #0d47a1;
+            font-size: 20px;
+            border-bottom: 2px dashed #90caf9;
+            padding-bottom: 5px;
         }
 
         .highlight {
-            font-weight: bold;
+            color: #1976d2;
+            font-weight: 600;
         }
 
-        /* ---------- Button Styling ---------- */
+        /* ---------- Buttons ---------- */
         button {
-            background-color: #007bff;
+            background: linear-gradient(135deg, #2196f3, #1976d2);
             border: none;
-            color: white;
-            padding: 8px 14px;
-            margin-top: 10px;
+            color: #fff;
+            padding: 10px 18px;
             border-radius: 6px;
             cursor: pointer;
             font-size: 14px;
-            transition: background 0.3s ease, transform 0.2s ease;
+            margin-top: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 6px rgba(33, 150, 243, 0.4);
         }
 
         button:hover {
-            background-color: #0056b3;
-            transform: scale(1.05);
+            background: linear-gradient(135deg, #1976d2, #0d47a1);
+            transform: scale(1.06);
+            box-shadow: 0 3px 8px rgba(33, 150, 243, 0.6);
         }
 
         button:active {
-            transform: scale(0.98);
+            transform: scale(0.96);
+        }
+
+        pre {
+            background: #f1f8ff;
+            padding: 10px;
+            border-radius: 6px;
+            font-size: 14px;
+            overflow-x: auto;
+            border-left: 4px solid #64b5f6;
+        }
+
+        .animate {
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
     </style>
 </head>
 
 <body>
-    <h1>DOM Element Access Methods (Interactive Project)</h1>
-    <p>This mini project demonstrates all major DOM selection methods with live examples.</p>
+    <h1>DOM Element Access Methods</h1>
+    <p class="intro">This mini project demonstrates all major DOM selection methods with live examples and visible
+        comments.</p>
 
-    <!-- 1️⃣ getElementById() -->
+    <!-- 📘 Documentation Table -->
+    <div class="comment">
+        | Method | Description | Return Type |
+        | ------- | ------------ | ------------ |
+        | getElementById("id") | Returns element with specified ID | Element |
+        | getElementsByClassName("class") | Returns all elements with the given class name | HTMLCollection |
+        | getElementsByTagName("tag") | Returns all elements with the given tag name | HTMLCollection |
+        | querySelector("selector") | Returns first matching element | Element |
+        | querySelectorAll("selector") | Returns all matching elements (NodeList) | NodeList |
+        | getElementsByName("name") | Returns elements by name attribute | NodeList |
+    </div>
+
     <section>
+        <div class="comment">1️⃣ document.getElementById()
+            Get element by its ID.
+            Used to select a single unique element.</div>
         <h2>1️⃣ document.getElementById()</h2>
         <p id="demo">This paragraph will be styled using <span class="highlight">getElementById()</span>.</p>
         <button onclick="runGetElementById()">Run getElementById()</button>
     </section>
 
-    <!-- 2️⃣ getElementsByClassName() -->
     <section>
+        <div class="comment">2️⃣ document.getElementsByClassName()
+            Returns an HTMLCollection of elements with the given class name.</div>
         <h2>2️⃣ document.getElementsByClassName()</h2>
         <p class="text">Paragraph 1 - accessed by <span class="highlight">class name</span>.</p>
         <p class="text">Paragraph 2 - accessed by <span class="highlight">class name</span>.</p>
@@ -93,23 +157,27 @@
         <button onclick="runGetElementsByClassName()">Run getElementsByClassName()</button>
     </section>
 
-    <!-- 3️⃣ getElementsByTagName() -->
     <section>
+        <div class="comment">3️⃣ document.getElementsByTagName()
+            Get all elements with a specific tag name (like h1, p, li, etc.).</div>
         <h2>3️⃣ document.getElementsByTagName()</h2>
         <h1>Heading 1 - Example of <span class="highlight">Tag Name</span></h1>
         <h1>Heading 2 - Example of <span class="highlight">Tag Name</span></h1>
         <button onclick="runGetElementsByTagName()">Run getElementsByTagName()</button>
     </section>
 
-    <!-- 4️⃣ querySelector() -->
     <section>
+        <div class="comment">4️⃣ document.querySelector()
+            Returns the first element that matches a CSS selector (like .class or #id).</div>
         <h2>4️⃣ document.querySelector()</h2>
         <p class="text1"></p>
         <button onclick="runQuerySelector()">Run querySelector()</button>
     </section>
 
-    <!-- 5️⃣ querySelectorAll() -->
     <section>
+        <div class="comment">5️⃣ document.querySelectorAll()
+            Returns all elements that match a CSS selector.
+            It returns a NodeList which supports forEach().</div>
         <h2>5️⃣ document.querySelectorAll()</h2>
         <ul class="container">
             <li class="list-item">List Item 1 - accessed by querySelectorAll()</li>
@@ -121,17 +189,18 @@
         <button onclick="runQuerySelectorAll()">Run querySelectorAll()</button>
     </section>
 
-    <!-- ---------- Script Section ---------- -->
     <script>
         // 1️⃣ Accessing by ID
         function runGetElementById() {
             let demoPara = document.getElementById("demo");
-            demoPara.style.color = "red";
+            demoPara.style.color = "#d32f2f";
             demoPara.style.fontWeight = "bold";
+            demoPara.style.fontSize = "18px";
             demoPara.innerHTML = "✔️ getElementById() Applied Successfully!";
+            demoPara.classList.add("animate");
         }
 
-        // 2️⃣ Accessing by Class Name (HTMLCollection)
+        // 2️⃣ Accessing by Class Name
         function runGetElementsByClassName() {
             let classElements = document.getElementsByClassName("text");
             classElements[0].style.color = "green";
@@ -145,8 +214,8 @@
             let headings = document.getElementsByTagName("h1");
             headings[0].style.fontSize = "35px";
             headings[1].style.color = "darkred";
-            console.log("Total number of <h1> tags:", headings.length);
-            alert("✔️ getElementsByTagName() applied. Check console for count!");
+            headings[1].style.fontWeight = "bold";
+            alert("✔️ getElementsByTagName() applied. Total H1 tags: " + headings.length);
         }
 
         // 4️⃣ Accessing by Query Selector
@@ -155,6 +224,7 @@
             singleElement.innerHTML = "✔️ This paragraph was modified using querySelector().";
             singleElement.style.color = "#007bff";
             singleElement.style.fontWeight = "bold";
+            singleElement.classList.add("animate");
         }
 
         // 5️⃣ Accessing by Query Selector All
@@ -163,7 +233,8 @@
             listItems.forEach((item, index) => {
                 item.style.color = "#ff5722";
                 item.style.fontWeight = "bold";
-                item.innerHTML = `✔️ List Item ${index + 1} styled dynamically using querySelectorAll()`;
+                item.innerHTML = `✔️ List Item ${index + 1} styled using querySelectorAll()`;
+                item.classList.add("animate");
             });
         }
     </script>
