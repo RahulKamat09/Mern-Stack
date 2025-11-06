@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbling in JavaScript</title>
+
+    <style>
+        /* ---------- Page Styling ---------- */
+        body {
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
+            margin: 40px;
+            text-align: center;
+            color: #333;
+        }
+
+        h1 {
+            color: #004d40;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #00796b;
+            margin-bottom: 25px;
+            font-size: 18px;
+        }
+
+        /* ---------- Container ---------- */
+        .container {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 25px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ---------- Event Elements ---------- */
+        #parent {
+            padding: 40px;
+            background-color: #b3e5fc;
+            border-radius: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        #parent:hover {
+            background-color: #81d4fa;
+            transform: scale(1.02);
+        }
+
+        #child {
+            margin-top: 20px;
+            padding: 20px 30px;
+            background-color: #a5d6a7;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        #child:hover {
+            background-color: #66bb6a;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* ---------- Comment Box ---------- */
+        .comment {
+            background: #e8f5e9;
+            color: #2e7d32;
+            border-left: 4px solid #43a047;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 25px;
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        /* ---------- Output Section ---------- */
+        #output {
+            margin-top: 20px;
+            padding: 12px;
+            background: #fce4ec;
+            border-radius: 8px;
+            color: #ad1457;
+            font-weight: bold;
+            font-size: 16px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        #output.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🧩 Event Bubbling in JavaScript</h1>
+    <h2>Understanding how events propagate through parent and child elements</h2>
+
+    <div class="container">
+        <div id="parent">
+            Parent
+            <button id="child">Child</button>
+        </div>
+
+        <div id="output">Click on buttons to see event order!</div>
+
+        <div class="comment">
+            <b>🧠 Concept:</b><br>
+            When you click on a child element, the event first triggers the <b>child</b>’s event handler,
+            and then “bubbles up” to the <b>parent</b> element.<br><br>
+
+            <b>🧩 Output (Click on Child):</b><br>
+            1️⃣ Child clicked!<br>
+            2️⃣ Parent clicked!<br><br>
+
+            This is called <b>Event Bubbling</b>.
+        </div>
+    </div>
+
+    <script>
+        const output = document.getElementById("output");
+
+        // Parent event
+        document.getElementById("parent").addEventListener("click", function () {
+            alert("Parent clicked!");
+            output.classList.add("show");
+            output.style.color = "#004d40";
+            output.innerHTML = "✅ Parent clicked (event bubbled from child)";
+        });
+
+        // Child event
+        document.getElementById("child").addEventListener("click", function (event) {
+            alert("Child clicked!");
+            output.classList.add("show");
+            output.style.color = "#2e7d32";
+            output.innerHTML = "🟢 Child clicked (event started here)";
+        });
+    </script>
+
+</body>
+
+</html>

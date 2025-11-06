@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Post Card System</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .post-form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            width: 380px;
+        }
+
+        .post-form input,
+        .post-form textarea,
+        .post-form button {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .post-form input:focus,
+        .post-form textarea:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 3px #007bff;
+        }
+
+        .post-form button {
+            background: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .post-form button:hover {
+            background: #0056b3;
+        }
+
+        .post-section {
+            margin-top: 30px;
+            width: 380px;
+        }
+
+        .post {
+            background: #fff;
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: 0.3s;
+        }
+
+        .post:hover {
+            background: #f0f8ff;
+        }
+
+        .delete-btn,
+        .like-btn {
+            position: absolute;
+            top: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 6px;
+            padding: 5px 8px;
+            font-size: 13px;
+            transition: 0.2s;
+        }
+
+        .delete-btn {
+            right: 10px;
+            background: crimson;
+            color: white;
+        }
+
+        .like-btn {
+            right: 65px;
+            background: #e0e0e0;
+            color: black;
+        }
+
+        .like-btn.liked {
+            background: #ff4081;
+            color: white;
+        }
+
+        .post-title {
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 5px;
+        }
+
+        .post-content {
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>📝 Interactive Post Card System</h1>
+
+    <form class="post-form" id="postForm">
+        <input type="text" id="title" placeholder="Enter post title...">
+        <textarea id="content" rows="3" placeholder="Write something interesting..."></textarea>
+        <button type="submit">Post</button>
+    </form>
+
+    <div class="post-section" id="postSection"></div>
+
+    <script>
+        const form = document.getElementById("postForm");
+        const postSection = document.getElementById("postSection");
+        const titleInput = document.getElementById("title");
+        const contentInput = document.getElementById("content");
+
+        // 🔹 1️⃣ Add event to submit form
+        form.addEventListener("submit", function (e) {
+            e.preventDefault(); // stop reload
+
+            let title = titleInput.value.trim();
+            let content = contentInput.value.trim();
+
+            if (title === "" || content === "") {
+                alert("Title or content cannot be empty!");
+                return;
+            }
+
+            createPost(title, content);
+
+            titleInput.value = "";
+            contentInput.value = "";
+        });
+
+        // 🔹 2️⃣ Create a new post dynamically
+        function createPost(title, content) {
+            const div = document.createElement("div");
+            div.className = "post";
+
+            const h3 = document.createElement("div");
+            h3.className = "post-title";
+            h3.textContent = title;
+
+            const p = document.createElement("div");
+            p.className = "post-content";
+            p.textContent = content;
+
+            const delBtn = document.createElement("button");
+            delBtn.textContent = "Delete";
+            delBtn.className = "delete-btn";
+
+            const likeBtn = document.createElement("button");
+            likeBtn.textContent = "Like";
+            likeBtn.className = "like-btn";
+
+            div.appendChild(h3);
+            div.appendChild(p);
+            div.appendChild(likeBtn);
+            div.appendChild(delBtn);
+
+            postSection.appendChild(div);
+
+            // 🔹 3️⃣ Mouse hover color change
+            div.addEventListener("mouseover", () => div.style.boxShadow = "0 0 10px #007bff");
+            div.addEventListener("mouseout", () => div.style.boxShadow = "0 3px 10px rgba(0,0,0,0.1)");
+
+            // 🔹 4️⃣ Double click edit feature (once:false so can edit anytime)
+            div.addEventListener("dblclick", () => {
+                let newTitle = prompt("Edit Title:", h3.textContent);
+                if (newTitle) h3.textContent = newTitle;
+            });
+
+            // 🔹 5️⃣ Like button toggle
+            likeBtn.addEventListener("click", (e) => {
+                e.stopPropagation(); // stops bubbling to post
+                likeBtn.classList.toggle("liked");
+                likeBtn.textContent = likeBtn.classList.contains("liked") ? "Liked ❤️" : "Like";
+            });
+
+            // 🔹 6️⃣ Delete post button
+            delBtn.addEventListener("click", function (e) {
+                e.stopPropagation(); // prevent triggering post click
+                div.remove();
+            });
+
+            // 🔹 7️⃣ Demonstrate capturing phase (clicks on section)
+            postSection.addEventListener("click", () => {
+                console.log("Capturing phase: Post section clicked first");
+            }, true);
+
+            // 🔹 8️⃣ Keyboard event (press Enter to submit)
+            document.addEventListener("keydown", function (e) {
+                if (e.key === "Enter" && document.activeElement === contentInput) {
+                    e.preventDefault();
+                    form.requestSubmit();
+                }
+            }, { once: true }); // demonstrate once:true
+
+            // 🔹 9️⃣ Remove capturing listener after 5 posts
+            if (postSection.children.length > 5) {
+                postSection.removeEventListener("click", () => { }, true);
+                console.log("Removed capturing listener after 5 posts");
+            }
+        }
+
+        // 🔹 1️⃣0️⃣ Stop form event bubbling example (demonstrating bubbling phase)
+        form.addEventListener("click", function () {
+            console.log("Form clicked - bubbling phase");
+        });
+    </script>
+
+</body>
+
+</html>

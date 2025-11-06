@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Named Function AddEventListener Project</title>
+
+    <style>
+        /* ---------- Page Styling ---------- */
+        body {
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #e3f2fd, #f8f9fa);
+            margin: 40px;
+            color: #333;
+            text-align: center;
+        }
+
+        h1 {
+            color: #1a237e;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #1565c0;
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
+        .container {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 25px;
+            max-width: 550px;
+            margin: auto;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+        }
+
+        p.comment {
+            background: #e3f2fd;
+            color: #0d47a1;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            text-align: left;
+            margin-bottom: 25px;
+            border-left: 4px solid #1976d2;
+            line-height: 1.5;
+        }
+
+        /* ---------- Button Styling ---------- */
+        #btn {
+            background: linear-gradient(135deg, #42a5f5, #1e88e5);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        #btn:hover {
+            background: linear-gradient(135deg, #1e88e5, #0d47a1);
+            transform: scale(1.05);
+        }
+
+        #btn:active {
+            transform: scale(0.97);
+        }
+
+        /* ---------- Output Section ---------- */
+        #output {
+            margin-top: 25px;
+            font-weight: bold;
+            font-size: 18px;
+            color: #1b5e20;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        #output.show {
+            opacity: 1;
+        }
+
+        .removed {
+            color: #d32f2f;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🎯 Named Function in AddEventListener()</h1>
+    <h2>How to Add and Remove Event Listeners</h2>
+
+    <div class="container">
+        <p class="comment">
+            2️⃣ <b>Using Named Function (Reuse / Remove Later):</b><br>
+            When you want to remove an event listener later, you must use a named function instead of an anonymous one.
+        </p>
+
+        <button id="btn">Click Me</button>
+
+        <p id="output">✅ Waiting for button click...</p>
+
+        <p class="comment">
+            ✅ After 3 seconds, the event listener will be removed automatically. <br>
+            Try clicking again after that — the alert won’t appear anymore!
+        </p>
+    </div>
+
+    <script>
+        // Named function example
+        function showMessage() {
+            const output = document.getElementById("output");
+            output.classList.add("show");
+            output.style.color = "#1b5e20";
+            output.textContent = "✔️ Button Clicked! Event Triggered Successfully!";
+            alert("This Button is Clicked!");
+        }
+
+        // Attach event listener
+        const btn = document.getElementById("btn");
+        btn.addEventListener("click", showMessage);
+
+        // Remove event listener after 3 seconds
+        setTimeout(() => {
+            btn.removeEventListener("click", showMessage);
+            const output = document.getElementById("output");
+            output.classList.add("show");
+            output.classList.add("removed");
+            output.textContent = "❌ Event Listener Removed — Click Won’t Work Now!";
+            alert("Event Listener Removed Successfully!");
+        }, 3000);
+    </script>
+
+</body>
+
+</html>

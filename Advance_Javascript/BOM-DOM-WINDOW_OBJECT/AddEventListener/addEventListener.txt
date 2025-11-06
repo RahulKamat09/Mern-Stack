@@ -1,0 +1,200 @@
+🧠 What is addEventListener()?:
+
+The addEventListener() method in JavaScript is used to attach an event handler to an HTML element without overwriting existing event handlers.
+It allows you to listen (detect) specific events — like clicks, key presses, mouse movements, etc. — and execute a function when that event happens.
+
+
+🧩 Basic Syntax:
+element.addEventListener(event, function, useCapture);
+
+
+OR (modern version):
+element.addEventListener(event, function, options);
+
+
+⚙️ Parameters Explained:
+
+| Parameter                | Type             | Description                                                                           |
+| ------------------------ | ---------------- | ------------------------------------------------------------------------------------- |
+| **event**                | String           | The name of the event (e.g., `"click"`, `"mouseover"`, `"keydown"`, `"input"`, etc.). |
+| **function**             | Function         | The callback function that runs when the event is triggered.                          |
+| **useCapture / options** | Boolean / Object | Determines how the event is handled in the **event flow** (capturing or bubbling).    |
+
+
+🔁 Event Flow (Capturing vs Bubbling)
+
+When an event occurs (like a click inside nested elements), it goes through three phases:
+Capturing Phase: Event goes from the root (<html>) down to the target element.
+Target Phase: Event reaches the actual element clicked.
+Bubbling Phase: Event bubbles up from the target back to the root.
+By default, addEventListener() listens in bubbling phase, but you can switch to capturing phase.
+
+
+🧩 Example: Bubbling vs Capturing:
+
+<div id="outer" style="padding:20px; background:lightblue;">
+  Outer Div
+  <div id="inner" style="padding:20px; background:lightcoral;">
+    Inner Div
+  </div>
+</div>
+
+<script>
+  // Bubbling phase (default)
+  document.getElementById("outer").addEventListener("click", function() {
+    alert("Outer Div Clicked (Bubbling)");
+  });
+
+  document.getElementById("inner").addEventListener("click", function() {
+    alert("Inner Div Clicked (Bubbling)");
+  });
+
+  // Capturing phase (true as 3rd argument)
+  document.getElementById("outer").addEventListener("click", function() {
+    alert("Outer Div Clicked (Capturing)");
+  }, true);
+</script>
+
+
+🧾 Explanation:
+
+By default (bubbling), the inner click triggers inner → outer.
+With capturing (true), event triggers outer → inner.
+
+
+
+🧠 Methods/Features Used with addEventListener():
+
+1️⃣ Normal Event Listener:
+Used most commonly to handle user interactions.
+
+<button id="btn">Click Me</button>
+
+<script>
+document.getElementById("btn").addEventListener("click", function() {
+  alert("Button clicked!");
+});
+</script>
+
+✅ Runs every time the button is clicked.
+
+
+2️⃣ Using Named Function (Reuse/Remove later):
+
+If you want to remove an event listener later, you must use a named function.
+
+<button id="btn">Click Me</button>
+
+<script>
+function showMessage() {
+  alert("Hello Rahul!");
+}
+
+// Add listener
+document.getElementById("btn").addEventListener("click", showMessage);
+
+// Remove listener after 3 seconds
+setTimeout(() => {
+  document.getElementById("btn").removeEventListener("click", showMessage);
+  alert("Event listener removed!");
+}, 3000);
+</script>
+
+
+
+3️⃣ Using Options Object
+
+Instead of just true or false, you can pass an options object as the third argument.
+element.addEventListener(event, listener, options);
+
+Available Options:
+
+| Option      | Type    | Description                                                                              |
+| ----------- | ------- | ---------------------------------------------------------------------------------------- |
+| **capture** | Boolean | Set `true` for capturing phase.                                                          |
+| **once**    | Boolean | The listener runs only once.                                                             |
+| **passive** | Boolean | Improves performance for scroll/touch events (you can’t call `preventDefault()` inside). |
+
+
+Example:
+<button id="testBtn">Click Once</button>
+
+<script>
+document.getElementById("testBtn").addEventListener("click", () => {
+  alert("This will run only once!");
+}, { once: true });
+</script>
+
+✅ The event handler runs only one time, then automatically removes itself.
+
+
+4️⃣ Multiple Events on Same Element:
+
+You can attach multiple event listeners for different events (or even same event).
+
+<button id="multiBtn">Hover or Click</button>
+
+<script>
+const btn = document.getElementById("multiBtn");
+
+btn.addEventListener("click", () => alert("Button Clicked!"));
+btn.addEventListener("mouseover", () => alert("Mouse Over Button!"));
+</script>
+
+
+✅ Both listeners are independent — removing one won’t affect others.
+
+
+5️⃣ Access Event Object:
+Every listener automatically receives an event object (e or event) as an argument that contains all details about the event.
+
+
+<button id="infoBtn">Click for Info</button>
+
+<script>
+document.getElementById("infoBtn").addEventListener("click", function(e) {
+  console.log("Event Type:", e.type);
+  console.log("Target Element:", e.target);
+  console.log("Mouse X:", e.clientX, "Mouse Y:", e.clientY);
+});
+</script>
+
+
+✅ event object contains:
+
+event.type → type of event
+
+event.target → which element triggered the event
+
+event.clientX, event.clientY → cursor position
+
+event.preventDefault() → stop default action (e.g., link navigation)
+
+event.stopPropagation() → stop event from bubbling/capturing further
+
+
+
+6️⃣ Prevent Default Action:
+Used to stop normal browser behavior (like link opening, form submission).
+
+<a href="https://google.com" id="link">Go to Google</a>
+
+<script>
+document.getElementById("link").addEventListener("click", function(e) {
+  e.preventDefault(); // stops navigation
+  alert("Default action stopped!");
+});
+</script>
+
+
+🧩 Summary Table:
+
+| Concept         | Syntax Example                     | Description                    |
+| --------------- | ---------------------------------- | ------------------------------ |
+| Basic listener  | `el.addEventListener("click", fn)` | Runs on click                  |
+| Bubbling phase  | `useCapture = false`               | Default                        |
+| Capturing phase | `useCapture = true`                | Runs top-down                  |
+| Once            | `{ once: true }`                   | Runs once then removed         |
+| Passive         | `{ passive: true }`                | Improves performance on scroll |
+| Prevent default | `e.preventDefault()`               | Stops browser default          |
+| Remove listener | `removeEventListener("click", fn)` | Detaches listener              |

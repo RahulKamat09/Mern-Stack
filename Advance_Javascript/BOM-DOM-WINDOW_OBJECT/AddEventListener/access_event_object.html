@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Event Object in AddEventListener</title>
+
+    <style>
+        /* 🌈 Basic Page Styling */
+        body {
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #e3f2fd, #fce4ec);
+            margin: 0;
+            padding: 40px;
+            color: #333;
+            text-align: center;
+        }
+
+        h1 {
+            color: #3f51b5;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #5e35b1;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+
+        /* 🎨 Button Styling */
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        button:active {
+            transform: scale(0.97);
+        }
+
+        /* 📋 Event Info Box */
+        #eventInfo {
+            margin-top: 30px;
+            background-color: #f3e5f5;
+            color: #4a148c;
+            border-radius: 10px;
+            padding: 20px;
+            width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.4s ease, transform 0.3s ease;
+            text-align: left;
+            font-size: 15px;
+        }
+
+        #eventInfo.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 💬 Comment / Explanation Panel */
+        .comment {
+            background-color: #ede7f6;
+            border-left: 4px solid #7e57c2;
+            text-align: left;
+            margin: 50px auto;
+            padding: 20px;
+            width: 700px;
+            line-height: 1.6;
+            border-radius: 8px;
+        }
+
+        code {
+            background-color: #f1f1f1;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #d32f2f;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🧠 Accessing Event Object</h1>
+    <h2>Learn how event objects hold details about user interactions</h2>
+
+    <!-- 5️⃣ Access Event Object -->
+    <button id="infoBtn">Click for Info</button>
+
+    <div id="eventInfo">
+        Click the button to display event details here!
+    </div>
+
+    <div class="comment">
+        <b>📘 Concept:</b><br>
+        Every event listener automatically receives an <b>event object</b> (commonly named <code>e</code> or
+        <code>event</code>) that contains useful information about the event triggered.
+        <br><br>
+        <b>🧩 Example:</b><br>
+        <code>element.addEventListener("click", function(e) { console.log(e.type); });</code>
+        <br><br>
+        <b>✅ Common Properties:</b>
+        <ul>
+            <li><code>event.type</code> → Type of event (e.g., click, keydown)</li>
+            <li><code>event.target</code> → Element that triggered the event</li>
+            <li><code>event.clientX</code>, <code>event.clientY</code> → Mouse cursor position</li>
+            <li><code>event.preventDefault()</code> → Stops default browser action</li>
+            <li><code>event.stopPropagation()</code> → Stops event bubbling/capturing</li>
+        </ul>
+    </div>
+
+    <script>
+        const infoBtn = document.getElementById("infoBtn");
+        const infoBox = document.getElementById("eventInfo");
+
+        infoBtn.addEventListener("click", function (e) {
+            console.log("Event Type:", e.type);
+            console.log("Target Element:", e.target);
+            console.log("Mouse X:", e.clientX, "Mouse Y:", e.clientY);
+
+            infoBox.classList.add("show");
+            infoBox.innerHTML = `
+        <b>🎯 Event Details:</b><br><br>
+        <b>Type:</b> ${e.type}<br>
+        <b>Target:</b> ${e.target.tagName}#${e.target.id}<br>
+        <b>Mouse Position:</b> X: ${e.clientX}, Y: ${e.clientY}<br><br>
+        <i>Check your browser console for more event details.</i>
+      `;
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Options Object in addEventListener Project</title>
+
+    <style>
+        /* ---------- Page Styling ---------- */
+        body {
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #f3e5f5, #e8f5e9);
+            margin: 40px;
+            color: #333;
+            text-align: center;
+        }
+
+        h1 {
+            color: #4a148c;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #6a1b9a;
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
+        .container {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 25px;
+            max-width: 550px;
+            margin: auto;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+        }
+
+        p.comment {
+            background: #ede7f6;
+            color: #4a148c;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            text-align: left;
+            margin-bottom: 25px;
+            border-left: 4px solid #6a1b9a;
+            line-height: 1.5;
+        }
+
+        /* ---------- Button Styling ---------- */
+        #btn {
+            background: linear-gradient(135deg, #ab47bc, #8e24aa);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        #btn:hover {
+            background: linear-gradient(135deg, #8e24aa, #4a148c);
+            transform: scale(1.05);
+        }
+
+        #btn:active {
+            transform: scale(0.97);
+        }
+
+        /* ---------- Output Section ---------- */
+        #output {
+            margin-top: 25px;
+            font-weight: bold;
+            font-size: 18px;
+            color: #1b5e20;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        #output.show {
+            opacity: 1;
+        }
+
+        .removed {
+            color: #d32f2f;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🎯 Using Options Object in addEventListener()</h1>
+    <h2>Execute Event Only Once Using `{ once: true }`</h2>
+
+    <div class="container">
+        <p class="comment">
+            3️⃣ <b>Using Options Object:</b><br>
+            Instead of passing just <code>true</code> or <code>false</code> as the third parameter, you can pass an
+            <b>options object</b>.
+            <br><br>
+            For example:
+            <code>{ once: true }</code> — means the event will be executed <b>only once</b>, and then automatically
+            removed.
+        </p>
+
+        <button id="btn">Click Me Once</button>
+
+        <p id="output">🟢 Waiting for button click...</p>
+
+        <p class="comment">
+            ✅ After you click once, the event listener will be automatically removed.
+            Try clicking again — nothing will happen!
+        </p>
+    </div>
+
+    <script>
+        const btn = document.getElementById("btn");
+        const output = document.getElementById("output");
+
+        // Using addEventListener with options object
+        btn.addEventListener("click", () => {
+            alert("Button Clicked Once!");
+            output.classList.add("show");
+            output.textContent = "✔️ Event Triggered Once — Now Listener Removed!";
+            output.style.color = "#2e7d32";
+        }, { once: true });
+    </script>
+
+</body>
+
+</html>

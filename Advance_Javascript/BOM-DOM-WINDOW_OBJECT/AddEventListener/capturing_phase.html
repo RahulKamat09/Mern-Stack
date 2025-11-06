@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Capturing in JavaScript</title>
+
+    <style>
+        /* ---------- General Page Style ---------- */
+        body {
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #f3e5f5, #e1f5fe);
+            text-align: center;
+            padding: 40px;
+            color: #333;
+        }
+
+        h1 {
+            color: #4a148c;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #6a1b9a;
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        /* ---------- Container ---------- */
+        .container {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 30px;
+            width: 600px;
+            margin: auto;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        /* ---------- Elements ---------- */
+        #parent {
+            padding: 40px;
+            background-color: #b39ddb;
+            border-radius: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        #parent:hover {
+            background-color: #9575cd;
+            transform: scale(1.02);
+        }
+
+        #child {
+            margin-top: 20px;
+            padding: 20px 30px;
+            background-color: #81d4fa;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        #child:hover {
+            background-color: #0288d1;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* ---------- Output Section ---------- */
+        #output {
+            margin-top: 20px;
+            background: #f3e5f5;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        #output.show {
+            opacity: 1;
+        }
+
+        /* ---------- Comment / Explanation Box ---------- */
+        .comment {
+            background: #ede7f6;
+            color: #4a148c;
+            border-left: 4px solid #6a1b9a;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 25px;
+            text-align: left;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🔮 Event Capturing in JavaScript</h1>
+    <h2>Learn how events travel from parent to child in the capturing phase</h2>
+
+    <div class="container">
+        <div id="parent">
+            Parent
+            <button id="child">Child</button>
+        </div>
+
+        <div id="output">Click a button to see the event order!</div>
+
+        <div class="comment">
+            <b>🧠 Concept:</b><br>
+            In <b>Event Capturing</b>, the event travels <b>from the outermost element → to the target element</b>.<br>
+            The parent’s listener executes <b>before</b> the child’s.<br><br>
+
+            <b>🧩 Output (Click on Child):</b><br>
+            1️⃣ Parent clicked! (capturing phase)<br>
+            2️⃣ Child clicked! (bubbling phase)<br><br>
+
+            This demonstrates the <b>capturing flow</b> of JavaScript events.
+        </div>
+    </div>
+
+    <script>
+        const output = document.getElementById("output");
+
+        // Parent listener (Capturing phase)
+        document.getElementById("parent").addEventListener("click", function () {
+            alert("Parent clicked! (Capturing phase)");
+            output.classList.add("show");
+            output.style.color = "#4a148c";
+            output.innerHTML = "🟣 Parent clicked first → Capturing Phase";
+        }, true); // 👈 true = capturing phase
+
+        // Child listener (Bubbling phase - default)
+        document.getElementById("child").addEventListener("click", function () {
+            alert("Child clicked! (Bubbling phase)");
+            output.classList.add("show");
+            output.style.color = "#0288d1";
+            output.innerHTML = "🔵 Child clicked next → Bubbling Phase";
+        });
+    </script>
+
+</body>
+
+</html>

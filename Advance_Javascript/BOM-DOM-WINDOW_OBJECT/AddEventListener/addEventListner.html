@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AddEventListener In JavaScript</title>
+
+    <style>
+        /* 🌈 Page Styling */
+        body {
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
+            margin: 0;
+            padding: 40px;
+            color: #333;
+            text-align: center;
+        }
+
+        h1 {
+            color: #3f51b5;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #5e35b1;
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+
+        /* 🎯 Div Containers */
+        .box {
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        #outer {
+            padding: 40px;
+            background-color: #90caf9;
+            width: 400px;
+            margin: auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        #outer:hover {
+            background-color: #64b5f6;
+            transform: scale(1.02);
+        }
+
+        #inner {
+            margin-top: 20px;
+            background-color: #ef9a9a;
+            padding: 40px;
+            border-radius: 10px;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        #inner:hover {
+            background-color: #e57373;
+            transform: scale(1.05);
+        }
+
+        /* 💬 Output Box */
+        #result {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #ede7f6;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 17px;
+            color: #4a148c;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #result.show {
+            opacity: 1;
+        }
+
+        /* 📘 Comment / Info Panel */
+        .comment {
+            background-color: #f3e5f5;
+            border-left: 4px solid #7e57c2;
+            text-align: left;
+            margin: 40px auto;
+            padding: 20px;
+            width: 700px;
+            line-height: 1.6;
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ccc;
+            text-align: center;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #ede7f6;
+            color: #4a148c;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>⚡ Understanding addEventListener() in JavaScript</h1>
+    <h2>Explore Event Flow: Capturing vs Bubbling</h2>
+
+    <!-- 🧩 Interactive Boxes -->
+    <div id="outer" class="box">
+        Outer Div
+        <div id="inner" class="box">
+            Inner Div
+        </div>
+    </div>
+
+    <div id="result">Click on the inner or outer box to see event order.</div>
+
+    <!-- 🧠 What is addEventListener()? -->
+    <div class="comment">
+        <b>🧠 What is addEventListener()?</b><br>
+        The <code>addEventListener()</code> method in JavaScript is used to attach an event handler to an HTML element
+        without overwriting existing event handlers.
+        It allows you to listen to specific events — like <b>click</b>, <b>keypress</b>, <b>mouseover</b>, etc. — and
+        execute
+        a function when the event happens.
+        <br><br>
+
+        <b>🧩 Basic Syntax:</b><br>
+        <code>element.addEventListener(event, function, useCapture);</code><br>
+        <code>element.addEventListener(event, function, options);</code>
+        <br><br>
+
+        <b>⚙️ Parameters Explained:</b>
+        <table>
+            <tr>
+                <th>Parameter</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td><b>event</b></td>
+                <td>String</td>
+                <td>Name of the event (e.g., "click", "mouseover", "keydown")</td>
+            </tr>
+            <tr>
+                <td><b>function</b></td>
+                <td>Function</td>
+                <td>Callback function to execute when the event occurs</td>
+            </tr>
+            <tr>
+                <td><b>useCapture / options</b></td>
+                <td>Boolean / Object</td>
+                <td>Determines whether to use <b>capturing</b> or <b>bubbling</b> phase</td>
+            </tr>
+        </table>
+
+        <br>
+        <b>🔁 Event Flow:</b>
+        When an event occurs (like a click inside nested elements), it passes through:
+        <ol>
+            <li><b>Capturing Phase:</b> Event travels from the root (HTML) down to the target element.</li>
+            <li><b>Target Phase:</b> Event reaches the clicked element.</li>
+            <li><b>Bubbling Phase:</b> Event bubbles up from target to root.</li>
+        </ol>
+    </div>
+
+    <!-- 🧾 Summary Table -->
+    <div class="comment">
+        <b>🧭 Summary Table:</b>
+        <table>
+            <tr>
+                <th>Phase Type</th>
+                <th>Direction</th>
+                <th><code>useCapture</code> Value</th>
+                <th>Order (Click on Child)</th>
+            </tr>
+            <tr>
+                <td><b>Capturing</b></td>
+                <td>Top → Down</td>
+                <td>true</td>
+                <td>Parent → Child</td>
+            </tr>
+            <tr>
+                <td><b>Bubbling</b></td>
+                <td>Bottom → Up</td>
+                <td>false (default)</td>
+                <td>Child → Parent</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        const resultBox = document.getElementById("result");
+
+        // Bubbling phase (default)
+        document.getElementById("outer").addEventListener("click", function () {
+            alert("Outer Div Clicked (Bubbling Phase)");
+            resultBox.classList.add("show");
+            resultBox.style.color = "#1a237e";
+            resultBox.innerHTML = "🔵 Outer Div Clicked — Bubbling Phase (Bottom → Up)";
+        });
+
+        document.getElementById("inner").addEventListener("click", function () {
+            alert("Inner Div Clicked (Bubbling Phase)");
+            resultBox.classList.add("show");
+            resultBox.style.color = "#c62828";
+            resultBox.innerHTML = "🔴 Inner Div Clicked — Bubbling Phase (Child → Parent)";
+        });
+
+        // Capturing phase
+        document.getElementById("outer").addEventListener("click", function () {
+            alert("Outer Div Clicked (Capturing Phase)");
+            resultBox.classList.add("show");
+            resultBox.style.color = "#4a148c";
+            resultBox.innerHTML = "🟣 Outer Div Clicked — Capturing Phase (Top → Down)";
+        }, true);
+    </script>
+
+</body>
+
+</html>
