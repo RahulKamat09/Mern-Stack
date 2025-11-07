@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessing All Nodes in DOM</title>
+</head>
+
+<body>
+    <!-- 
+    🔹 4. Accessing All Nodes (including text/comments)
+
+    If you want to include text nodes, comments, and whitespace, you can use: -->
+
+    <!-- 
+    | Property                   | Description                                       |
+    | -------------------------- | ------------------------------------------------- |
+    | `childNodes`               | Includes **all nodes** (elements, text, comments) |
+    | `firstChild` / `lastChild` | Include **any type of node** (not just elements)  | -->
+
+    <div id="box">
+        Text
+        <p>Hello</p>
+    </div>
+
+    <script>
+        let box = document.getElementById("box");
+        console.log(box.childNodes); // NodeList(3): [text, p, text]
+    </script>
+
+
+</body>
+
+</html>

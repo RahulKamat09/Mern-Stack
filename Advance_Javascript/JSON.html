@@ -12,16 +12,25 @@
     <h1>Check Console!!!!</h1>
     <script>
 
-        /*  JSON is a format for storing and transporting data.
-            JSON is often used when data is sent from a server to a web page.
-            JSON stands for JavaScript Object Notation
-            JSON is a lightweight data interchange format
-            JSON is language independent *
-            JSON is "self-describing" and easy to understand
-            * The JSON syntax is derived from JavaScript object notation syntax, but the JSON format 
-            is text only. Code for reading and generating JSON data can be written in any 
-            programming language. */
-
+        /*🧩 1. JSON(JavaScript Object Notation)
+         🧠 Theory:
+ 
+         JSON stands for JavaScript Object Notation.
+         It is a lightweight data format used to store and exchange data between a client(browser) and a server.
+ 
+         It is language - independent, but similar to JavaScript object syntax.
+ 
+         JSON is mainly used when we fetch data from APIs or store structured data(like users, products, etc.).
+         
+         🧱 Structure:
+ 
+            Data is written as key-value pairs
+ 
+            Keys must be in double quotes
+ 
+            Values can be: string, number, boolean, array, object, or null.
+         
+         */
 
         //Json Format
         var json = `{"id":102,"name":"Shyam Kumar","salary":40000}`;
@@ -31,7 +40,15 @@
         var object = { id: 102, name: "Shyam Kumar", salary: 40000 };
         console.log(object);
 
-        //Multi JSON Data
+        //Multi JSON Data:
+
+        // 🔁 JSON Methods:
+
+        // | Method             | Description                      | Example                                                    |
+        // | ------------------ | -------------------------------- | ---------------------------------------------------------- |
+        // | `JSON.stringify()` | Converts JS Object → JSON String | `JSON.stringify({ name: "Rahul" })` → `'{"name":"Rahul"}'` |
+        // | `JSON.parse()`     | Converts JSON String → JS Object | `JSON.parse('{"name":"Rahul"}')` → `{ name: "Rahul" }`     |
+
 
         let jsonData = `[
 						{
@@ -50,6 +67,7 @@
 							"Qty": 10
 						}
 					]`;
+
         //Now We Convert JSON data into Object:
 
         var obj = JSON.parse(jsonData);

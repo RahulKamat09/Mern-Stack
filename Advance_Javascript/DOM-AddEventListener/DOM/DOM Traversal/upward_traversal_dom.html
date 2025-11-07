@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upward Traversal in DOM</title>
+
+    <style>
+        /* 🎨 Page Styling */
+        body {
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+            text-align: center;
+            padding: 40px;
+            margin: 0;
+        }
+
+        h1 {
+            color: #e65100;
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            color: #f57c00;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        /* 📦 Example Elements */
+        .outer {
+            background: #ffe0b2;
+            border: 3px solid #ef6c00;
+            border-radius: 12px;
+            width: 400px;
+            margin: 40px auto;
+            padding: 25px;
+            text-align: left;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: 0.3s ease;
+        }
+
+        .inner {
+            background-color: #ffcc80;
+            border-radius: 10px;
+            padding: 20px;
+            transition: 0.3s;
+        }
+
+        #text {
+            background-color: #ffe082;
+            border-radius: 6px;
+            padding: 10px;
+            transition: 0.3s;
+        }
+
+        .outer:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .inner:hover {
+            background-color: #ffb74d;
+            transform: scale(1.05);
+        }
+
+        #text:hover {
+            background-color: #ffd54f;
+            transform: scale(1.05);
+        }
+
+        /* 🔘 Buttons */
+        button {
+            background-color: #ef6c00;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 8px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background-color: #e65100;
+            transform: scale(1.05);
+        }
+
+        /* 💬 Output Area */
+        #output {
+            background-color: #fff8e1;
+            color: #4e342e;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 25px;
+            width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+            line-height: 1.6;
+            display: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* 📘 Comment Box */
+        .comment {
+            background-color: #fff3e0;
+            border-left: 4px solid #fb8c00;
+            text-align: left;
+            margin: 40px auto;
+            padding: 20px;
+            width: 700px;
+            line-height: 1.6;
+            border-radius: 8px;
+        }
+
+        code {
+            background-color: #f5f5f5;
+            padding: 3px 6px;
+            border-radius: 5px;
+            color: #d32f2f;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🔼 Upward Traversal in DOM</h1>
+    <h2>Exploring Parent and Ancestor Elements</h2>
+
+    <!-- Example 1 -->
+    <p id="para" style="background-color:#fff9c4; padding:10px; width:200px; margin:auto; border-radius:6px;">Hello
+        World</p>
+
+    <!-- Example 2 -->
+    <div class="outer">
+        Outer Div
+        <div class="inner">
+            Inner Div
+            <p id="text">This is a paragraph.</p>
+        </div>
+    </div>
+
+    <!-- 🔘 Control Buttons -->
+    <button id="btnParent">Show Parent Element</button>
+    <button id="btnClosest">Show Closest('.outer')</button>
+
+    <!-- 💬 Output -->
+    <div id="output"></div>
+
+    <!-- 📘 Comment Section -->
+    <div class="comment">
+        <b>📘 Concept:</b><br>
+        Upward traversal means moving <b>from a child element to its parent or ancestor elements</b> in the DOM tree.
+        <br><br>
+        <b>🔹 Common Methods:</b>
+        <ul>
+            <li><code>element.parentElement</code> → Returns the direct parent element</li>
+            <li><code>element.closest(selector)</code> → Returns the nearest ancestor (including itself) that matches a
+                selector</li>
+        </ul>
+    </div>
+
+    <script>
+        const para = document.getElementById("para");
+        const para1 = document.getElementById("text");
+        const output = document.getElementById("output");
+
+        // Show direct parent
+        document.getElementById("btnParent").addEventListener("click", () => {
+            const parent = para.parentElement ? para.parentElement.tagName : "No parent found";
+            output.innerHTML = `<b>Parent Element of #para:</b> ${parent}`;
+            output.style.display = "block";
+        });
+
+        // Show closest ancestor with .outer
+        document.getElementById("btnClosest").addEventListener("click", () => {
+            const closestOuter = para1.closest(".outer");
+            output.innerHTML = `<b>Closest('.outer') Ancestor of #text:</b><br>${closestOuter.outerHTML}`;
+            output.style.display = "block";
+        });
+    </script>
+
+</body>
+
+</html>
