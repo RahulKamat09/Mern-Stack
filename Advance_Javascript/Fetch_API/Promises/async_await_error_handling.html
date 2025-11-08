@@ -8,7 +8,8 @@
 </head>
 
 <body>
-    <script>async function fetchData() {
+    <script>
+    async function fetchData() {
             try {
                 let response = await fetch("https://wrong-url-example.com");
                 let data = await response.json();
