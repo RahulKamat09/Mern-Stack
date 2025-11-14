@@ -1,0 +1,115 @@
+🧠 1. What is Import and Export in ReactJS?
+
+ReactJS is built on modern JavaScript (ES6) — and ES6 introduced a module system that allows us to split our code into multiple files and share functionality between them.
+
+➡️ Export → is used to make variables, functions, or components available from one file.
+➡️ Import → is used to bring those variables, functions, or components into another file.
+
+This helps make the code modular, readable, and maintainable.
+
+
+
+📦 2. Why Import / Export is Important in React
+
+In React projects:
+
+Each component is usually written in a separate file.
+
+You use export to make that component reusable.
+
+You use import to use that component in other files (like App.js).
+
+Without import/export, all code would be in one file — which is messy and hard to maintain.
+
+
+
+⚙️ 3. Types of Exports in React (and JavaScript ES6)
+
+There are two main types of exports:
+
+Default Export
+
+Named Export
+
+Let’s understand both with examples 👇
+
+
+
+✅ (A) Default Export
+
+Default export means a file can export only one main thing — for example, a React component or a function.
+
+📘 Example:
+
+File: Message.js
+
+import React from 'react';
+
+export default function Message() {
+  return <h2>Hello, Welcome to React!</h2>;
+}
+
+
+Here:
+
+export default → means this file exports one default item (the Message component).
+
+You don’t need { } when importing it.
+
+Importing it in another file:
+
+File: App.js
+
+import React from 'react';
+import Message from './Message'; // no curly braces needed
+
+function App() {
+  return (
+    <div>
+      <Message />
+    </div>
+  );
+}
+
+export default App;
+
+
+✅ You can rename it while importing:
+
+import Msg from './Message';
+
+
+⚠️ Only one default export is allowed per file.
+
+
+
+✅ (B) Named Export
+
+Named export means a file can export multiple things — and you have to use curly braces { } when importing them.
+
+📘 Example:
+
+File: utils.js
+
+export const name = "Rahul";
+export function greet() {
+  return "Hello, " + name + "!";
+}
+export const add = (a, b) => a + b;
+
+
+Importing them:
+
+import { name, greet, add } from './utils';
+
+console.log(name);           // Rahul
+console.log(greet());        // Hello, Rahul!
+console.log(add(2, 3));      // 5
+
+
+✅ You can rename while importing:
+
+import { greet as sayHello } from './utils';
+
+
+⚠️ You must use the same export names or use as to rename.

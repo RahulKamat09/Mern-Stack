@@ -1,0 +1,218 @@
+🔹 What is JSX (JavaScript XML)?
+🧠 Definition:
+
+JSX stands for JavaScript XML.
+It is a syntax extension for JavaScript that allows you to write HTML-like code inside JavaScript.
+JSX makes it easier to create and visualize React elements (UI components).
+
+JSX → Combines the power of JavaScript + the readability of HTML.
+
+
+🧩 Why We Use JSX
+
+Without JSX, we would have to write React elements using plain JavaScript functions like:
+
+const element = React.createElement("h1", null, "Hello, React!");
+
+
+That works, but it’s hard to read and tedious when building large UIs.
+
+Using JSX, we can simply write:
+
+const element = <h1>Hello, React!</h1>;
+
+
+This looks like HTML but actually gets transpiled (converted) by Babel into plain JavaScript (React.createElement() calls).
+
+
+✅ JSX Advantages:
+
+Readable and clean syntax – looks like HTML.
+
+Integration with JavaScript – can include variables, expressions, and logic.
+
+Prevents injection attacks – React escapes values before rendering.
+
+Better error messages – JSX gives descriptive compile-time errors.
+
+
+🔹 JSX Syntax Rules
+
+JSX looks like HTML but follows JavaScript rules under the hood.
+Let’s look at the most important syntax rules 👇
+
+
+1️⃣ JSX Must Have One Parent Element
+
+In JSX, every component must return a single root element.
+
+❌ Wrong:
+
+return (
+  <h1>Hello</h1>
+  <p>Welcome</p>
+);
+
+
+✅ Correct:
+
+return (
+  <div>
+    <h1>Hello</h1>
+    <p>Welcome</p>
+  </div>
+);
+
+
+Or use React Fragment:
+
+return (
+  <>
+    <h1>Hello</h1>
+    <p>Welcome</p>
+  </>
+);
+
+
+2️⃣ Use className Instead of class
+
+Since class is a reserved keyword in JavaScript, JSX uses className.
+
+✅ Example:
+
+<div className="container">This is a div</div>
+
+
+3️⃣ Use camelCase for Attributes
+
+HTML attributes like onclick or tabindex become onClick, tabIndex in JSX.
+
+✅ Example:
+
+<button onClick={handleClick}>Click Me</button>
+
+
+4️⃣ JSX Tags Must Be Closed
+
+Even self-closing tags like <img> or <input> must end with a /.
+
+✅ Example:
+
+<img src="logo.png" alt="logo" />
+
+
+5️⃣ Use {} to Embed JavaScript Expressions
+
+Anything inside {} is treated as JavaScript, not a string.
+
+✅ Example:
+
+const name = "Rahul";
+const element = <h1>Hello, {name}!</h1>;
+
+
+🔹 Expressions in JSX
+
+You can embed JavaScript expressions inside JSX by wrapping them in {}.
+
+Expressions mean something that returns a value — variables, functions, operations, etc.
+(Statements like if, for, etc., are not allowed directly inside JSX.)
+
+✅ Example 1 – Using Variables
+const name = "Rahul";
+const element = <h1>Hello, {name}</h1>;
+
+
+Output:
+
+Hello, Rahul
+
+✅ Example 2 – Using Functions
+function greet() {
+  return "Welcome to React!";
+}
+
+const element = <p>{greet()}</p>;
+
+
+Output:
+
+Welcome to React!
+
+✅ Example 3 – Using Expressions / Operators
+const a = 10, b = 20;
+const element = <h2>{a + b}</h2>;
+
+
+Output:
+
+30
+
+✅ Example 4 – Conditional (Ternary) Operator
+const loggedIn = true;
+const element = <p>{loggedIn ? "Welcome Back!" : "Please Log In"}</p>;
+
+
+Output:
+
+Welcome Back!
+
+
+🔹 JSX vs HTML Differences
+
+| Feature               | JSX                                             | HTML                                |
+| --------------------- | ----------------------------------------------- | ----------------------------------- |
+| **Syntax Base**       | JavaScript XML                                  | Markup Language                     |
+| **Attributes**        | Uses `camelCase` (e.g., `className`, `onClick`) | Uses lowercase (`class`, `onclick`) |
+| **Dynamic Data**      | Can embed JS expressions using `{}`             | Not possible                        |
+| **Parent Element**    | Must have a single parent element               | Can have multiple roots             |
+| **Self-closing Tags** | Must end with `/` (e.g., `<img />`)             | Can omit `/`                        |
+| **Comments**          | `{/* comment */}`                               | `<!-- comment -->`                  |
+| **Logic**             | Can use JS logic inline                         | Not supported                       |
+
+🧩 Example Comparison:
+
+HTML:
+
+<div class="container">
+  <h1>Hello World</h1>
+</div>
+
+
+JSX:
+
+<div className="container">
+  <h1>Hello World</h1>
+</div>
+
+
+🔹 Fragments (<></>) in JSX
+🧠 What are Fragments?
+
+In React, a Fragment lets you group multiple elements without adding an extra DOM node.
+
+🧩 Example Without Fragment (Using <div>)
+function Example() {
+  return (
+    <div>
+      <h1>Title</h1>
+      <p>Paragraph</p>
+    </div>
+  );
+}
+
+
+This adds an extra <div> in the DOM tree — sometimes we want to avoid that.
+
+🧩 Example With Fragment (<>...</>)
+function Example() {
+  return (
+    <>
+      <h1>Title</h1>
+      <p>Paragraph</p>
+    </>
+  );
+}
+
+
+This groups the elements without creating an additional <div> in the DOM.
