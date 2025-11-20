@@ -1,17 +1,11 @@
-import About from "./Layout/pages/About";
-import Contact from "./Layout/pages/Contact";
-import Home from "./Layout/pages/Home";
-import Main_props from "./Props/Main_props";
+import React from 'react'
 
-function App() {
+const App = () => {
   return (
-    <>
-    {/* <Home/>
-    <About/>
-    <Contact/> */}
-    <Main_props/>
-    </>
-  );
+    <div>
+      
+    </div>
+  )
 }
 
-export default App;
+export default App
