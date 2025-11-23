@@ -1,0 +1,195 @@
+SQL BASICS (FOUNDATION)
+
+>> 1. Introduction to SQL:
+
+What is SQL?
+
+👉 SQL (Structured Query Language) is a standard programming language used to store, manage, and retrieve data from a relational database.
+
+SQL is used in databases such as MySQL, Oracle, PostgreSQL, SQL Server, SQLite, etc.
+
+Why SQL is Needed? (Purpose):
+
+| Need                          | Explanation                                          |
+| ----------------------------- | ---------------------------------------------------- |
+| **Store data**                | SQL helps create databases and store data in tables. |
+| **Insert/update/delete data** | SQL manages changes to stored data.                  |
+| **Fetch data**                | SQL retrieves specific data using queries.           |
+| **Secure data**               | SQL allows permissions & access control.             |
+| **Manage large datasets**     | SQL handles millions of records efficiently.         |
+| **Maintain data accuracy**    | SQL supports constraints, keys, and transactions.    |
+
+
+
+
+1. DDL – Data Definition Language
+
+Used to create or modify the structure of database objects (tables, schemas).
+
+Common DDL Commands:
+
+| Need                          | Explanation                                          |
+| ----------------------------- | ---------------------------------------------------- |
+| **Store data**                | SQL helps create databases and store data in tables. |
+| **Insert/update/delete data** | SQL manages changes to stored data.                  |
+| **Fetch data**                | SQL retrieves specific data using queries.           |
+| **Secure data**               | SQL allows permissions & access control.             |
+| **Manage large datasets**     | SQL handles millions of records efficiently.         |
+| **Maintain data accuracy**    | SQL supports constraints, keys, and transactions.    |
+
+
+Example:
+
+CREATE TABLE students (
+    id INT,
+    name VARCHAR(50),
+    age INT
+);
+
+
+
+
+2. DML – Data Manipulation Language
+
+Used to manipulate data inside tables (add, modify, remove).
+
+Common DML Commands:
+
+| Command    | Purpose              |
+| ---------- | -------------------- |
+| **INSERT** | Add new record       |
+| **UPDATE** | Modify existing data |
+| **DELETE** | Delete records       |
+
+
+Example:
+INSERT INTO students VALUES (1, 'Rahul', 20);
+
+
+
+3. DQL – Data Query Language
+
+Used to fetch data from the database.
+
+Main DQL Command:
+
+| Command    | Purpose       |
+| ---------- | ------------- |
+| **SELECT** | Retrieve data |
+
+
+Example:
+SELECT * FROM students;
+
+
+
+4. TCL – Transaction Control Language
+
+Used to control transactions in SQL.
+
+
+TCL Commands:
+
+| Command       | Purpose                      |
+| ------------- | ---------------------------- |
+| **COMMIT**    | Save all changes permanently |
+| **ROLLBACK**  | Undo changes                 |
+| **SAVEPOINT** | Create checkpoints           |
+
+
+Example:
+
+SAVEPOINT a1;
+
+
+
+5. DCL – Data Control Language
+
+Used to control access/permissions.
+
+DCL Commands:
+
+| Command    | Purpose          |
+| ---------- | ---------------- |
+| **GRANT**  | Give user access |
+| **REVOKE** | Remove access    |
+
+
+Example:
+GRANT SELECT ON students TO user1;
+
+
+
+
+>> 2. Basic SQL Structure
+Database
+
+A database is a collection of organized data stored in tables.
+
+📌 Example:
+A "School" database may contain tables like:
+
+Students
+
+Teachers
+
+Courses
+
+Fees
+
+
+Create a Database:
+
+CREATE DATABASE school;
+
+
+Tables
+
+A table is a structure inside a database that stores information in rows and columns.
+
+📌 Example Table: students
+
+| id | name  | age |
+| -- | ----- | --- |
+| 1  | Rahul | 20  |
+| 2  | Kiran | 22  |
+
+
+Create a Table:
+
+CREATE TABLE students (
+    id INT,
+    name VARCHAR(50),
+    age INT
+);
+
+
+
+Columns & Rows
+Columns
+
+Columns define the fields / attributes of the table.
+
+Example:
+
+id
+
+name
+
+age
+
+Each column has:
+
+Name
+
+Data type
+
+Constraints
+
+Rows
+
+Rows are records stored in a table.
+
+Example:
+
+INSERT INTO students VALUES (1, 'Rahul', 20);
