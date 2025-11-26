@@ -1,0 +1,114 @@
+✅ What Are Props in React?
+
+Props (short for Properties) are read-only inputs that are passed from a parent component to a child component.
+They allow components to be dynamic, reusable, and customizable by sending data and functions between components.
+
+👉 In simple terms:
+
+Props are arguments you pass to React components—just like parameters you pass to a JavaScript function.
+
+
+🎯 Key Features / Concepts of Props:
+
+✔ 1. Props are read-only
+
+A child cannot modify the props it receives.
+
+✔ 2. Props make components reusable
+
+You can reuse the same component with different values.
+
+✔ 3. Props flow one-way (Top → Down)
+
+Data always travels from parent → child, not the other way.
+
+✔ 4. Props can be any data type
+
+You can pass:
+
+String
+
+Number
+
+Boolean
+
+Array
+
+Object
+
+Function (most important!)
+
+JSX
+
+Components
+
+✔ 5. Props allow communication from parent to child
+✔ 6. Props are accessed using:
+
+    props.propertyName
+
+✔ 7. Using destructuring:
+
+    const { name, age } = props;
+
+
+
+⭐ Basic Example of Props:
+
+👉 Parent Component:
+
+function App() {
+  return (
+    <div>
+      <Student name="Rahul" age={21} />
+    </div>
+  );
+}
+
+👉 Child Component (receiving props):
+
+function Student(props) {
+  return (
+    <h2>My name is {props.name} and I am {props.age} years old.</h2>
+  );
+}
+
+⭐ Using Destructuring (Best Practice):
+
+function Student({ name, age }) {
+  return (
+    <h2>My name is {name} and I am {age} years old.</h2>
+  );
+}
+
+
+
+🔥 Passing Different Types of Props
+1️⃣ String Props
+<User username="Rahul" />
+
+2️⃣ Number Props
+<User age={20} />
+
+3️⃣ Boolean Props
+<Button disabled={true} />
+
+
+or shorthand:
+
+<Button disabled />
+
+4️⃣ Array Props
+
+Parent
+
+const skills = ["HTML", "CSS", "React"];
+
+<Profile skills={skills} />;
+
+
+Child
+
+function Profile({ skills }) {
+  return skills.map((s, i) => <li key={i}>{s}</li>);
+}
