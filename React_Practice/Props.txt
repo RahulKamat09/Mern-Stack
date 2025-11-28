@@ -83,14 +83,21 @@ function Student({ name, age }) {
 
 
 
-🔥 Passing Different Types of Props
-1️⃣ String Props
+🔥 Passing Different Types of Props:
+
+
+1️⃣ String Props:
+
 <User username="Rahul" />
 
-2️⃣ Number Props
+
+2️⃣ Number Props:
+
 <User age={20} />
 
-3️⃣ Boolean Props
+
+3️⃣ Boolean Props:
+
 <Button disabled={true} />
 
 
@@ -98,7 +105,8 @@ or shorthand:
 
 <Button disabled />
 
-4️⃣ Array Props
+
+4️⃣ Array Props:
 
 Parent
 
@@ -112,3 +120,131 @@ Child
 function Profile({ skills }) {
   return skills.map((s, i) => <li key={i}>{s}</li>);
 }
+
+5️⃣ Object Props:
+
+Parent
+
+const user = { name: "Rahul", age: 22 };
+
+<UserCard info={user} />
+
+
+Child
+
+function UserCard({ info }) {
+  return <h3>{info.name} - {info.age}</h3>;
+}
+
+
+6️⃣ Passing Functions as Props (Very Important):
+
+Used for child → parent communication.
+
+Parent
+
+function Parent() {
+  const showMessage = () => {
+    alert("Hello from Child!");
+  };
+
+  return <Child onClick={showMessage} />;
+}
+
+Child
+
+function Child({ onClick }) {
+  return <button onClick={onClick}>Click Me</button>;
+}
+
+
+7️⃣ Passing Components as Props (Children Prop):
+
+Every component has a special prop called children.
+
+Parent
+
+<Card>
+  <h2>This is inside the Card</h2>
+</Card>
+
+Child (Card.js)
+
+function Card({ children }) {
+  return <div className="card">{children}</div>;
+}
+
+
+🧩 2. What is Props Drilling? 
+
+Props Drilling happens when you need to pass data from a top-level parent component to a deeply nested child component,
+but the data has to pass through multiple intermediate components that don't actually need the data.
+
+👉 In simple words:
+
+Passing props through many layers just so the last component can use it.
+
+Why is it a problem?
+
+Extra code
+
+Hard to maintain
+
+Intermediate components get unnecessary props
+
+Makes component tree messy
+
+Causes unnecessary re-renders
+
+
+🎯 Example of Props Drilling (3-level component tree):
+
+App → Parent → Child → Button
+
+You want to pass "Rahul" from App to Button, but the middle components don’t need it.
+
+
+App.js:
+
+function App() {
+  const username = "Rahul";
+
+  return <Parent username={username} />;
+}
+
+
+Parent.js:
+
+function Parent({ username }) {
+  return <Child username={username} />;
+}
+
+
+Child.js:
+
+function Child({ username }) {
+  return <Button username={username} />;
+}
+
+
+Button.js:
+
+function Button({ username }) {
+  return <button>Hello {username}</button>;
+}
+
+
+✔ What happened here?
+
+The Parent and Child components do NOT need username,
+yet they are forced to pass it forward → This is props drilling.
+
+⭐ How to Avoid Props Drilling?
+
+Use:
+
+✔ useContext (Most common)
+✔ Redux
+✔ Zustand
+✔ Recoil
+✔ Jotai
