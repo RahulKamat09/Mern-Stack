@@ -1,0 +1,181 @@
+✅ 1. What is an Event in React?
+
+An event is an action performed by the user (or the system), such as:
+
+Clicking a button
+
+Typing in an input field
+
+Hovering the mouse
+
+Submitting a form
+
+React lets us respond to these events using event handlers.
+
+
+✅ 2. What is an Event Handler in React? (Definition)
+Definition:
+
+An event handler in React is a function that gets executed when an event (like click, input, submit) occurs on a component.
+
+React uses camelCase event names (e.g., onClick, onChange) and passes functions (not strings).
+
+Example: Basic Event Handler
+
+function App() {
+  function handleClick() {
+    alert("Button Clicked!");
+  }
+
+  return (
+    <button onClick={handleClick}>
+      Click Me
+    </button>
+  );
+}
+
+✔ Key Points:
+
+handleClick is the event handler function
+
+onClick={handleClick} attaches that event handler to button’s click event
+
+The function is not executed immediately, but only when the event occurs
+
+
+⭐ Why React Event Handlers Are Special?
+
+React event handlers wrap the browser’s native events using SyntheticEvent, which improves performance and works the same across all browsers.
+
+
+✅ 3. What is an Event Listener in React? (Definition)
+Definition:
+
+An event listener is the actual mechanism that listens for a specific event and triggers the event handler when that event happens.
+
+In React, you don’t manually add event listeners using addEventListener() for most cases.
+React internally manages event listeners using its Synthetic Event System.
+
+✔ Example of underlying concept (React does this internally)
+
+React automatically attaches event listeners at the root level (event delegation):
+
+document.addEventListener("click", () => {
+  // React internally manages clicks for all components
+});
+
+
+In React components, you just write:
+
+<button onClick={handleClick}>Click</button>
+
+
+You do not write:
+
+button.addEventListener("click", handleClick)
+
+React does this automatically using synthetic events.
+
+
+🎯 Difference Between Event Handler and Event Listener:
+
+
+| **Event Handler**                         | **Event Listener**                                               |
+| ----------------------------------------- | ---------------------------------------------------------------- |
+| A function that runs when an event occurs | Mechanism that “listens” for the event                           |
+| Written inside React component            | Handled internally by React                                      |
+| Example: `onClick={handleClick}`          | React attaches listeners at document root using event delegation |
+| Developer controls                        | React controls                                                   |
+| We write a function                       | React manages listeners using SyntheticEvent                     |
+
+
+
+📌 4. Event Handler with Parameters:
+
+You cannot directly call a function like:
+
+❌ Wrong
+
+<button onClick={handleClick()}>Click</button>
+
+
+This will execute immediately.
+
+✔ Correct
+
+<button onClick={() => handleClick("Rahul")}>Click</button>
+
+Example:
+function App() {
+  function handleClick(name) {
+    alert("Hello " + name);
+  }
+
+  return (
+    <button onClick={() => handleClick("Rahul")}>
+      Greet
+    </button>
+  );
+}
+
+
+📌 5. Event Object (SyntheticEvent):
+
+React passes a SyntheticEvent to event handlers.
+
+Example:
+
+function App() {
+  function handleInput(e) {
+    console.log(e.target.value);
+  }
+
+  return <input onChange={handleInput} />;
+}
+
+
+✔ e.target.value → current input value
+✔ e is a SyntheticEvent, not a native DOM event
+
+
+📌 6. Event Handler in Class Components:
+
+class App extends React.Component {
+  handleClick = () => {
+    alert("Clicked from class component!");
+  };
+
+  render() {
+    return (
+      <button onClick={this.handleClick}>
+        Click
+      </button>
+    );
+  }
+}
+
+
+📌 7. Handling Multiple Events:
+
+<button
+  onMouseEnter={() => console.log("Mouse In")}
+  onMouseLeave={() => console.log("Mouse Out")}
+>
+  Hover Me
+</button>
+
+
+📌 8. Preventing Default Behavior:
+
+function App() {
+  function handleSubmit(e) {
+    e.preventDefault();
+    alert("Form Submitted!");
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
