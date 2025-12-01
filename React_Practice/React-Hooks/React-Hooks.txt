@@ -1,0 +1,55 @@
+⭐ What Are Hooks in React? (Definition)
+Definition:
+
+Hooks are special functions in React that allow functional components to use features like state, lifecycle methods, and context — without writing class components.
+
+They were introduced in React 16.8 to make functional components more powerful and easier to manage.
+
+
+⭐ Why Hooks Were Introduced?
+
+Before Hooks, only class components could:
+
+✔ Manage state
+✔ Use lifecycle methods (componentDidMount, componentDidUpdate, etc.)
+✔ Use context
+
+Hooks allow functional components to do all this with simpler code.
+
+
+⭐ Rules of Hooks (Very Important for Interviews)
+
+1️⃣ Hooks must be called at the top level
+❌ Not allowed inside loops, conditions, or nested functions
+✔ This ensures React can track Hooks in order
+
+2️⃣ Hooks can only be called inside React components or custom hooks
+❌ Not in normal JS functions
+✔ Not in class components
+
+3️⃣ Custom hooks must start with the word “use”
+Example: useFetch(), useAuth()
+
+
+⭐ Types of Hooks in React
+✔ 1. Basic (Core) Hooks
+
+useState
+
+useEffect
+
+useContext
+
+✔ 2. Additional Hooks
+
+useRef
+
+useReducer
+
+useCallback
+
+useMemo
+
+useLayoutEffect
+
+useImperativeHandle

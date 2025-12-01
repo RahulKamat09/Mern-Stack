@@ -1,0 +1,194 @@
+⭐ What is useState in React?
+Definition:
+
+useState is a React Hook that allows functional components to create and manage state.
+State means data that changes over time and React automatically re-renders the component when the state changes.
+
+Before Hooks, this was only possible in class components using this.state.
+
+
+⭐ Syntax of useState (Explained Properly):
+
+const [stateVariable, setStateFunction] = useState(initialValue);
+
+Explanation:
+
+| Part               | Meaning                           |
+| ------------------ | --------------------------------- |
+| `stateVariable`    | Stores the current state value    |
+| `setStateFunction` | A function that updates the state |
+| `useState()`       | React Hook that creates state     |
+| `initialValue`     | Starting value of the state       |
+
+
+Why array destructuring?
+useState returns two values, so we capture them using array destructuring.
+
+
+⭐ Example (Basic Counter)
+const [count, setCount] = useState(0);
+
+<button onClick={() => setCount(count + 1)}>Increase</button>
+
+
+✔ count → current value
+✔ setCount() → updates value
+✔ Component re-renders when state changes
+
+
+⭐ All Types of State Values You Can Use in useState
+
+React allows useState() to store any type of data:
+
+1️⃣ Number
+2️⃣ String
+3️⃣ Boolean
+4️⃣ Array
+5️⃣ Object
+6️⃣ Function (lazy initialization)
+
+Below are proper examples for each.
+
+
+🟦 1. useState with Number
+import React, { useState } from "react";
+
+function NumberExample() {
+  const [age, setAge] = useState(20);
+
+  return (
+    <div>
+      <h2>Age: {age}</h2>
+      <button onClick={() => setAge(age + 1)}>Increase Age</button>
+    </div>
+  );
+}
+
+export default NumberExample;
+
+
+🟦 2. useState with String
+import React, { useState } from "react";
+
+function StringExample() {
+  const [name, setName] = useState("Rahul");
+
+  return (
+    <div>
+      <h2>Name: {name}</h2>
+      <input
+        type="text"
+        onChange={(e) => setName(e.target.value)}
+      />
+    </div>
+  );
+}
+
+export default StringExample;
+
+
+🟦 3. useState with Boolean
+import React, { useState } from "react";
+
+function ToggleExample() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  return (
+    <div>
+      <button onClick={() => setIsVisible(!isVisible)}>
+        Toggle
+      </button>
+
+      {isVisible && <p>This is visible now!</p>}
+    </div>
+  );
+}
+
+export default ToggleExample;
+
+
+🟦 4. useState with Array
+import React, { useState } from "react";
+
+function ArrayExample() {
+  const [items, setItems] = useState([]);
+
+  const addItem = () => {
+    setItems([...items, `Item ${items.length + 1}`]);
+  };
+
+  return (
+    <div>
+      <button onClick={addItem}>Add Item</button>
+      <p>{items.join(", ")}</p>
+    </div>
+  );
+}
+
+export default ArrayExample;
+
+✔ Always use ...items to avoid mutating the state
+✔ React requires a new array reference to re-render
+
+
+🟦 5. useState with Object
+import React, { useState } from "react";
+
+function ObjectExample() {
+  const [user, setUser] = useState({
+    name: "John",
+    age: 20,
+  });
+
+  const updateAge = () => {
+    setUser({
+      ...user, // keep old values
+      age: user.age + 1,
+    });
+  };
+
+  return (
+    <div>
+      <h2>{user.name} - {user.age}</h2>
+      <button onClick={updateAge}>Increase Age</button>
+    </div>
+  );
+}
+
+export default ObjectExample;
+
+✔ Must use spread operator (...user)
+✔ Otherwise previous object keys will be lost
+
+
+🟦 6. useState with Function (Lazy Initialization)
+
+Use this when initial value is expensive to calculate.
+
+const [value, setValue] = useState(() => {
+  console.log("Running heavy calculation...");
+  return 500;
+});
+
+
+✔ The function runs only once (on initial render)
+✔ Improves performance
+
+
+
+⭐ Multiple useState Hooks
+
+Yes, you can have multiple states:
+
+const [name, setName] = useState("");
+const [count, setCount] = useState(0);
+const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+
+⭐ Important Notes About useState
+
+1️⃣ State updates cause re-render
+2️⃣ Updates are asynchronous
+3️⃣ Never mutate state directly (❌ array.push() or object.key=...)
+4️⃣ Always return a new reference
+5️⃣ Prefer functional updates when depending on previous state
