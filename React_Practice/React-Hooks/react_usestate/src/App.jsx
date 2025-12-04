@@ -4,6 +4,9 @@ import String from './components/String'
 import Boolean from './components/Boolean'
 import Array from './components/Array'
 import Object from './components/Object'
+import Form from './components/Form'
+import ChangingObject from './components/Array-Object/ChangingObject'
+import ChangingArrayObject from './components/Array-Object/ChangingArrayObject'
 
 const App = () => {
   return (
@@ -13,6 +16,9 @@ const App = () => {
       <Boolean/>
       <Array/>
       <Object/>
+      <ChangingObject/>
+      <ChangingArrayObject/>
+      <Form/>
     </div>
   )
 }

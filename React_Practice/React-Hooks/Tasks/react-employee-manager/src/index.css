@@ -1,0 +1,55 @@
+/* Admin Panel Title */
+.page-title {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2d3436;
+}
+
+/* Card styling */
+.employee-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border-radius: 15px;
+}
+
+.employee-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+.employee-card img {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  object-fit: cover;
+  height: 220px;
+}
+
+.status-badge {
+  padding: 5px 12px;
+  font-size: 13px;
+  border-radius: 15px;
+}
+
+.form-box {
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  background: white;
+}
+
+.btn-custom {
+  border-radius: 30px;
+  padding: 8px 18px;
+}
+
+.search-box {
+  border-radius: 30px;
+  padding-left: 18px;
+}
+
+/* Smooth input focus */
+input:focus,
+select:focus {
+  border-color: #6c5ce7 !important;
+  box-shadow: 0 0 0 0.15rem rgba(108, 92, 231, .4) !important;
+}

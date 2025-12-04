@@ -1,34 +1,224 @@
-body{
-  /* background-color: black; */
+/* ========== Global Reset ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
 }
-.number{
+
+body {
+  background: #f4f4f4;
+}
+
+/* ========== Page Layout ========== */
+.number {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px;
+}
+
+.form {
+  display: flex;
   flex-direction: column;
-  /* margin-top: 250px; */
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
-.number h2{
-  background-color: black;
-  color: white;
-  padding: 12px 30px;
-  border: 2px solid white;
-  border-radius: 20px;
+.field{
+  padding: 5px 10px;
+  margin-top: 10px;
+  border: 1px solid blue;
+  border-radius: 10px;
 }
 
-.number button:first-child{
-  padding: 12px 14px;
-  margin: 5px;
-  background-color: aqua;
-  border: 2px solid white;
-  border-radius: 10px;
+/* ========== Universal Card Style ========== */
+.card {
+  width: 330px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+  text-align: center;
+  transition: 0.3s ease;
 }
-.number button:last-child{
-  padding: 12px 14px;
-  margin: 5px;
-  background-color: rgb(25, 42, 42);
-  border: 2px solid white;
-  border-radius: 10px;
+
+/* ========== Buttons ========== */
+.btn {
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
   color: white;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 15px;
+  transition: 0.2s;
+}
+
+.btn-green {
+  background: #4caf50;
+}
+
+.btn-red {
+  background: #f44336;
+}
+
+.btn-blue {
+  background: #2196f3;
+}
+
+.btn-dark {
+  background: black;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+/* ========== Flex Buttons Side by Side ========== */
+.btn-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.btn-row button {
+  flex: 1;
+}
+
+/* ========== Input Styling ========== */
+.input-box {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.input-box:focus {
+  border-color: #2196f3;
+}
+
+/* ========== Display Container ========== */
+.display-box {
+  padding: 12px;
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  min-height: 40px;
+  margin-top: 15px;
+}
+
+/* ========== List Styling (for Array component) ========== */
+.list-container {
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 15px;
+  background: #fafafa;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.list-item {
+  padding: 8px;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+  margin: 8px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* ========== Heading ========== */
+h2 {
+  margin-bottom: 20px;
+}
+
+/* Page container */
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Heading */
+.heading {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form box styling */
+.form-box {
+  background: #f8f8f8;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-bottom: 25px;
+}
+
+.form-box label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.form-box input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: 0.3s;
+}
+
+.form-box input:focus {
+  border-color: #6a5acd;
+  box-shadow: 0 0 5px #6a5acd80;
+}
+
+/* Preview box */
+.preview-box {
+  text-align: center;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Preview text */
+.preview-text {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.city-text {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Image preview */
+.preview-img {
+  width: 250px;
+  height: 250px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-top: 10px;
+  border: 3px solid #ddd;
+  transition: transform 0.3s ease;
+}
+
+/* Hover animation */
+.preview-img:hover {
+  transform: scale(1.05);
 }

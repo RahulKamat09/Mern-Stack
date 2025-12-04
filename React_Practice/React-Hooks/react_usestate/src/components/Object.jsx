@@ -7,18 +7,29 @@ const Object = () => {
     });
 
     const updateAge = () => {
-        setUser({
-            ...user, // keep old values
-            age: user.age + 1,
-        });
+        setUser(prev => ({
+            ...prev,
+            age: prev.age + 1
+        }));
     };
 
     return (
         <div className='number'>
-            <h2>{user.name} - {user.age}</h2>
-            <button onClick={updateAge}>Increase Age</button>
+            <div className='card'>
+                <h2 style={{ marginBottom: "20px" }}>
+                    {user.name}
+                </h2>
+
+                <p style={{ fontSize: "20px", marginBottom: "20px" }}>
+                    <b>Age:</b> {user.age}
+                </p>
+
+                <button onClick={updateAge} className='btn btn-green'>
+                    Increase Age
+                </button>
+            </div>
         </div>
     );
-}
+};
 
-export default Object
+export default Object;
