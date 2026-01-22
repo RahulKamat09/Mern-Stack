@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level - Travel Website</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg bg-light shadow-sm py-0">
+            <div class="container">
+                <a class="navbar-brand fs-2 fw-bold" href="#">
+                    <img src="images/logo.png" alt="logo" width="40">
+                    Level
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav ms-auto gap-lg-4">
+                        <li class="nav-item nav-lists p-4"><a class="nav-link text-dark" href="#home">Home</a></li>
+                        <li class="nav-item nav-lists p-4"><a class="nav-link text-dark" href="#portfolio">Portfolio</a>
+                        </li>
+                        <li class="nav-item nav-lists p-4"><a class="nav-link text-dark" href="#blog">Blog</a></li>
+                        <li class="nav-item nav-lists p-4"><a class="nav-link text-dark" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 bg-img tm-bg-img">
+                        <div class="container d-flex justify-content-center align-items-center h-100">
+
+                            <div class="form-container rounded shadow-lg">
+
+                                <form class="row g-3 align-items-center">
+
+                                    <!-- Destination -->
+                                    <div class="col-lg-4 col-md-6 col-12">
+                                        <div class="form-row">
+                                            <i class="bi bi-geo-alt-fill"></i>
+                                            <input type="text" placeholder="Type your destination..." />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-6 col-12">
+                                        <div class="form-row">
+                                            <i class="bi bi-calendar-date"></i>
+                                            <input type="date" required />
+                                            <span class="date-label">Check In</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-6 col-12">
+                                        <div class="form-row">
+                                            <i class="bi bi-calendar-date"></i>
+                                            <input type="date" required />
+                                            <span class="date-label">Check Out</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-4 col-12">
+                                        <div class="form-row">
+                                            <i class="bi bi-person-fill"></i>
+                                            <select>
+                                                <option>Adult</option>
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-4 col-12">
+                                        <div class="form-row">
+                                            <i class="bi bi-people-fill"></i>
+                                            <select>
+                                                <option>Children</option>
+                                                <option>0</option>
+                                                <option>1</option>
+                                                <option>2</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3 col-md-4 col-12">
+                                        <div class="form-row">
+                                            <i class="bi bi-door-open-fill"></i>
+                                            <select>
+                                                <option>Room</option>
+                                                <option>1</option>
+                                                <option>2</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!-- Button -->
+                                    <div class="col-lg-3 col-md-12 col-12">
+                                        <button class="check-btn w-100">
+                                            CHECK AVAILABILITY
+                                        </button>
+                                    </div>
+
+                                </form>
+
+                                <div class="form-footer mt-3">
+                                    <p class="fw-bold text-secondary">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                        elit.</p>
+                                    <a href="#" class="fw-bolder">Need Help?</a>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="help-section text-center text-white">
+            <div class="row">
+                <div class="col-12">
+                    <div class="help-content">
+                        <h2>We are here to help you?</h2>
+                        <p>Subscribe to get our newsletters</p>
+
+                        <button class="subscribe-btn">
+                            SUBSCRIBE NEWSLETTERS
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-section my-5">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-12">
+                        <div class="info-card bg-white text-center">
+                            <i class="bi bi-hammer"></i>
+                            <h4 class="fw-bold fs-5 mb-3 lh-1">Level HTML Template by Toolplate website</h4>
+                            <p class="fs-6 text-secondary mb-2">
+                                You are allowed to download, edit and use this
+                                template for your business or client websites.
+                            </p>
+                            <a href="#" class="text-decoration-none fw-semibold">CONTINUE READING...</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="info-card bg-white text-center">
+                            <i class="bi bi-airplane"></i>
+                            <h4 class="fw-bold fs-5 mb-3 lh-1">Original Website Template Producer</h4>
+                            <p class="fs-6 text-secondary mb-2">
+                                You are NOT allowed to re-distribute the downloadable
+                                template ZIP file on any website.
+                            </p>
+                            <a href="#" class="text-decoration-none fw-semibold">CONTINUE READING...</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="info-card bg-white text-center">
+                            <i class="bi bi-life-preserver"></i>
+                            <h4 class="fw-bold fs-5 mb-3 lh-1">Contact us if you have any question</h4>
+                            <p class="fs-6 text-secondary mb-3">
+                                If you see this template being distributed on any
+                                other site, that is an illegal copy.
+                            </p>
+                            <a href="#" class="text-decoration-none fw-semibold">CONTINUE READING...</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="places-section py-5">
+            <div class="container">
+                <div class="row g-4">
+
+                    <div class="col-lg-8">
+                        <div id="placesSlider" class="carousel slide" data-bs-ride="carousel">
+
+                            <div class="carousel-inner">
+
+                                <div class="carousel-item active">
+                                    <div class="row g-4">
+
+                                        <div class="col-md-6">
+                                            <div class="place-card">
+                                                <img src="images/img-01.jpg" alt="">
+                                                <div class="place-content">
+                                                    <h5>ORCI VARIUS NATOQUE PENATIBUS ET</h5>
+                                                    <p>
+                                                        Pellentesque quis dui sit amet purus scelerisque
+                                                        eleifend sed ut eros. Morbi viverra blandit massa.
+                                                    </p>
+                                                    <button class="place-btn">READ MORE</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="place-card">
+                                                <img src="images/img-02.jpg" alt="">
+                                                <div class="place-content">
+                                                    <h5>NULLAM SOLLICITUDIN AT AUGUE VENENATIS</h5>
+                                                    <p>
+                                                        Aenean finibus tempor nulla, et maximus nibh dapibus ac.
+                                                        Duis consequat sed sapien.
+                                                    </p>
+                                                    <button class="place-btn">MORE DETAILS</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <div class="row g-4">
+
+                                        <div class="col-md-6">
+                                            <div class="place-card">
+                                                <img src="images/img-01.jpg" alt="">
+                                                <div class="place-content">
+                                                    <h5>MAECENAS COMMODO MASSA</h5>
+                                                    <p>
+                                                        Pellentesque quis dui sit amet purus scelerisque
+                                                        eleifend sed ut eros. Morbi viverra blandit massa.
+                                                    </p>
+                                                    <button class="place-btn">READ MORE</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="place-card">
+                                                <img src="images/img-02.jpg" alt="">
+                                                <div class="place-content">
+                                                    <h5>NULLAM SOLLICITUDIN AT AUGUE VENENATIS</h5>
+                                                    <p>
+                                                        Aenean finibus tempor nulla, et maximus nibh dapibus ac.
+                                                        Duis consequat sed sapien.
+                                                    </p>
+                                                    <button class="place-btn">MORE DETAILS</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#placesSlider"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                            </button>
+
+                            <button class="carousel-control-next" type="button" data-bs-target="#placesSlider"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="recommended-box">
+                            <div class="recommended-header">
+                                <h4>Recommended Places</h4>
+                                <p>Enamel pin cliche tilde, kitsch and VHS thundercats</p>
+                            </div>
+
+                            <ul class="recommended-list">
+                                <li class="fw-bold">
+                                    <img src="images/tn-img-01.jpg">
+                                    <span>EUROPE</span>
+                                </li>
+                                <li class="fw-bold">
+                                    <img src="images/tn-img-02.jpg">
+                                    <span>ASIA</span>
+                                </li>
+                                <li class="fw-bold">
+                                    <img src="images/tn-img-03.jpg">
+                                    <span>AFRICA</span>
+                                </li>
+                                <li class="fw-bold">
+                                    <img src="images/tn-img-04.jpg">
+                                    <span>SOUTH AMERICA</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="region-section" id="blog">
+            <div class="container">
+
+                <div class="region-wrapper">
+
+                    <!-- LEFT SIDE -->
+                    <div class="region-left">
+                        <h2>ASIA</h2>
+                        <span>Singapore</span>
+                    </div>
+
+                    <!-- RIGHT CONTENT -->
+                    <div class="region-card">
+
+                        <!-- Item 1 -->
+                        <div class="region-item">
+                            <img src="images/img-01.jpg" alt="">
+                            <div class="region-text">
+                                <h4>Suspendisse vel est libero sem phasellus ac laoreet</h4>
+                                <p>
+                                    Vivamus eget tellus ornare, sollicitudin quam id, dictum nulla.
+                                    Phasellus finibus rhoncus justo.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="region-item">
+                            <img src="images/img-02.jpg" alt="">
+                            <div class="region-text">
+                                <h4>Suspendisse vel est libero sem phasellus ac laoreet</h4>
+                                <p>
+                                    Duis accumsan sagittis tortor in ultrices.
+                                </p>
+                                <a href="#">CONTINUE READING...</a>
+                            </div>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="region-item">
+                            <img src="images/img-03.jpg" alt="">
+                            <div class="region-text">
+                                <h4>Faucibus dolor ligula nisl metus auctor aliquet</h4>
+                                <p>
+                                    Nunc in felis aliquet metus luctus iaculis.
+                                </p>
+                                <a href="#">CONTINUE READING...</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 bg-img tm-bg-img-2">
+                        <div class="container d-flex justify-content-center align-items-center h-100">
+                            <div class="contact-section w-100">
+                                <div class="row g-4 mb-5 p-5">
+
+                                    <!-- MAP -->
+                                    <div class="col-lg-6">
+                                        <div class="map-box">
+                                            <iframe src="https://www.google.com/maps?q=Singapore&output=embed"
+                                                allowfullscreen loading="lazy">
+                                            </iframe>
+                                        </div>
+                                    </div>
+
+                                    <!-- FORM -->
+                                    <div class="col-lg-6">
+                                        <div class="contact-form">
+                                            <input type="text" placeholder="Name">
+                                            <input type="email" placeholder="Email">
+                                            <input type="text" placeholder="Subject">
+                                            <textarea placeholder="Message"></textarea>
+                                            <button>SEND MESSAGE NOW</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 footer-section">
+                    <p class="text-center text-white fs-6">Copyright © 2026 Your Company - Design: Tooplate</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

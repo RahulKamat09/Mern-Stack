@@ -17,6 +17,7 @@ const ToDoList = () => {
     };
 
     const deleteTask = (id) => {
+        confirm("Are You sure You want to delete this task from to do list !!");
         setTasks(tasks.filter((task) => task.id !== id));
     };
 
