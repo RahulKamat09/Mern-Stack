@@ -1,0 +1,20 @@
+export const EmployeeData = [
+    {
+        id:1,
+        firstName:"Rahul",
+        lastName:"Kamat",
+        age:21
+    },
+    {
+        id:2,
+        firstName:"Jay",
+        lastName:"Khatik",
+        age:22
+    },
+    {
+        id:3,
+        firstName:"Prashant",
+        lastName:"Parmar",
+        age:22
+    }
+];
