@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  min-height: 100vh;
+}
+
+.navbar {
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  color: white;
+}
+
+.add-btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #06b6d4;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.container {
+  padding: 30px;
+}
+
+.title {
+  color: white;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.student-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.student-card {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(16px);
+  border-radius: 20px;
+  padding: 20px;
+  color: white;
+  transition: 0.3s;
+}
+
+.student-card:hover {
+  transform: translateY(-8px);
+}
+
+.card-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.edit-btn {
+  background: #22c55e;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background: #ef4444;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.empty {
+  color: white;
+  text-align: center;
+  width: 100%;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: white;
+  width: 420px;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.modal h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.modal input {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.modal-buttons button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.modal-buttons button:first-child {
+  background: #06b6d4;
+  color: white;
+}
+
+.modal-buttons button:last-child {
+  background: #e5e7eb;
+}
