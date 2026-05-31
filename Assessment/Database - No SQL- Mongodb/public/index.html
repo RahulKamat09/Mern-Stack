@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apex Product Catalog & Inventory Engine</title>
+  <!-- Modern Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Premium Style Sheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-mode">
+  <div class="app-container">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="logo-area">
+        <div class="logo-icon">
+          <i data-lucide="database"></i>
+        </div>
+        <div class="logo-text">
+          <h2>ApexStock</h2>
+          <span>Mongodb Engine</span>
+        </div>
+      </div>
+
+      <nav class="nav-links">
+        <button class="nav-btn active" id="btn-inventory" onclick="switchTab('inventory')">
+          <i data-lucide="package"></i>
+          <span>Inventory Board</span>
+        </button>
+        <button class="nav-btn" id="btn-analytics" onclick="switchTab('analytics')">
+          <i data-lucide="pie-chart"></i>
+          <span>Aggregation Hub</span>
+        </button>
+        <button class="nav-btn" id="btn-terminal" onclick="switchTab('terminal')">
+          <i data-lucide="terminal"></i>
+          <span>Log Audit Terminal</span>
+        </button>
+        <button class="nav-btn" id="btn-sandbox" onclick="switchTab('sandbox')">
+          <i data-lucide="cpu"></i>
+          <span>Conceptual Sandbox</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="connection-status connected" id="db-status">
+          <span class="status-dot animate-pulse"></span>
+          <span class="status-label">Database Connected</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      
+      <!-- Top Header Bar -->
+      <header class="top-bar">
+        <div class="header-search">
+          <i data-lucide="search"></i>
+          <input type="text" id="search-input" placeholder="Search catalog by name or description..." oninput="handleSearch(this.value)">
+        </div>
+        <div class="header-actions">
+          <select id="filter-category" onchange="handleCategoryFilter(this.value)">
+            <option value="">All Categories</option>
+            <!-- Dynamically populated categories -->
+          </select>
+          <button class="btn btn-primary" id="btn-open-modal" onclick="openAddProductModal()">
+            <i data-lucide="plus"></i>
+            <span>Add Product</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Feedback / Alert Banners -->
+      <div id="alert-container" class="alert-container"></div>
+
+      <!-- Tab Content: Inventory Board -->
+      <section id="tab-inventory" class="tab-pane active">
+        <div class="pane-header">
+          <div>
+            <h1>Product Catalog Management</h1>
+            <p>Full REST CRUD dashboard featuring Mongoose models and atomic stock controls.</p>
+          </div>
+          <div class="catalog-stats">
+            <div class="mini-stat-card">
+              <span class="stat-num" id="stat-total-products">0</span>
+              <span class="stat-lbl">Unique SKUs</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid" id="products-grid">
+          <!-- Dynamic loading spinner -->
+          <div class="loader-container" id="grid-loader">
+            <span class="spinner"></span>
+            <p>Querying E-Commerce Catalog...</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tab Content: Aggregation Hub -->
+      <section id="tab-analytics" class="tab-pane">
+        <div class="pane-header">
+          <div>
+            <h1>Aggregation Insights</h1>
+            <p>Real-time analytics powered by the MongoDB Aggregation Framework ($group, $sum, $avg).</p>
+          </div>
+          <button class="btn btn-secondary" onclick="loadAnalyticsData()">
+            <i data-lucide="refresh-cw"></i>
+            <span>Recalculate Pipeline</span>
+          </button>
+        </div>
+
+        <!-- Dynamic aggregation visual board -->
+        <div class="analytics-deck" id="analytics-deck">
+          <!-- Dynamically populated aggregate cards -->
+        </div>
+
+        <!-- Aggregation Pipeline Explanation Diagram -->
+        <div class="card pipeline-card">
+          <h3>Understanding this Real-Time Pipeline</h3>
+          <p>These values are calculated dynamically on the database server through a multi-stage aggregation pipeline. This executes compilation routines inside MongoDB and transfers only the final processed report back to Node.js.</p>
+          <div class="pipeline-visual">
+            <div class="pipeline-node">
+              <div class="node-icon"><i data-lucide="database"></i></div>
+              <div class="node-desc"><strong>Raw Data</strong><br>100k+ Records</div>
+            </div>
+            <div class="pipeline-arrow"><i data-lucide="chevrons-right"></i></div>
+            <div class="pipeline-node">
+              <div class="node-icon bg-indigo"><i data-lucide="filter"></i></div>
+              <div class="node-desc"><strong>$match</strong><br>Filter Active</div>
+            </div>
+            <div class="pipeline-arrow"><i data-lucide="chevrons-right"></i></div>
+            <div class="pipeline-node">
+              <div class="node-icon bg-violet"><i data-lucide="layers"></i></div>
+              <div class="node-desc"><strong>$group & $sum</strong><br>Aggregate Stats</div>
+            </div>
+            <div class="pipeline-arrow"><i data-lucide="chevrons-right"></i></div>
+            <div class="pipeline-node">
+              <div class="node-icon bg-emerald"><i data-lucide="sort-asc"></i></div>
+              <div class="node-desc"><strong>$sort</strong><br>Order Value Desc</div>
+            </div>
+            <div class="pipeline-arrow"><i data-lucide="chevrons-right"></i></div>
+            <div class="pipeline-node">
+              <div class="node-icon bg-pink"><i data-lucide="table"></i></div>
+              <div class="node-desc"><strong>Final Report</strong><br>5 Clean Rows</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tab Content: Log Audit Terminal -->
+      <section id="tab-terminal" class="tab-pane">
+        <div class="pane-header">
+          <div>
+            <h1>Request Auditing Logs</h1>
+            <p>Live visualization of requests parsed by our custom Express middleware using Node's <code>fs</code> library.</p>
+          </div>
+          <button class="btn btn-secondary" onclick="fetchAuditLogs()">
+            <i data-lucide="refresh-cw"></i>
+            <span>Refresh Terminal</span>
+          </button>
+        </div>
+
+        <div class="terminal-mockup">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="dot-red"></span>
+              <span class="dot-yellow"></span>
+              <span class="dot-green"></span>
+            </div>
+            <div class="terminal-title">access.log - Live Stream</div>
+            <div class="terminal-badge">FS.APPEND_FILE ACTIVE</div>
+          </div>
+          <div class="terminal-body" id="log-terminal">
+            <!-- Dynamic access logs go here -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Tab Content: Conceptual Sandbox -->
+      <section id="tab-sandbox" class="tab-pane">
+        <div class="pane-header">
+          <div>
+            <h1>Section A: Conceptual Sandbox</h1>
+            <p>An interactive, educational simulator exploring core backend architectures and concurrency theories.</p>
+          </div>
+        </div>
+
+        <div class="sandbox-grid">
+          
+          <!-- Interactive Non-Blocking Simulator -->
+          <div class="card sandbox-card highlight-card">
+            <div class="sandbox-card-header">
+              <div class="card-icon"><i data-lucide="activity"></i></div>
+              <div>
+                <h3>Blocking vs Non-Blocking Simulator</h3>
+                <p>Observe how Node's Event Loop handles tasks in real time.</p>
+              </div>
+            </div>
+            
+            <div class="simulator-panel">
+              <div class="simulator-controls">
+                <button class="btn btn-danger" onclick="runSyncSimulator()">
+                  <i data-lucide="shield-alert"></i>
+                  <span>Simulate Blocking I/O (readFileSync)</span>
+                </button>
+                <button class="btn btn-success" onclick="runAsyncSimulator()">
+                  <i data-lucide="shield-check"></i>
+                  <span>Simulate Non-Blocking I/O (readFile)</span>
+                </button>
+              </div>
+
+              <div class="simulator-canvas">
+                <div class="main-thread">
+                  <span class="thread-label">Node.js Main Execution Thread:</span>
+                  <div class="thread-status active" id="thread-state">IDLE / RESPONSIVE</div>
+                  <div class="thread-bar-container">
+                    <div class="thread-bar" id="thread-progress"></div>
+                  </div>
+                </div>
+                
+                <div class="event-loop-visual">
+                  <div class="rotator" id="event-loop-spinner">
+                    <i data-lucide="refresh-cw"></i>
+                  </div>
+                  <span>Event Loop Status</span>
+                </div>
+              </div>
+
+              <div class="simulator-console" id="simulator-console">
+                [SYSTEM] Ready for simulation. Click an action to start.
+              </div>
+            </div>
+          </div>
+
+          <!-- Conceptual Cards -->
+          <div class="card sandbox-card">
+            <h3>1. Node.js & Real-Time APIs</h3>
+            <p>Node.js is preferred because it runs on a <strong>single-threaded event loop</strong> using **non-blocking I/O**. Traditional architectures allocate one heavy thread per client, exhausting memory quickly under high concurrency (e.g. holding thousands of open WebSocket paths). Node.js holds connections open with minimal memory overhead, responding as events resolve.</p>
+          </div>
+
+          <div class="card sandbox-card">
+            <h3>3. Promises vs Callback Hell</h3>
+            <p>Callbacks force deep nesting (the Pyramid of Doom), repeating complex exception checks at every level. **Promises flatten execution** into structured chains (<code>.then().catch()</code>) representing eventual state fulfillment. Modern <code>async/await</code> lets asynchronous interactions follow a standard linear design, looking like clean synchronous routines with try/catch logic.</p>
+          </div>
+
+          <div class="card sandbox-card">
+            <h3>4. Document Catalogs in MongoDB</h3>
+            <p>SQL splits product details into strict relational tables (categories, attributes, stocks) that require performance-heavy JOIN joins. MongoDB embeds multi-tiered datasets (sub-documents, specifications, variations) inside a **single BSON document**. Reading a product retrieves its complete nested catalog block in one fast operation.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Add/Edit Product Modal Dialog (Premium Glass Modal) -->
+  <div class="modal-overlay" id="product-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modal-title">Create New Catalog Product</h3>
+        <button class="modal-close" onclick="closeAddProductModal()">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+      <form id="product-form" onsubmit="handleFormSubmit(event)">
+        <!-- Hidden input for ID when updating -->
+        <input type="hidden" id="form-product-id">
+        
+        <div class="form-group">
+          <label for="form-name">Product Name *</label>
+          <input type="text" id="form-name" required placeholder="e.g. Apex Mechanical Keyboard">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="form-price">Unit Price ($) *</label>
+            <input type="number" step="0.01" id="form-price" required min="0" placeholder="e.g. 99.99">
+          </div>
+          <div class="form-group">
+            <label for="form-stock">Initial Stock *</label>
+            <input type="number" id="form-stock" required min="0" placeholder="e.g. 50">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="form-category">Product Category *</label>
+          <input type="text" id="form-category" required placeholder="e.g. Peripherals">
+        </div>
+
+        <div class="form-group">
+          <label for="form-description">Description *</label>
+          <textarea id="form-description" required rows="3" placeholder="Describe the product features and specs..."></textarea>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="btn btn-secondary" onclick="closeAddProductModal()">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="form-submit-btn">Save Product</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Client JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>
